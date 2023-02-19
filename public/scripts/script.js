@@ -102,33 +102,17 @@ if (document.body.id === 'company') {
 
 
 
-const pages = ['homePage', 'company', 'staff'];
-if (pages.some(el => pages.includes(el))) {
-  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  // back to top Btn
-  const toTopBtn = document.querySelector('#toTopBtn');
-  window.addEventListener('scroll', handleScroll);
+// const pages = ['homePage', 'company', 'staff'];
+// if (pages.some(el => pages.includes(el))) {
 
-  function handleScroll() {
-    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-      // toTopBtn.classList.add('opacity-100')
-      toTopBtn.style.opacity = 1;
-      screen.width <= 450 ? (toTopBtn.style.right = '15px') : (toTopBtn.style.right = '50px');
-    } else {
-      // toTopBtn.classList.remove('opacity-100');
-      toTopBtn.style.opacity = 0;
-      toTopBtn.style.right = '0px';
-    }
-  }
-
-  toTopBtn.addEventListener('click', () => {
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
-  });
 
  
-}
+// }
   
+
+
+
+
 // script that runs on all pages
 
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -154,30 +138,24 @@ if (pages.some(el => pages.includes(el))) {
     });
   }
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  // back to top Btn
+  const toTopBtn = document.querySelector('#toTopBtn');
+  window.addEventListener('scroll', handleScroll);
 
-  
+  function handleScroll() {
+    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+      // toTopBtn.classList.add('opacity-100')
+      toTopBtn.style.opacity = 1;
+      screen.width <= 450 ? (toTopBtn.style.right = '15px') : (toTopBtn.style.right = '50px');
+    } else {
+      // toTopBtn.classList.remove('opacity-100');
+      toTopBtn.style.opacity = 0;
+      toTopBtn.style.right = '0px';
+    }
+  }
 
-
-
-// if (document.body.id === 'homePage' || document.body.id === 'company' || document.body.id === 'staff') {
-  // const toTopBtn = document.querySelector('#toTopBtn');
-  // window.addEventListener('scroll', handleScroll);
-
-  // function handleScroll() {
-  //   if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-  //     // toTopBtn.classList.add('opacity-100')
-  //     toTopBtn.style.opacity = 1;
-  //     screen.width <= 450 ? (toTopBtn.style.right = '15px') : (toTopBtn.style.right = '50px');
-  //   } else {
-  //     // toTopBtn.classList.remove('opacity-100');
-  //     toTopBtn.style.opacity = 0;
-  //     toTopBtn.style.right = '0px';
-  //   }
-  // }
-
-  // toTopBtn.addEventListener('click', () => {
-  //   document.documentElement.scrollTop = 0;
-  //   document.body.scrollTop = 0;
-  // });
-// }
-
+  toTopBtn.addEventListener('click', () => {
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  });
