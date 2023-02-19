@@ -1,28 +1,5 @@
 if (document.body.id === 'homePage') {
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  // Nav burger buttons
-  const navTogglers = document.querySelectorAll('.navToggle');
-  const navMenus = document.querySelectorAll('.navMenu');
-  const toggleBars = document.querySelector('#toggleBars');
-
-  if (screen.width < 768) {
-    navTogglers.forEach((toggler) => {
-      toggler.addEventListener('click', (e) => {
-        if (e.currentTarget === navTogglers[0]) {
-          toggleBars.classList.toggle('rotate-90');
-          navMenus[0].classList.toggle('hidden');
-        } else if (e.currentTarget === navTogglers[1]) {
-          navMenus[1].classList.toggle('invisible');
-          navMenus[1].classList.toggle('h-[10rem]');
-        } else if (e.currentTarget === navTogglers[2]) {
-          navMenus[2].classList.toggle('invisible');
-          navMenus[2].classList.toggle('h-[10rem]');
-        }
-      });
-    });
-  }
-
-  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   // Projects Slider
   const slider = document.querySelector('#slider-inner');
   const progressBar = document.querySelector('#progress-bar-inner');
@@ -124,11 +101,11 @@ if (document.body.id === 'company') {
 }
 
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// back to top Btn
+
 const pages = ['homePage', 'company', 'staff'];
 if (pages.some(el => pages.includes(el))) {
-
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  // back to top Btn
   const toTopBtn = document.querySelector('#toTopBtn');
   window.addEventListener('scroll', handleScroll);
 
@@ -148,10 +125,34 @@ if (pages.some(el => pages.includes(el))) {
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
   });
+
+ 
 }
   
+// script that runs on all pages
 
+ //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Nav burger buttons
+  const navTogglers = document.querySelectorAll('.navToggle');
+  const navMenus = document.querySelectorAll('.navMenu');
+  const toggleBars = document.querySelector('#toggleBars');
 
+  if (screen.width < 768) {
+    navTogglers.forEach((toggler) => {
+      toggler.addEventListener('click', (e) => {
+        if (e.currentTarget === navTogglers[0]) {
+          toggleBars.classList.toggle('rotate-90');
+          navMenus[0].classList.toggle('hidden');
+        } else if (e.currentTarget === navTogglers[1]) {
+          navMenus[1].classList.toggle('invisible');
+          navMenus[1].classList.toggle('h-[10rem]');
+        } else if (e.currentTarget === navTogglers[2]) {
+          navMenus[2].classList.toggle('invisible');
+          navMenus[2].classList.toggle('h-[10rem]');
+        }
+      });
+    });
+  }
 
 
   
