@@ -94,32 +94,12 @@ if (document.body.id === 'homePage') {
     }
 
     items[slideIndex - 1].style.display = 'block';
-    setTimeout(showSlides, 3500, items); // Change image every 3.5 seconds
+    setTimeout(showSlides, 3000, items); // Change image every 3 seconds
   }
-
-  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  // back to top Btn
-
-  const toTopBtn = document.querySelector('#toTopBtn');
-  window.addEventListener('scroll', handleScroll);
-
-  function handleScroll() {
-    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-      // toTopBtn.classList.add('opacity-100')
-      toTopBtn.style.opacity = 1;
-      screen.width <= 450 ? (toTopBtn.style.right = '15px') : (toTopBtn.style.right = '50px');
-    } else {
-      // toTopBtn.classList.remove('opacity-100');
-      toTopBtn.style.opacity = 0;
-      toTopBtn.style.right = '0px';
-    }
-  }
-
-  toTopBtn.addEventListener('click', () => {
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
-  });
 }
+
+
+
 
 if (document.body.id === 'company') {
   // show certificates animations
@@ -141,9 +121,13 @@ if (document.body.id === 'company') {
       }
     }
   }
+}
 
-  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  // back to top Btn
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// back to top Btn
+const pages = ['homePage', 'company', 'staff'];
+if (pages.some(el => pages.includes(el))) {
 
   const toTopBtn = document.querySelector('#toTopBtn');
   window.addEventListener('scroll', handleScroll);
@@ -165,3 +149,34 @@ if (document.body.id === 'company') {
     document.body.scrollTop = 0;
   });
 }
+  
+
+
+
+
+  
+
+
+
+// if (document.body.id === 'homePage' || document.body.id === 'company' || document.body.id === 'staff') {
+  // const toTopBtn = document.querySelector('#toTopBtn');
+  // window.addEventListener('scroll', handleScroll);
+
+  // function handleScroll() {
+  //   if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+  //     // toTopBtn.classList.add('opacity-100')
+  //     toTopBtn.style.opacity = 1;
+  //     screen.width <= 450 ? (toTopBtn.style.right = '15px') : (toTopBtn.style.right = '50px');
+  //   } else {
+  //     // toTopBtn.classList.remove('opacity-100');
+  //     toTopBtn.style.opacity = 0;
+  //     toTopBtn.style.right = '0px';
+  //   }
+  // }
+
+  // toTopBtn.addEventListener('click', () => {
+  //   document.documentElement.scrollTop = 0;
+  //   document.body.scrollTop = 0;
+  // });
+// }
+
