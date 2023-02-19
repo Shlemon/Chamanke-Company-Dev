@@ -94,7 +94,7 @@ if (document.body.id === 'homePage') {
     }
 
     items[slideIndex - 1].style.display = 'block';
-    setTimeout(showSlides, 3500, items); // Change image every 3.5 seconds
+    setTimeout(showSlides, 3000, items); // Change image every 3 seconds
   }
 }
 
@@ -159,9 +159,6 @@ if (pages.some(el => pages.includes(el))) {
 
 
 // if (document.body.id === 'homePage' || document.body.id === 'company' || document.body.id === 'staff') {
-  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  // back to top Btn
-
   // const toTopBtn = document.querySelector('#toTopBtn');
   // window.addEventListener('scroll', handleScroll);
 
