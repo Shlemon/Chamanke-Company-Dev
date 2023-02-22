@@ -243,11 +243,6 @@
                             class="w-full h-full object-cover duration-200 ease-in hover:scale-110">
                     </div>
 
-
-
-
-
-
                 </div>
 
 
@@ -256,32 +251,46 @@
 
                 <div class="hidden popup-image fixed top-0 left-0 bg-black/90 w-full h-full z-50">
                     <span class="absolute top-2 right-5 text-white font-bold text-4xl cursor-pointer z-50">&times;</span>
-                    <img class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-8 border-white rounded-md object-cover w-11/12 md:w-[50rem] "
+                    <img class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-8 border-white rounded-md object-cover w-11/12 md:w-[50rem] max-h-[40rem] "
                         src="./img/projects/Bejil Civil works/Road Measurement.jpg" alt="Bejil Civil works">
+
+
+
+
+
+                        
+                    <!-- Slider controls -->
+                    <button type="button"
+                        class="previousBtn absolute top-[8.5rem] left-1/4 md:top-0 md:left-48 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none">
+                        <span
+                            class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 md:w-14 md:h-14 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/60 transition-all duration-200 dark:group-hover:bg-gray-800/60">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                class="w-10 h-10 text-gray-800 dark:text-gray-100">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
+                            </svg>
+
+                            <span class="sr-only">Previous</span>
+                        </span>
+                    </button>
+                    <button type="button"
+                        class="nextBtn absolute top-[8.5rem] right-1/4 md:top-0 md:right-48 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none">
+                        <span
+                            class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 md:w-14 md:h-14 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/60 transition-all duration-200 dark:group-hover:bg-gray-800/60">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                class="w-10 h-10 text-gray-800 dark:text-gray-100">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                            </svg>
+                            <span class="sr-only">Next</span>
+                        </span>
+                    </button>
+
+
+
                 </div>
             </div>
+            </div>
 
-            <script>
-                // figure out next and prv btns
-                const imgContainer = document.querySelector('.image-container')
-                const popupImage = document.querySelector('.popup-image')
-                const images = document.querySelectorAll('.image-container img');
-                images.forEach(img => {
-                    img.addEventListener('click', () => {
-                        popupImage.style.display = 'block';
-                        popupImage.children[1].src = img.getAttribute('src')
-                    })
-                })
 
-                // combine these two events into one
-                popupImage.children[0].addEventListener('click', () => {
-                    popupImage.style.display = 'none'
-                })
-
-                popupImage.addEventListener('click', (e) => {
-                    popupImage.style.display = 'none'
-                })
-            </script>
         </section>
 
 
@@ -433,8 +442,7 @@
             <i class="fa-solid fa-angle-up text-white hover:text-blue-900 hover:bg-blue-100 text-4xl text-center bg-slate-300 rounded-2xl w-12 h-12 p-2"></i>
         </div>
 
-        <!-- <script src="./scripts/staffPage.js"></script> -->
-
+        <script src="./scripts/projectsPage.js"></script>
     </body>
 
 </html>
