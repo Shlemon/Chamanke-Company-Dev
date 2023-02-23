@@ -1,4 +1,3 @@
-// figure out next and prv btns
 // const imgContainer = document.querySelector('.image-container');
 const popupImgContainer = document.querySelector('.popup-image');
 const popupImg = document.querySelector('.popup-image img');
@@ -62,7 +61,7 @@ popupImgContainer.addEventListener('click', (e) => {
 });
 
 
-
+// add touch events?
 
 
 
