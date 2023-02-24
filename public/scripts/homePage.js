@@ -118,3 +118,12 @@ toTopBtn.addEventListener('click', () => {
   document.documentElement.scrollTop = 0;
   document.body.scrollTop = 0;
 });
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+const form = document.getElementById('contactForm');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  // const formData = new FormData(form);
+  // sendEmail(formData);
+});
