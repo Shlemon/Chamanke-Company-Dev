@@ -1,4 +1,3 @@
-// const imgContainer = document.querySelector('.image-container');
 const popupImgContainer = document.querySelector('.popup-image');
 const popupImg = document.querySelector('.popup-image img');
 const popupImgX = document.querySelector('.popup-image span');
@@ -7,12 +6,13 @@ const images = Array.from(document.querySelectorAll('.image-container img'));
 const nextBtn = document.querySelector('.nextBtn');
 const prevBtn = document.querySelector('.previousBtn');
 
+// images gallery function
 
 images.forEach((img, index) => {
   img.addEventListener('click', () => {
     popupImgContainer.style.display = 'block';
     popupImg.src = img.getAttribute('src');
-    console.log(index);
+    toTopBtn.style.opacity = 0;
 
     nextBtn.addEventListener('click', () => {
       index++;
@@ -52,7 +52,6 @@ images.forEach((img, index) => {
 
 
 popupImgContainer.addEventListener('click', (e) => {
-  console.log(e.target);
   if (e.target === popupImgX) {
     popupImgContainer.style.display = 'none';
   } else if (e.target === popupImgContainer) {
@@ -111,8 +110,7 @@ toTopBtn.addEventListener('click', () => {
   document.body.scrollTop = 0;
 });
 
-
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
