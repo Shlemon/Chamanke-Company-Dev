@@ -124,7 +124,5 @@ const form = document.getElementById('contactForm');
 
 form.addEventListener('submit', (e) => {
   // e.preventDefault();
-  console.log('submitted');
-  // const formData = new FormData(form);
-  // sendEmail(formData);
+  console.log('form submitted');
 });
