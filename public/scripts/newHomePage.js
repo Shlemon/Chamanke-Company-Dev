@@ -42,7 +42,8 @@ const services = [
 const nextBtn = document.querySelector('#sliderNextBtn');
 const prevBtn = document.querySelector('#sliderPrevBtn');
 let currentIndex = 0;
-// container.servicesContainer.style.cursor = 'grab';
+let isDragging = false;
+let startPosition = null;
 
 container.servicesContainer.addEventListener('click', (e) => {
   if (e.target.closest('#sliderNextBtn, #sliderNextBtn svg')) {
@@ -52,7 +53,6 @@ container.servicesContainer.addEventListener('click', (e) => {
     // fade out current content
     container.img.classList.remove('fade-in');
     container.img.classList.add('fade-out');
-    // container.img.classList.add('swipe-left');
 
     setTimeout(() => {
       updateElements();
@@ -66,7 +66,6 @@ container.servicesContainer.addEventListener('click', (e) => {
     // fade out current content
     container.img.classList.remove('fade-in');
     container.img.classList.add('fade-out');
-    // container.img.classList.add('swipe-left');
 
     setTimeout(() => {
       updateElements();
@@ -85,17 +84,11 @@ function updateElements() {
   // fade in the next content
   container.img.classList.remove('fade-out');
   container.img.classList.add('fade-in');
-  // container.img.classList.remove('swipe-left');
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-// add 'touchstart' to 'mousedown' and add 'touchmove' to 'mousemove' events
+// pointer events (mouse + touch + stylus...etc.)
 
-
-let isDragging = false;
-let startPosition = null;
-
-container.servicesContainer.addEventListener('mousedown', (e) => {
+container.servicesContainer.addEventListener('pointerdown', (e) => {
   // prevent selecting
   e.preventDefault();
   isDragging = true;
@@ -103,19 +96,7 @@ container.servicesContainer.addEventListener('mousedown', (e) => {
   container.servicesContainer.style.cursor = 'grabbing';
 });
 
-// ['mousedown', 'touchstart'].forEach((event) => {
-//   container.servicesContainer.addEventListener(event, (e) => {
-//     // prevent selecting
-//     e.preventDefault();
-//     isDragging = true;
-//     startPosition = e.clientX;
-//     container.servicesContainer.style.cursor = 'grabbing';
-//   });
-// });
-
-
-
-container.servicesContainer.addEventListener('mousemove', (e) => {
+container.servicesContainer.addEventListener('pointermove', (e) => {
   // prevent selecting
   e.preventDefault();
   if (isDragging) {
@@ -130,76 +111,19 @@ container.servicesContainer.addEventListener('mousemove', (e) => {
   }
 });
 
-// ['mousemove', 'touchend'].forEach((event) => {
-//   container.servicesContainer.addEventListener(event, (e) => {
-//     // prevent selecting
-//     e.preventDefault();
-//     if (isDragging) {
-//       const delta = e.clientX - startPosition;
-//       if (delta > 50) {
-//         isDragging = false;
-//         nextBtn.click();
-//       } else if (delta < -50) {
-//         isDragging = false;
-//         prevBtn.click();
-//       }
-//     }
-//   });
-// });
-
-
-container.servicesContainer.addEventListener('mouseup', () => {
+container.servicesContainer.addEventListener('pointerup', () => {
   isDragging = false;
   container.servicesContainer.style.cursor = 'default';
 });
 
-// Touch events
-let touchStartX = 0;
-let touchEndX = 0;
-
-servicesContainer.addEventListener('touchstart', (e) => {
-  // console.log(e.targetTouches); // this only works when our target (the servicesContainer) is touched
-
-  // prevent default gestures
-  e.preventDefault();
-  touchStartX = e.touches[0].clientX;
-});
-
-servicesContainer.addEventListener('touchend', (e) => {
-  touchEndX = e.changedTouches[0].clientX;
-  if (touchEndX < touchStartX) {
-    nextBtn.click();
-  } else if (touchEndX > touchStartX) {
-    prevBtn.click();
-  }
+// add 'pointercancel' just in case. Use same logic as 'pointerup'
+container.servicesContainer.addEventListener('pointercancel', () => {
+  isDragging = false;
+  container.servicesContainer.style.cursor = 'default';
 });
 
 
-
-
-
-
-// container.servicesContainer.addEventListener('mousemove', (e) => {
-//   // prevent selecting
-//   e.preventDefault();
-//   if (isDragging) {
-//     const delta = e.clientX - startPosition;
-//     if (delta > 50) {
-//       isDragging = false;
-//       currentIndex++;
-//       if (currentIndex >= services.length) currentIndex = 0;
-//       // fade out current content
-//       container.img.classList.remove('fade-in');
-//       container.img.classList.add('fade-out');
-//       updateElements();
-//     } else if (delta < -50) {
-//       isDragging = false;
-//       currentIndex--;
-//       if (currentIndex < 0) currentIndex = services.length - 1;
-//       // fade out current content
-//       container.img.classList.remove('fade-in');
-//       container.img.classList.add('fade-out');
-//       updateElements();
-//     }
-//   }
-// });
+// automatically change the content
+// setInterval(() => {
+//   nextBtn.click();
+// }, 5000)
