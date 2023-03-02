@@ -2,10 +2,14 @@
 module.exports = {
   content: ['public/**/*.{html,js}'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'chamanke-red': 'var(--chamanke-red)',
+        'chamanke-blue': 'var(--chamanke-blue)',
+        'chamanke-light-blue':'var(--chamanke-light-blue)',
+        'chamanke-green':'var(--chamanke-green)',
+      },
+    },
   },
   plugins: [],
 };
-
-
-// ['public/index.html']

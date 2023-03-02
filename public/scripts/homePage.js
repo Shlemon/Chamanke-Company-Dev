@@ -4,6 +4,7 @@ const navTogglers = document.querySelectorAll('.navToggle');
 const navMenus = document.querySelectorAll('.navMenu');
 const toggleBars = document.querySelector('#toggleBars');
 
+// change the if() to check wether the nav menu is displayed or not
 if (screen.width < 768) {
   navTogglers.forEach((toggler) => {
     toggler.addEventListener('click', (e) => {
@@ -126,3 +127,7 @@ form.addEventListener('submit', (e) => {
   // e.preventDefault();
   console.log('form submitted');
 });
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// new services section
+
