@@ -42,6 +42,7 @@ const services = [
 const nextBtn = document.querySelector('#sliderNextBtn');
 const prevBtn = document.querySelector('#sliderPrevBtn');
 let currentIndex = 0;
+// container.servicesContainer.style.cursor = 'grab';
 
 container.servicesContainer.addEventListener('click', (e) => {
   if (e.target.closest('#sliderNextBtn, #sliderNextBtn svg')) {
@@ -80,37 +81,96 @@ function updateElements() {
   container.title.textContent = currentData.title;
   container.description.textContent = currentData.description;
   container.btn = currentData.btn;
-  
+
   // fade in the next content
   container.img.classList.remove('fade-out');
   container.img.classList.add('fade-in');
   // container.img.classList.remove('swipe-left');
-
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+// add 'touchstart' to 'mousedown' and add 'touchmove' to 'mousemove' events
+
+
+let isDragging = false;
+let startPosition = null;
+
+container.servicesContainer.addEventListener('mousedown', (e) => {
+  // prevent selecting
+  e.preventDefault();
+  isDragging = true;
+  startPosition = e.clientX;
+  container.servicesContainer.style.cursor = 'grabbing';
+});
+
+// ['mousedown', 'touchstart'].forEach((event) => {
+//   container.servicesContainer.addEventListener(event, (e) => {
+//     // prevent selecting
+//     e.preventDefault();
+//     isDragging = true;
+//     startPosition = e.clientX;
+//     container.servicesContainer.style.cursor = 'grabbing';
+//   });
+// });
 
 
 
+container.servicesContainer.addEventListener('mousemove', (e) => {
+  // prevent selecting
+  e.preventDefault();
+  if (isDragging) {
+    const delta = e.clientX - startPosition;
+    if (delta > 50) {
+      isDragging = false;
+      nextBtn.click();
+    } else if (delta < -50) {
+      isDragging = false;
+      prevBtn.click();
+    }
+  }
+});
+
+// ['mousemove', 'touchend'].forEach((event) => {
+//   container.servicesContainer.addEventListener(event, (e) => {
+//     // prevent selecting
+//     e.preventDefault();
+//     if (isDragging) {
+//       const delta = e.clientX - startPosition;
+//       if (delta > 50) {
+//         isDragging = false;
+//         nextBtn.click();
+//       } else if (delta < -50) {
+//         isDragging = false;
+//         prevBtn.click();
+//       }
+//     }
+//   });
+// });
 
 
-
-
-
+container.servicesContainer.addEventListener('mouseup', () => {
+  isDragging = false;
+  container.servicesContainer.style.cursor = 'default';
+});
 
 // Touch events
 let touchStartX = 0;
 let touchEndX = 0;
 
-servicesContainer.addEventListener('touchstart', (event) => {
-  touchStartX = event.touches[0].clientX;
+servicesContainer.addEventListener('touchstart', (e) => {
+  // console.log(e.targetTouches); // this only works when our target (the servicesContainer) is touched
+
+  // prevent default gestures
+  e.preventDefault();
+  touchStartX = e.touches[0].clientX;
 });
 
-servicesContainer.addEventListener('touchend', (event) => {
-  touchEndX = event.changedTouches[0].clientX;
+servicesContainer.addEventListener('touchend', (e) => {
+  touchEndX = e.changedTouches[0].clientX;
   if (touchEndX < touchStartX) {
-    nextBtn.click()
+    nextBtn.click();
   } else if (touchEndX > touchStartX) {
-    prevBtn.click()
+    prevBtn.click();
   }
 });
 
@@ -119,61 +179,27 @@ servicesContainer.addEventListener('touchend', (event) => {
 
 
 
-// old updateElements function
-// function updateElements() {
-//   container.img.src = services[currentIndex].image;
-//   container.title.textContent = services[currentIndex].title;
-//   container.description.textContent = services[currentIndex].description;
-//   container.btn = services[currentIndex].btn;
-// }
-
-// function updateElements() {
-//   const currentData = services[currentIndex];
-
-//   // fade out the content container
-//   container.servicesContainer.classList.remove('fade-in');
-//   container.servicesContainer.classList.add('fade-out');
-
-//   setTimeout(function () {
-//     // update the title
-//     container.title.textContent = currentData.title;
-//     // fade in the title
-//     container.title.classList.remove('fade-out');
-//     container.title.classList.add('fade-in');
-
-//     // update the img
-//     container.img.src = currentData.image;
-//     // fade in the img
-//     container.img.classList.remove('fade-out');
-//     container.img.classList.add('fade-in');
-
-//     // Update the description
-//     container.description.textContent = currentData.description;
-
-//     // Fade in the description
-//     container.description.classList.remove('fade-out');
-//     container.description.classList.add('fade-in');
-
-//     // Fade in the content container
-//     container.servicesContainer.classList.remove('fade-out');
-//     container.servicesContainer.classList.add('fade-in');
-//   }, 300);
-
-// }
-
-// Touch events
-// let touchStartX = 0;
-// let touchEndX = 0;
-
-// servicesContainer.addEventListener('touchstart', (event) => {
-//   touchStartX = event.touches[0].clientX;
-// });
-
-// servicesContainer.addEventListener('touchend', (event) => {
-//   touchEndX = event.changedTouches[0].clientX;
-//   if (touchEndX < touchStartX) {
-//     sliderNextBtn.click();
-//   } else if (touchEndX > touchStartX) {
-//     sliderPrevBtn.click();
+// container.servicesContainer.addEventListener('mousemove', (e) => {
+//   // prevent selecting
+//   e.preventDefault();
+//   if (isDragging) {
+//     const delta = e.clientX - startPosition;
+//     if (delta > 50) {
+//       isDragging = false;
+//       currentIndex++;
+//       if (currentIndex >= services.length) currentIndex = 0;
+//       // fade out current content
+//       container.img.classList.remove('fade-in');
+//       container.img.classList.add('fade-out');
+//       updateElements();
+//     } else if (delta < -50) {
+//       isDragging = false;
+//       currentIndex--;
+//       if (currentIndex < 0) currentIndex = services.length - 1;
+//       // fade out current content
+//       container.img.classList.remove('fade-in');
+//       container.img.classList.add('fade-out');
+//       updateElements();
+//     }
 //   }
 // });
