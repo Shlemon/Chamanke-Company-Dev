@@ -3,54 +3,39 @@ const container = {
   img: document.querySelector('#servicesImg'),
   title: document.querySelector('#servicesTitle'),
   description: document.querySelector('#servicesDescription'),
-  btn: document.querySelector('#civil'), // changed the id here to apply it to the filtering function
+  btn: document.querySelector('#servicesBtn').href,
 };
-
-container.btn.addEventListener('click', (e) => {
-  const serviceIds = [];
-  const clickedId = e.target.id;
-  console.log(e.target.id);
-  serviceIds.push(clickedId)
-
-  sessionStorage.setItem('selectedServiceId', clickedId);
-});
-
 
 const services = [
   {
     title: 'WE BUILD YOUR HOME SECURE AND SAFE',
     image: 'img/Snow-removing.jpg',
     description: 'Get All Your Civil Needs Done In An Effiecnt Way',
-    btnId: 'civil',
-    btnHref: 'aaaaaa',
+    btn: 'aaaaaa',
   },
   {
     title: 'Catering & Housekeeping',
     image: 'img/services/Catering.jpg',
     description: 'A Catering Service You can Trust',
-    btnId: 'catering',
-    btnHref: './services pages/Civil Works.html',
+    btn: 'bbbbbb',
   },
   {
     title: 'logistics',
     image: 'img/services/logistics.jpg',
     description: 'Logistics info',
-    btnId: 'logistics',
-    btnHref: 'cccccc',
+    btn: 'cccccc',
   },
   {
     title: 'Procurment & Supply Chain',
     image: 'img/services/Utility.jpeg',
     description: 'Procurement & Supply Chain info',
-    btnId: 'procurement',
-    btnHref: 'dddddd',
+    btn: 'dddddd',
   },
   {
     title: 'Mechanical & Maintenance Works',
     image: 'img/services/Oil Trading.jpg',
     description: 'Mechanical & Maintenance Works info',
-    btnId: 'maintenance',
-    btnHref: 'eeeeee',
+    btn: 'eeeeee',
   },
 ];
 
@@ -65,26 +50,30 @@ container.servicesContainer.addEventListener('click', (e) => {
     currentIndex++;
     if (currentIndex >= services.length) currentIndex = 0;
 
-    crossfade();
+    // fade out current content
+    container.img.classList.remove('fade-in');
+    container.img.classList.add('fade-out');
+
+    setTimeout(() => {
+      updateElements();
+    }, 300);
   }
 
   if (e.target.closest('#sliderPrevBtn, #sliderPrevBtn svg')) {
     currentIndex--;
     if (currentIndex < 0) currentIndex = services.length - 1;
 
-    crossfade();
+    // fade out current content
+    container.img.classList.remove('fade-in');
+    container.img.classList.add('fade-out');
+
+    setTimeout(() => {
+      updateElements();
+    }, 300);
   }
 });
 
-function crossfade() {
-  // fade out current content
-  container.img.classList.remove('fade-in');
-  container.img.classList.add('fade-out');
-
-  setTimeout(() => {
-    updateElements();
-  }, 500);
-}
+// try hiding the body for the animation testing
 
 function updateElements() {
   const currentData = services[currentIndex];
@@ -92,14 +81,12 @@ function updateElements() {
   container.img.src = currentData.image;
   container.title.textContent = currentData.title;
   container.description.textContent = currentData.description;
-  container.btn.href = currentData.btnHref;
-  container.btn.id = currentData.btnId;
+  container.btn = currentData.btn;
 
   // fade in the next content
   container.img.classList.remove('fade-out');
   container.img.classList.add('fade-in');
-  // console.log(currentData.btnId);
-  // console.log(currentData.btnHref);
+
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -118,20 +105,24 @@ container.servicesContainer.addEventListener('pointermove', (e) => {
   e.preventDefault();
   if (isDragging) {
     const delta = e.clientX - startPosition;
-    if (delta > 50) {
+    if (delta > 75) {
       isDragging = false;
       nextBtn.click();
-    } else if (delta < -50) {
+    } else if (delta < -75) {
       isDragging = false;
       prevBtn.click();
     }
   }
 });
 
+
+
+
 container.servicesContainer.addEventListener('pointerup', () => {
   isDragging = false;
   container.servicesContainer.style.cursor = 'default';
 });
+
 
 // // Touch events
 // let touchStartX = 0;
@@ -151,6 +142,7 @@ container.servicesContainer.addEventListener('pointerup', () => {
 //     prevBtn.click();
 //   }
 // });
+
 
 // ['mousemove', 'touchmove'].forEach((event) => {
 //   container.servicesContainer.addEventListener(event, (e) => {
