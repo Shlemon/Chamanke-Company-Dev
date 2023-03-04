@@ -7,10 +7,7 @@ const container = {
 };
 
 container.btn.addEventListener('click', (e) => {
-  const serviceIds = [];
   const clickedId = e.target.id;
-  console.log(e.target.id);
-  serviceIds.push(clickedId)
 
   sessionStorage.setItem('selectedServiceId', clickedId);
 });
@@ -92,7 +89,7 @@ function updateElements() {
   container.img.src = currentData.image;
   container.title.textContent = currentData.title;
   container.description.textContent = currentData.description;
-  container.btn.href = currentData.btnHref;
+  // container.btn.href = currentData.btnHref;
   container.btn.id = currentData.btnId;
 
   // fade in the next content
