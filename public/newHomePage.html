@@ -17,12 +17,12 @@
 
     </head>
 
-    <body id="homePage" class="bg-slate-100">
+    <body id="homePage" class="">
 
         <!-- NAV Section ==================================================================================================================-->
         <nav class="nav bg-white border-gray-200 px-2 sm:px-4 py-1.5 rounded dark:bg-gray-900">
             <div class="container flex flex-wrap justify-between mx-auto">
-                <a href="http://chamanke.com/" class="flex items-center">
+                <a href="./index.html" class="flex items-center">
                     <img src="./img/Chamanke Logo.png" class="h-6 mr-3 sm:h-9" alt="Chamanke Logo" />
                 </a>
 
@@ -188,9 +188,9 @@
             <h1>test</h1>
 
 
-            <div id="servicesContainer" class="relative overflow-hidden touch-none ">
+            <div id="servicesContainer" class="relative overflow-hidden touch-none z-10 bg-black/70">
                 <img id="servicesImg" draggable="false"
-                    class="h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-[100vh] w-full p-0 bg-cover brightness-75 bg-no-repeat transition-all duration-300 ease-in-out z-50 "
+                    class="h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-[100vh] w-full p-0 bg-cover brightness-75 bg-no-repeat transition-all duration-300 ease-in-out"
                     src="./img/Snow-removing.jpg" alt="">
 
                 <div class="absolute top-[15%] -translate-x-1/2 left-1/2 w-full sm:w-[75vw] md:w-[82vw] xl:w-[47vw] md:h-[15rem] p-4 md:p-6">
@@ -207,14 +207,8 @@
                     <div class="flex justify-center mt-8 sm:mt-14 md:mt-20">
                         <button type="button" class="text-white bg-[var(--chamanke-red)] hover:bg-[var(--chamanke-blue)] duration-300 focus:ring-2
                              font-medium rounded-sm text-sm md:text-lg lg:scale-110 px-5 py-2.5 text-center mr-2 mb-2">
-                            <a id="servicesBtn" href=""> view projects</a>
+                            <a id="civil" href="./servicesProjects.html"> view projects</a>
                         </button>
-
-                        <!-- change out the above code with this -->
-                        <!-- <button type="button" onclick="window.location.href='#'" class="text-white bg-[var(--chamanke-red)] hover:bg-[var(--chamanke-blue)] duration-300 focus:ring-2
-                            font-medium rounded-sm text-sm md:text-lg lg:scale-110 px-5 py-2.5 text-center mr-2 mb-2">
-                            View projects
-                        </button> -->
 
                     </div>
 
@@ -247,27 +241,6 @@
             </div>
 
         </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -571,6 +544,7 @@
         </div>
 
         <script src="./scripts/newHomePage.js"></script>
+        <!-- <script src="./scripts/filter-mine.js" ></script> -->
 
     </body>
 
