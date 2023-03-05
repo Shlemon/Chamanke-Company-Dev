@@ -3,59 +3,22 @@ const container = {
   img: document.querySelector('#servicesImg'),
   title: document.querySelector('#servicesTitle'),
   description: document.querySelector('#servicesDescription'),
-  btn: document.querySelector('#civil'), // changed the id here to apply it to the filtering function
+  btn: document.querySelector('#civil'),
+  nextBtn: document.querySelector('#sliderNextBtn'),
+  prevBtn: document.querySelector('#sliderPrevBtn'),
 };
 
+// store the id of the clicked service to use it for the filtering in the projects page
 container.btn.addEventListener('click', (e) => {
   const clickedId = e.target.id;
 
-  sessionStorage.setItem('selectedServiceId', clickedId);
+  // sessionStorage.setItem('selectedServiceId', clickedId);
+  localStorage.setItem('selectedServiceId', clickedId);
 });
 
-
-const services = [
-  {
-    title: 'WE BUILD YOUR HOME SECURE AND SAFE',
-    image: 'img/Snow-removing.jpg',
-    description: 'Get All Your Civil Needs Done In An Effiecnt Way',
-    btnId: 'civil',
-    btnHref: 'aaaaaa',
-  },
-  {
-    title: 'Catering & Housekeeping',
-    image: 'img/services/Catering.jpg',
-    description: 'A Catering Service You can Trust',
-    btnId: 'catering',
-    btnHref: './services pages/Civil Works.html',
-  },
-  {
-    title: 'logistics',
-    image: 'img/services/logistics.jpg',
-    description: 'Logistics info',
-    btnId: 'logistics',
-    btnHref: 'cccccc',
-  },
-  {
-    title: 'Procurment & Supply Chain',
-    image: 'img/services/Utility.jpeg',
-    description: 'Procurement & Supply Chain info',
-    btnId: 'procurement',
-    btnHref: 'dddddd',
-  },
-  {
-    title: 'Mechanical & Maintenance Works',
-    image: 'img/services/Oil Trading.jpg',
-    description: 'Mechanical & Maintenance Works info',
-    btnId: 'maintenance',
-    btnHref: 'eeeeee',
-  },
-];
-
-const nextBtn = document.querySelector('#sliderNextBtn');
-const prevBtn = document.querySelector('#sliderPrevBtn');
 let currentIndex = 0;
 let isDragging = false;
-let startPosition = null;
+let startPosition = 0;
 
 container.servicesContainer.addEventListener('click', (e) => {
   if (e.target.closest('#sliderNextBtn, #sliderNextBtn svg')) {
@@ -72,32 +35,6 @@ container.servicesContainer.addEventListener('click', (e) => {
     crossfade();
   }
 });
-
-function crossfade() {
-  // fade out current content
-  container.img.classList.remove('fade-in');
-  container.img.classList.add('fade-out');
-
-  setTimeout(() => {
-    updateElements();
-  }, 500);
-}
-
-function updateElements() {
-  const currentData = services[currentIndex];
-
-  container.img.src = currentData.image;
-  container.title.textContent = currentData.title;
-  container.description.textContent = currentData.description;
-  // container.btn.href = currentData.btnHref;
-  container.btn.id = currentData.btnId;
-
-  // fade in the next content
-  container.img.classList.remove('fade-out');
-  container.img.classList.add('fade-in');
-  // console.log(currentData.btnId);
-  // console.log(currentData.btnHref);
-}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 // pointer events (mouse + touch + stylus...etc.)
@@ -117,10 +54,10 @@ container.servicesContainer.addEventListener('pointermove', (e) => {
     const delta = e.clientX - startPosition;
     if (delta > 50) {
       isDragging = false;
-      nextBtn.click();
+      container.nextBtn.click();
     } else if (delta < -50) {
       isDragging = false;
-      prevBtn.click();
+      container.prevBtn.click();
     }
   }
 });
@@ -130,38 +67,58 @@ container.servicesContainer.addEventListener('pointerup', () => {
   container.servicesContainer.style.cursor = 'default';
 });
 
-// // Touch events
-// let touchStartX = 0;
-// let touchEndX = 0;
+function crossfade() {
+  // fade out current content
+  container.img.classList.remove('fade-in');
+  container.img.classList.add('fade-out');
 
-// servicesContainer.addEventListener('touchstart', (e) => {
-//   // console.log(e.targetTouches); // this only works when our target (the servicesContainer) is touched
+  setTimeout(() => {
+    updateElements();
+  }, 500);
+}
 
-//   touchStartX = e.touches[0].clientX;
-// });
+function updateElements() {
+  const currentData = services[currentIndex];
 
-// servicesContainer.addEventListener('touchend', (e) => {
-//   touchEndX = e.changedTouches[0].clientX;
-//   if (touchEndX < touchStartX) {
-//     nextBtn.click();
-//   } else if (touchEndX > touchStartX) {
-//     prevBtn.click();
-//   }
-// });
+  container.img.src = currentData.image;
+  container.title.textContent = currentData.title;
+  container.description.textContent = currentData.description;
+  container.btn.id = currentData.btnId;
 
-// ['mousemove', 'touchmove'].forEach((event) => {
-//   container.servicesContainer.addEventListener(event, (e) => {
-//     // prevent selecting
-//     e.preventDefault();
-//     if (isDragging) {
-//       const delta = e.clientX - startPosition;
-//       if (delta > 50) {
-//         isDragging = false;
-//         nextBtn.click();
-//       } else if (delta < -50) {
-//         isDragging = false;
-//         prevBtn.click();
-//       }
-//     }
-//   });
-// });
+  // fade in the next content
+  container.img.classList.remove('fade-out');
+  container.img.classList.add('fade-in');
+}
+
+const services = [
+  {
+    title: 'WE BUILD YOUR HOME SECURE AND SAFE',
+    image: 'img/Snow-removing.jpg',
+    description: 'Get All Your Civil Needs Done In An Effiecnt Way',
+    btnId: 'civil',
+  },
+  {
+    title: 'Catering & Housekeeping',
+    image: 'img/services/Catering.jpg',
+    description: 'A Catering Service You can Trust',
+    btnId: 'catering',
+  },
+  {
+    title: 'logistics',
+    image: 'img/services/logistics.jpg',
+    description: 'Logistics info',
+    btnId: 'logistics',
+  },
+  {
+    title: 'Procurment & Supply Chain',
+    image: 'img/services/Oil Trading.jpg',
+    description: 'Procurement & Supply Chain info',
+    btnId: 'procurement',
+  },
+  {
+    title: 'Mechanical & Maintenance Works',
+    image: 'img/services/Utility.jpeg',
+    description: 'Mechanical & Maintenance Works info',
+    btnId: 'maintenance',
+  },
+];

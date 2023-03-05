@@ -128,46 +128,49 @@
             </div>
         </nav>
 
+        <!-- Services Section ============================================================================================================ -->
         <section>
             <div class="carosuel-item bg-black/20 duration-700 ease-in-out relative">
                 <img id="servicesImg" src="../img/services/civil-works.jpeg" class="brightness-[60%] w-full h-[65dvh]" alt="...">
-                <span id="servicesTitle" class="top-1/2 left-1/2 absolute -translate-x-1/2 -translate-y-1/2  text-4xl  md:text-5xl lg:text-6xl text-white font-bold">
+                <span id="servicesTitle"
+                    class="top-1/2 left-1/2 absolute -translate-x-1/2 -translate-y-1/2  text-4xl  md:text-5xl lg:text-6xl text-white text-center font-bold w-10/12 ">
                     Civil Works
                 </span>
             </div>
         </section>
 
+        <!-- Categories Section ========================================================================================================== -->
         <section class="py-16">
             <div class="px-8">
                 <ul class="flex flex-wrap md:flex-nowrap gap-3 sm:gap-4 md:gap-6 justify-center text-[#596672] text-lg md:text-xl lg:text-2xl font-semibold ">
                     <li class="hover:text-[#e04639]">
-                        <button id="all" class="service-category" onclick="filterProduct('all')" >
+                        <button id="all" class="service-category">
                             All
                         </button>
                     </li>
 
                     <li class="hover:text-[#e04639]">
-                        <button id="civil" class="service-category" onclick="filterProduct('civil')" >
+                        <button id="civil" class="service-category">
                             Civil
                         </button>
                     </li>
                     <li class="hover:text-[#e04639]">
-                        <button id="catering" class="service-category" onclick="filterProduct('catering')" >
+                        <button id="catering" class="service-category">
                             Catering
                         </button>
                     </li>
                     <li class="hover:text-[#e04639]">
-                        <button id="logistics" class="service-category" onclick="filterProduct('logistics')" >
+                        <button id="logistics" class="service-category">
                             Logistics
                         </button>
                     </li>
                     <li class="hover:text-[#e04639]">
-                        <button id="procurement" class="service-category" onclick="filterProduct('procurement')" >
+                        <button id="procurement" class="service-category">
                             Procurment & Supply Chain
                         </button>
                     </li>
                     <li class="hover:text-[#e04639]">
-                        <button id="maintenance" class="service-category" onclick="filterProduct('maintenance')" >
+                        <button id="maintenance" class="service-category">
                             Mechanical & Maintenance Works
                         </button>
                     </li>
@@ -179,19 +182,51 @@
         <section class="bg-slate-100">
             <div class=" relative min-h-[100vh] px-7">
                 <div class="image-container flex flex-wrap gap-3.5 lg:gap-6 justify-center p-2.5">
+                    <!-- make a 'card class and use the @apply directive to use it here for all cards' -->
+                    <!-- card 1 -->
+                    <div class="card mb-5 max-h-fit hover:shadow-md transition-all duration-500 ease-in-out max-w-sm bg-white rounded-sm
+            hover:bg-gray-100/80">
+                        <img class="rounded-t-sm h-64" src="./img/services/Civil Works.jpg" alt="Civil Works" />
+                        <h5 class="text-left ml-2 mt-3 text-3xl font-bold tracking-tight text-gray-700">Civil Works</h5>
+
+                        <p class="cardContent text-left p-2 mb-2 font-normal text-gray-700">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos laboriosam, non nulla minima sint voluptatibus deserunt
+                            corrupti. Quod deserunt optio quidem animi quos? Labore sed magnam molestiae facilis ullam similique.
+                        </p>
+                    </div>
+
 
 
                     <div class="civil image min-w-fit mx-2 md:mx-3 text-center overflow-hidden group">
                         <div class="content">
                             <img src="./img/projects/Bejil Civil works.jpg" draggable="false" alt="Bejil Civil works"
                                 class="mb-6 w-[22rem] h-[16.5rem] object-cover object-center duration-300 ease-in group-hover:scale-110">
-                            <span class="font-bold text-md inline-block max-w-xs group-hover:text-[#e04639] duration-300 ease-in">
+                            <span class="font-bold text-md inline-block max-w-xs group-hover:text-[var(--chamanke-red)] duration-300 ease-in">
                                 Civil Works for Bejil Wells 2 and 11 - Block 11 Harir-Bejil
                             </span>
                         </div>
                     </div>
 
-                    <div class="civil image w-[22rem] h-[16rem] border-8 border-white shadow-md shadow-black/10 overflow-hidden cursor-pointer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- <div class="civil image w-[22rem] h-[16rem] border-8 border-white shadow-md shadow-black/10 overflow-hidden cursor-pointer">
                         <img src="./img/projects/Bejil Civil works/Crane.jpg" alt="Crane"
                             class="w-full h-full object-cover duration-200 ease-in hover:scale-110">
                     </div>
@@ -243,29 +278,13 @@
                     <div class="image w-[22rem] h-[16rem] border-8 border-white shadow-md shadow-black/10 overflow-hidden cursor-pointer">
                         <img src="./img/projects/Bejil Civil works/Fence Gate.jpg" alt="Fence Gate"
                             class="w-full h-full object-cover duration-200 ease-in hover:scale-110">
-                    </div>
+                    </div> -->
 
                 </div>
 
 
-                <!-- <div class="image min-w-fit mx-2 md:mx-3 text-center overflow-hidden group">
-                        <div class="content">
-                            <img src="../img/projects/Bejil Civil works.jpg" draggable="false" alt="Bejil Civil works"
-                                class="mb-6 w-[22rem] h-[16.5rem] object-cover object-center duration-300 ease-in group-hover:scale-110">
-                            <span class="font-bold text-md inline-block max-w-xs group-hover:text-[#e04639] duration-300 ease-in">
-                                Civil Works for Bejil Wells 2 and 11 - Block 11 Harir-Bejil
-                            </span>
-                        </div>
-                    </div>
-                    <div class="image w-[22rem] h-[20rem] border-8 border-white shadow-md shadow-black/10 overflow-hidden cursor-pointer">
-                        <img src="../img/projects/Bejil Civil works/Road Measurement.jpg" alt="Bejil Civil works"
-                            class="w-full max-h-[16rem] h-full object-cover duration-200 ease-in hover:scale-110">
-                        <caption class="">
-                            Maintenace & Road Construction
-                        </caption>
-                    </div> -->
 
-
+                <!-- popup image  -->
                 <div class="hidden popup-image fixed top-0 left-0 bg-black/90 w-full h-full z-50">
                     <span class="absolute top-2 right-5 text-white font-bold text-4xl cursor-pointer z-50">&times;</span>
                     <img class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-8 border-white rounded-md object-cover w-11/12 md:w-[50rem] max-h-[40rem] "
@@ -471,7 +490,7 @@
             <i class="fa-solid fa-angle-up text-white hover:text-blue-900 hover:bg-blue-100 text-4xl text-center bg-slate-300 rounded-2xl w-12 h-12 p-2"></i>
         </div>
 
-        <script src="./scripts/servicesProjects.js"></script>
+        <script src="./scripts/projects.js"></script>
     </body>
 
 </html>
