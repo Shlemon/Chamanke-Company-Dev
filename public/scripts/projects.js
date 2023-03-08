@@ -1,6 +1,6 @@
 // display the category based on the click from the services page
 window.onload = () => {
-  filterProduct(selectedServiceId);
+  filterCards(selectedServiceId);
 };
 // getting the id of the clicked button from the services page that was stored in sessionStorage
 // const selectedServiceId = sessionStorage.getItem('selectedServiceId');
@@ -9,13 +9,11 @@ const categoryButtons = document.querySelectorAll('.service-category');
 
 categoryButtons.forEach((btn) => {
   btn.addEventListener('click', () => {
-    filterProduct(btn.id);
+    filterCards(btn.id);
   });
 });
 
-
-
-function filterProduct(value) {
+function filterCards(value) {
   categoryButtons.forEach((btn) => {
     if (value.toLowerCase() === btn.id) {
       btn.classList.add('text-[var(--chamanke-red)]');
@@ -24,24 +22,23 @@ function filterProduct(value) {
     }
   });
 
-  let elements = document.querySelectorAll('.image');
-  elements.forEach((element) => {
+  let cards = document.querySelectorAll('.card');
+  cards.forEach((card) => {
     if (value === 'all') {
-      element.classList.remove('hidden');
+      card.classList.remove('hidden');
     } else {
-      if (element.classList.contains(value)) {
-        element.classList.remove('hidden');
+      if (card.classList.contains(value)) {
+        card.classList.remove('hidden');
       } else {
-        element.classList.add('hidden');
+        card.classList.add('hidden');
       }
     }
   });
 
-  updateElements(value);
+  updatecards(value);
 }
 
-
-function updateElements(value) {
+function updatecards(value) {
   const serviceImg = document.querySelector('#servicesImg');
   const serviceTitle = document.querySelector('#servicesTitle');
 
