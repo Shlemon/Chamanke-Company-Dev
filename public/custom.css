@@ -11,6 +11,8 @@
   --chamanke-green: #007832;
 }
 
+
+
 /* Hide scrollbar in samller window sizes for Chrome, Safari and Opera */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
@@ -36,12 +38,6 @@ height: 100%;
 background-color: #000;
 opacity: .5;
 z-index: -1;
-}
-
-.showing {
-opacity: 1;
-z-index: -1;
-transition: none;
 }
 
 
@@ -125,17 +121,4 @@ transition: none;
   100% {
     transform: translateX(0%);
   }
-}
-
-
-
-
-
-
-.active {
-  color: #e04639;
-}
-
-.hide {
-  display: none;
 }
