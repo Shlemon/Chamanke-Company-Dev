@@ -2,10 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
-  --chamanke-blue: #1642A0;
-  --chamanke-red: #E04639;
-  --chamanke-light-blue: #0A88A3;
+  --chamanke-blue: #1642a0;
+  --chamanke-red: #e04639;
+  --chamanke-light-blue: #0a88a3;
   --chamanke-green: #007832;
 }
+
+.card {
+  @apply mb-5 max-h-fit hover:shadow-md duration-300 ease-in-out max-w-sm rounded-sm group overflow-hidden;
+}
+

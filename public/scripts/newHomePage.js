@@ -92,7 +92,7 @@ function updateElements() {
 
 const services = [
   {
-    title: 'WE BUILD YOUR HOME SECURE AND SAFE',
+    title: 'Construction & building materials trade ',
     image: 'img/Snow-removing.jpg',
     description: 'Get All Your Civil Needs Done In An Effiecnt Way',
     btnId: 'civil',
