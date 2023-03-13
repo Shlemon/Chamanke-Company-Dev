@@ -1,14 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 * {
   font-family: 'Poppins', sans-serif;
-  /* scroll-behavior: smooth; */
+  scroll-behavior: smooth;
 }
 
-:root {
+/* :root {
   --chamanke-blue: #1642a0;
   --chamanke-red: #e04639;
   --chamanke-light-blue: #0a88a3;
   --chamanke-green: #007832;
+  --chamanke-gray: #74878e
+  --my-blue: #0C4773
+} */
+:root {
+  --chamanke-blue2: #1642a0;
+  --chamanke-blue: #2e3c49;
+  --chamanke-red: #e04639;
+  --chamanke-light-blue: #0a88a3;
+  --chamanke-green: #007832;
+  --chamanke-gray: #74878e
+  --my-blue: #0C4773
 }
 
 
@@ -94,15 +105,24 @@ z-index: -1;
 
 
 
+/* .swipe-right {
+  transform: translateX(100%);
+  transition: all 0.5s ease-in-out;
+}
+
+.swipe-left {
+  transform: translateX(-100%);
+  transition: all 0.5s ease-in-out;
+} */
 
 
 
 .swipe-left {
-  animation: swipe-left 0.3s ease-in-out;
+  animation: swipe-left 0.5s ease-in-out;
 }
 
 .swipe-right {
-  animation: swipe-right 0.3s ease-in-out;
+  animation: swipe-right 0.5s ease-in-out;
 }
 
 @keyframes swipe-left {
