@@ -8,7 +8,7 @@
         <title>Chamanke Company</title>
         <link rel="stylesheet" href="./output.css">
         <link rel="stylesheet" href="./custom.css">
-        <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+        <script src="https://cdn.tailwindcss.com"></script>
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/96f59b036f.js" crossorigin="anonymous"></script>
         <!-- Flowbite shit -->
@@ -17,13 +17,13 @@
 
     </head>
 
-    <body id="homePage" class="bg-slate-100">
+    <body id="homePage" class="">
 
         <!-- NAV Section ==================================================================================================================-->
         <nav class="nav bg-white border-gray-200 px-2 sm:px-4 py-1.5 rounded dark:bg-gray-900">
             <div class="container flex flex-wrap justify-between mx-auto">
-                <a href="http://chamanke.com/" class="flex items-center">
-                    <img src="./img/Chamanke Logo.png" class="h-6 mr-3 sm:h-9" alt="Chamanke Logo" />
+                <a href="http://chamanke.com/" class="flex items-center scale-[1.5] md:scale-[2]">
+                    <img src="./img/Chamanke.png" class="h-6 ml-5 md:ml-10 sm:h-9" alt="Chamanke Logo" />
                 </a>
 
                 <!-- Burger Button -->
@@ -31,7 +31,8 @@
                     class="navToggle inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                     aria-controls="navbar-default" aria-expanded="false">
 
-                    <svg id="toggleBars" class="w-6 h-6 duration-500 " aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <svg id="toggleBars" class="w-6 h-6 duration-500 " aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
                             d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
                             clip-rule="evenodd"></path>
@@ -97,7 +98,7 @@
 
                                 <ul class="space-y-2 lg:w-36 text-gray-600">
                                     <li>
-                                        <a class="block px-2 py-1 md:py-2 font-medium rounded-md hover:bg-gray-200 " href="">
+                                        <a class="block px-2 py-1 md:py-2 font-medium rounded-md hover:bg-gray-200 " href="./pojects.html">
                                             Civil Works
                                         </a>
                                     </li>
@@ -130,343 +131,229 @@
         </nav>
 
         <!-- HERO Section =================================================================================================================-->
-        <!-- FIXME: fix slider controls and add working indicators, fix the ones commented out below  -->
-        <section class="bg-[#0C4773] h-full py-12">
-            <div class="flex md:justify-end">
-                <h1 class="text-white text-5xl mr-32 p-3 uppercase font-bold">Your New Service Provider</h1>
-            </div>
-            <div>
-                <div id="default-carousel" class="relative justify-center" data-carousel="static">
-                    <!-- Carousel wrapper -->
-                    <div class="relative h-56 overflow-hidden rounded-lg md:h-96 mx-4 md:mr-36">
+        <section class="">
+            <div class="relative">
+                <img src="./img/card.jpg" class="w-full md:h-[40dvh] lg:h-[75dvh] xl:h-[90dvh]" alt="header image">
+                <div
+                    class="absolute scale-[0.15] -top-72 -left-44 min-[500px]:-top-64 min-[500px]:-left-32 sm:scale-[0.2] sm:-top-52 sm:-left-28 md:scale-[0.25] md:-top-60 md:-left-28 lg:-top-48 lg:-left-20 lg:scale-[0.3] xl:-left-6 xl:scale-[0.35] ">
 
-                        <!-- Item 1 -->
-                        <div class="carosuel-item bg-black/20 hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="./img/Catering.jpg"
-                                class="brightness-[60%] absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-                            <a href="http://chamanke.com/"
-                                class="z-10 absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 text-center text-lg  sm:text-3xl text-white font-bold">SEE
-                                WHY WE ARE THE BEST CATERING
-                                PROVIDERS
-                            </a>
-                        </div>
-                        <!-- Item 2 -->
-                        <div class="carosuel-item hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="./img/Snow-removing.jpg"
-                                class="brightness-[60%] absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-                            <a href="http://chamanke.com/"
-                                class="z-10 absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 text-center text-lg sm:text-3xl text-white font-bold">YEARS
-                                OF SNOW REMOVING MOST EXPERIENCED IN THE REGION!
-                            </a>
-                        </div>
-                        <!-- Item 3 -->
-                        <div class="carosuel-item hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="./img/Fleet.jpg" class="brightness-[60%] absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                alt="...">
-                            <a href="http://chamanke.com/"
-                                class="z-10 absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 text-center text-lg sm:text-3xl text-white font-bold">HUGE
-                                FLEET OF OIL TANKERS,
-                                DELIVERING EVERY DAY'S PRODUCTION SITE'S DEMAND
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Slider indicators -->
-                    <!-- <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                    </div> -->
+                    <img src="./img/logo with name.png" alt="">
+                </div>
 
+                <div
+                    class="absolute top-9 right-12 min-[480px]:top-12 min-[480px]:right-20  sm:top-20 sm:right-28 lg:right-48  xl:top-32 xl:right-60 text-sm min-[480px]:text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-white ">
+                    <p>
+                        We are the right <br>
+                        people for your job,<br>
+                    </p>
 
+                    <p class="md:py-1 lg:py-2 font-bold">because we have <br>
+                        <span class="text-[var(--chamanke-red)] ">DONE</span> that job
+                    </p>
+                </div>
+
+                <span class="absolute bottom-20 left-80 hidden xl:block text-white tracking-wider font-semibold capitalize ">
+                    Your new service provider
+                </span>
             </div>
         </section>
 
-        <!-- New Services Section ======================================================================================================== -->
-        <section>
-            <!-- add content here -->
-        </section>
+        <!-- Services Section ======================================================================================================== -->
+        <section class="">
+            <div id="servicesContainer" class="relative overflow-hidden  z-10 bg-black/70">
+                <img id="servicesImg"
+                    class="h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-[100vh] w-full p-0 bg-cover brightness-75 bg-no-repeat transition-all duration-500 ease-in-out"
+                    src="./img/Snow-removing.jpg" alt="">
 
+                <div class="absolute top-[20%] -translate-x-1/2 left-1/2 w-10/12  md:h-[15rem] p-4 md:p-6">
 
+                    <h2 id="servicesTitle" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center font-bold  pb-4 text-white uppercase tracking-wider">
+                        Construction & building materials trade
+                    </h2>
 
+                    <p id="servicesDescription" class="text-center text-white font-semibold text-lg sm:text-2xl lg:text-3xl  capitalize mt-8  md:mt-8 ">
+                        Get all your civil needs done in an effiecnt way
+                    </p>
 
-        <!-- SERVICES Section ========================================================================================================== -->
-        <section class="bg-[#212020] h-full pb-5">
-            <h1 class="text-5xl md:text-6xl md:text-center p-4 md:p-6 font-bold text-white"> Our Services</h1>
-            <!-- Cards container -->
-            <div id="cardsContainer" class="mx-5 md:px-5 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
-                <!-- card 1 -->
-                <div
-                    class="card mb-5 max-h-[20.25rem] overflow-hidden hover:max-h-[34rem] hover:shadow-md transition-all duration-500 ease-in-out  max-w-md sm:max-w-none bg-white border border-gray-200 rounded-lg  hover:bg-gray-100/100 dark:bg-gray-800 dark:border-gray-700">
-                    <a href="">
-                        <img class="rounded-t-lg h-64 w-full" src="./img/services/Civil Works.jpg" alt="Civil Works" />
-                    </a>
-                    <h5 class=" text-center my-2 text-3xl font-bold tracking-tight text-gray-800 dark:text-white">Civil Works</h5>
+                    <div class="flex justify-center mt-8 sm:mt-14 md:mt-20">
+                        <button type="button" class="text-white bg-[var(--chamanke-red)] hover:bg-[var(--chamanke-blue)] duration-300 focus:ring-2
+                                                 font-medium rounded-sm text-sm md:text-lg lg:scale-110 px-5 py-2.5 text-center mr-2 mb-2">
+                            <a id="civil" href="./pojects.html"> view projects</a>
+                        </button>
 
-                    <div class="cardContent p-2 overflow-hidden">
-                        <p class="mb-4 font-normal text-gray-700 dark:text-gray-400 text-left">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos laboriosam, non nulla minima sint voluptatibus deserunt
-                            corrupti. Quod deserunt optio quidem animi quos? Labore sed magnam molestiae facilis ullam similique.
-                        </p>
-                        <a href="#"
-                            class="inline-block w-32 items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Read more
-                            <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1 inline-block" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                        </a>
                     </div>
-                </div>
 
-                <!-- card 2 -->
-                <div
-                    class="card mb-5 max-h-[20.25rem] overflow-hidden hover:max-h-[34rem] hover:shadow-md transition-all duration-500 ease-in-out  max-w-md sm:max-w-none bg-white border border-gray-200 rounded-lg  hover:bg-gray-100/100 dark:bg-gray-800 dark:border-gray-700">
-                    <a href="">
-                        <img class="rounded-t-lg h-64 w-full" src="./img/services/Transportation.jpg" alt="Transportation" />
-                    </a>
-                    <h5 class=" text-center my-2 text-3xl font-bold tracking-tight text-gray-800 dark:text-white">Transportation</h5>
-
-                    <div class="cardContent p-2 overflow-hidden">
-                        <p class="mb-4 font-normal text-gray-700 dark:text-gray-400 text-left">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos laboriosam, non nulla minima sint voluptatibus deserunt
-                            corrupti. Quod deserunt optio quidem animi quos? Labore sed magnam molestiae facilis ullam similique.
-                        </p>
-                        <a href="#"
-                            class="inline-block w-32 items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Read more
-                            <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1 inline-block" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- card 3 -->
-                <div
-                    class="card mb-5 max-h-[20.25rem] overflow-hidden hover:max-h-[34rem] hover:shadow-md transition-all duration-500 ease-in-out  max-w-md sm:max-w-none bg-white border border-gray-200 rounded-lg  hover:bg-gray-100/100 dark:bg-gray-800 dark:border-gray-700">
-                    <a href="">
-                        <img class="rounded-t-lg h-64 w-full" src="./img/services/Catering.jpg" alt="catering" />
-                    </a>
-                    <h5 class=" text-center my-2 text-3xl font-bold tracking-tight text-gray-800 dark:text-white">Catering</h5>
-
-                    <div class="cardContent p-2">
-                        <p class="mb-4 font-normal text-gray-700 dark:text-gray-400 text-left">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos laboriosam, non nulla minima sint voluptatibus deserunt
-                            corrupti. Quod deserunt optio quidem animi quos? Labore sed magnam molestiae facilis ullam similique.
-                        </p>
-                        <a href="#"
-                            class="inline-block w-32 items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Read more
-                            <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1 inline-block" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <!-- card 4 -->
-                <div
-                    class="card mb-5 max-h-[20.25rem] overflow-hidden hover:max-h-[34rem] hover:shadow-md transition-all duration-500 ease-in-out  max-w-md sm:max-w-none bg-white border border-gray-200 rounded-lg  hover:bg-gray-100/100 dark:bg-gray-800 dark:border-gray-700">
-                    <a href="">
-                        <img class="rounded-t-lg h-64 w-full" src="./img/services/Oil Trading.jpg" alt="Oil Trading" />
-                    </a>
-                    <h5 class=" text-center my-2 text-3xl font-bold tracking-tight text-gray-800 dark:text-white">Oil Trading</h5>
-
-                    <div class="cardContent p-2 overflow-hidden">
-                        <p class="mb-4 font-normal text-gray-700 dark:text-gray-400 text-left">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos laboriosam, non nulla minima sint voluptatibus deserunt
-                            corrupti. Quod deserunt optio quidem animi quos? Labore sed magnam molestiae facilis ullam similique.
-                        </p>
-                        <a href="#"
-                            class="inline-block w-32 items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Read more
-                            <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1 inline-block" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                        </a>
-                    </div>
                 </div>
 
 
+
+                <!-- Slider Buttons -->
+                <div class="absolute top-1/2 right-1 sm:scale-150  bg-[#3A454A]/50 hover:bg-slate-200/60 rounded-sm opacity-60 hover:opacity-100
+                                    ">
+                    <button id="sliderNextBtn"
+                        class="h-14 w-7 p-1 flex justify-center items-center text-white hover:text-gray-600  hover:font-bold cursor-pointer duration-300 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="absolute top-1/2 left-1 sm:scale-150  bg-[#3A454A]/50 hover:bg-slate-200/60 rounded-sm opacity-60 hover:opacity-100
+                                    ">
+                    <button id="sliderPrevBtn"
+                        class="h-14 w-7 p-1 flex justify-center items-center text-white hover:text-gray-600  hover:font-bold cursor-pointer duration-300 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                        </svg>
+
+                    </button>
+                </div>
 
             </div>
-
 
         </section>
 
 
-        <!-- PROJECTS Section ========================================================================================================== -->
-        <section class="bg-white pb-8 relative h-[30rem]">
-            <h1 class="text-5xl md:text-6xl md:text-center p-4 md:p-6 font-bold text-black">Our Projects</h1>
+        <!-- Testimonials Section ======================================================================================================== -->
+        <!-- TODO: figure out the animation with sliding reviews. Add buttons to change the reviews -->
+        <section class="bg-white ">
+            <!-- add a title and a container for the reviews -->
+            <h2 class="pt-8 sm:pt-14 md:pt-20 pb-5 text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-wide text-cyan-900 ">
+                Testimonials
+            </h2>
+            <div class="reviews-container flex justify-center relative overflow-hidden">
+                <!-- First Review -->
+                <div class="review w-11/12 md:max-w-screen-2xl px-6 py-8 mx-auto text-center lg:py-16 lg:px-6">
+                    <figure class="max-w-screen-lg mx-auto">
+                        <svg class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
+                                fill="currentColor" />
+                        </svg>
+                        <blockquote>
+                            <p class="p-5 text-xl font-medium text-gray-900 dark:text-white">They are most helpful local Contractor and are always willing to
+                                help
+                                the
+                                Operator, Chamanke Co delivers a first class product, and understand how to work with
+                                International Oi Companies.
 
-            <div id="slider-wrap" class="absolute top-[20%] left-[5%] w-11/12 h-[320px] hover:cursor-grab">
-                <div id="slider" class="absolute top-0 left-0 h-full w-full overflow-auto no-scrollbar">
-
-                    <!-- slides -->
-                    <div id="slider-inner" class=" w-[188rem] flex">
-
-                        <!-- slide 1 -->
-                        <div class="slide min-w-fit mx-2  md:mx-3 text-center overflow-hidden">
-                            <div class="overlay w-full h-full rounded-md bg-black/0 duration-300 ease-in hover:bg-black/10">
-                                <div class="content">
-                                    <img src="./img/projects/Bejil Civil works.jpg" draggable="false" alt="Bejil Civil works"
-                                        class="mb-1 w-[22rem] h-[16.5rem] object-cover object-center">
-                                    <span class="font-bold text-md inline-block max-w-xs">
-                                        <a href="./Civil Works for Bejil Wells.html">
-                                            Civil Works for Bejil Wells 2 and 11 - Block 11 Harir-Bejil
-                                        </a>
-                                    </span>
-                                </div>
+                                On occasion Chamanke Company has also participated along with HKN Energy in providing the local community of Chamanke Town with
+                                a
+                                new Volleyball Court for the
+                                younger generation of Chamanke community and recently signed up to assist HKN Energy with the funding and refurbishment of
+                                Chamanke
+                                Town’s Tartan Stadium, this
+                                makes Chamanke Company a perfect partner as they are willing to give back to the local community.</p>
+                        </blockquote>
+                        <figcaption class="flex items-center justify-center mt-6 space-x-3">
+                            <img class="w-10 h-10 object-contain rounded-full" src="img/Cleints/HKN-Logo.png" alt="profile picture">
+                            <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
+                                <div class="pr-3 font-medium text-gray-900 dark:text-white">Geoff Potter</div>
+                                <div class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">Materials & Logistics Manager at HKN</div>
                             </div>
-                        </div>
-
-                        <!-- slide 2 -->
-                        <div class="slide min-w-fit mx-2  md:mx-3 text-center  overflow-hidden">
-                            <div class="overlay w-full h-full rounded-md bg-black/0 duration-300 ease-in hover:bg-black/10">
-                                <div class="content">
-                                    <img src="./img/projects/Pad Foundation.jpg" draggable="false" alt="Construction of Foundation"
-                                        class="mb-1 w-[22rem] h-[16.5rem] object-cover object-center">
-                                    <span class="font-bold text-md inline-block max-w-xs">
-                                        <a href="./newHomePage.html">
-                                            Construction of Foundation CH-E Pad LER & G Pad Produced Water Pump
-
-                                        </a>
-                                    </span>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-                        <!-- slide 3 -->
-                        <div class="slide min-w-fit mx-2  md:mx-3 text-center  overflow-hidden">
-                            <div class="overlay w-full h-full rounded-md bg-black/0 duration-300 ease-in hover:bg-black/10">
-                                <div class="content">
-                                    <img src="./img/projects/Oil Transportation.jpg" draggable="false" alt="Transportation of Crude oil and Provision of Diesel"
-                                        class="mb-1 w-[22rem] h-[16.5rem] object-cover object-center">
-                                    <span class="font-bold text-md inline-block max-w-xs">
-                                        <a href="">
-                                            Transportation of Crude oil and Provision of Diesel
-                                        </a>
-                                    </span>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <!-- slide 4 -->
-                        <div class="slide min-w-fit mx-2  md:mx-3 text-center  overflow-hidden">
-                            <div class="overlay w-full h-full rounded-md bg-black/0 duration-300 ease-in hover:bg-black/10">
-                                <div class="content">
-                                    <img src="./img/projects/Camp Maintenance Services.jpg" draggable="false" alt="Camp Maintenance Services"
-                                        class="mb-1 w-[22rem] h-[16.5rem] object-cover object-center">
-                                    <span class="font-bold text-md inline-block max-w-xs">
-                                        <a href="">Provision of CAMP MAINTENANCE Services</a>
-                                    </span>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <!-- slide 5 -->
-                        <div class="slide min-w-fit mx-2  md:mx-3 text-center  overflow-hidden">
-                            <div class="overlay w-full h-full rounded-md bg-black/0 duration-300 ease-in hover:bg-black/10">
-                                <div class="content">
-                                    <img src="./img/projects/Water Supply Network.jpg" draggable="false" alt="Water Supply Network"
-                                        class="mb-1 w-[22rem] h-[16.5rem] object-cover object-center">
-                                    <span class="font-bold text-md inline-block max-w-xs">
-                                        <a href="">
-                                            Water Supply Network (Besat Zheri)
-                                        </a>
-                                    </span>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <!-- slide 6 -->
-                        <div class="slide min-w-fit mx-2  md:mx-3 text-center  overflow-hidden">
-                            <div class="overlay w-full h-full rounded-md bg-black/0 duration-300 ease-in hover:bg-black/10">
-                                <div class="content">
-                                    <img src="./img/projects/Waste Management.jpg" draggable="false" alt="Waste management"
-                                        class="mb-1 w-[22rem] h-[16.5rem] object-cover object-center">
-                                    <span class="font-bold text-md inline-block max-w-xs">
-                                        <a href="">Waste management</a>
-                                    </span>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <!-- slide 7 -->
-                        <div class="slide min-w-fit mx-2  md:mx-3 text-center  overflow-hidden">
-                            <div class="overlay w-full h-full rounded-md bg-black/0 duration-300 ease-in hover:bg-black/10">
-                                <div class="content">
-                                    <img src="./img/projects/Signature Towers.jpg" draggable="false" alt="Signature Tower"
-                                        class="mb-1 w-[22rem] h-[16.5rem] object-cover object-center">
-                                    <span class="font-bold text-md inline-block max-w-xs">
-                                        <a href="">Signature Tower</a>
-                                    </span>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <!-- slide 8 -->
-                        <div class="slide min-w-fit mx-2  md:mx-3 text-center  overflow-hidden">
-                            <div class="overlay w-full h-full rounded-md bg-black/0 duration-300 ease-in hover:bg-black/10">
-                                <div class="content">
-                                    <img src="./img/projects/French Village.jpg" draggable="false" alt="French Village"
-                                        class="mb-1 w-[22rem] h-[16.5rem] object-cover object-center">
-                                    <span class="font-bold text-md inline-block max-w-xs">
-                                        <a href="">French Village</a>
-                                    </span>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <!-- slide 9 -->
-                        <div class="slide min-w-fit mx-2  md:mx-3 text-center overflow-hidden">
-                            <div class="overlay w-full h-full rounded-md bg-black/0 duration-300 ease-in hover:bg-black/10">
-                                <div class="content">
-                                    <img src="./img/projects/Zilla Tower.jpg" draggable="false" alt="Zilla Tower"
-                                        class="mb-1 w-[22rem] h-[16.5rem] object-cover object-center">
-                                    <span class="font-bold text-md inline-block max-w-xs">
-                                        <a href="">Zilla Tower</a>
-                                    </span>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-                        <div class="slide flex justify-centera items-center min-w-fit mx-2 md:mx-3 text-center p-2 ">
-                            <span draggable="false" class=" text-gray-800 text-md italic cursor-pointer hover:font-bold transition-all duration-300">
-                                <a href="./pojects.html">
-
-                                    View all Projects
-                                </a>
-                            </span>
-                        </div>
-
-                    </div>
+                        </figcaption>
+                    </figure>
                 </div>
 
-                <!-- progress bar -->
-                <div class="hidden progress-bar absolute left-0 bottom-[-20px] w-full h-[6px] border-2 border-black rounded-md">
-                    <div id="progress-bar-inner" class="absolute left-0 top-0 w-0/12 h-full bg-slate-600 ">
-                    </div>
+                <!-- 2nd Review -->
+                <div class="review hidden w-11/12 md:max-w-screen-2xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
+                    <figure class="max-w-screen-lg mx-auto">
+                        <svg class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
+                                fill="currentColor" />
+                        </svg>
+                        <blockquote>
+                            <p class="p-5 text-xl font-medium text-gray-900 dark:text-white">They have good rapport with the management and operating personnel
+                                of
+                                Hunt
+                                Oil and know how to get things done, especially in remote camps. The quality and
+                                selection of the food provide is second to none and it’s by far the best food that I have had personally here in Northern Iraq/
+                                Kurdistan for my time here. The
+                                rooms are exceptionally clean and good service is provided in the laundry.</p>
+                        </blockquote>
+                        <figcaption class="flex items-center justify-center mt-6 space-x-0">
+                            <img class="w-24 h-10 object-contain rounded-full" src="img/Cleints/Hunt Oil.png" alt="profile picture">
+                            <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
+                                <div class="pr-3 font-medium text-gray-900 dark:text-white">David Dunsby</div>
+                                <div class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">Senior Drilling Supervisor at HO</div>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <!-- 3rd Review -->
+                <div class="review hidden w-11/12 md:max-w-screen-2xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
+                    <figure class="max-w-screen-lg mx-auto">
+                        <svg class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
+                                fill="currentColor" />
+                        </svg>
+                        <blockquote>
+                            <p class="p-5 text-xl font-medium text-gray-900 dark:text-white">The food was excellent all the time that we have spent here, and
+                                the
+                                rooms
+                                were clean the whole period and good service was provided also in the laundry. All
+                                personnel were qualified and dedicated to their job and in good relation with all people on location.</p>
+                        </blockquote>
+                        <figcaption class="flex items-center justify-center mt-6 space-x-3">
+                            <img class="w-28 h-14 object-cover rounded-full" src="img/Cleints/Independent-Oil-Tools-01.png" alt="profile picture">
+                            <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
+                                <div class="pr-3 font-medium text-gray-900 dark:text-white">Gavriloiu Gabriel</div>
+                                <div class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">Rig Manager at IOT</div>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <!-- 4th Review -->
+                <div class="review hidden w-11/12 md:max-w-screen-2xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
+                    <figure class="max-w-screen-lg mx-auto">
+                        <svg class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
+                                fill="currentColor" />
+                        </svg>
+                        <blockquote>
+                            <p class="p-5 text-xl font-medium text-gray-900 dark:text-white">We have been associated with Chamanke Company on the contract for
+                                Parker
+                                Rig 269, in the Kurdistan region of Iraq. We are very satisfied with the level of
+                                service provided, and the quality of the food also. The housekeeping and Laundry were both a very high quality, and the daily
+                                service very prompt. Their
+                                personnel is well trained and qualified. We are then happy to recommend Chamanke to any prospective clients.</p>
+                        </blockquote>
+                        <figcaption class="flex items-center justify-center mt-6 space-x-1">
+                            <img class="w-32 h-full  rounded-full" src="img/Cleints/PARKER-DRILLING-LOGO-750.jpg" alt="profile picture">
+                            <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
+                                <div class="pr-3 font-medium text-gray-900 dark:text-white">Mark Sharkey</div>
+                                <div class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">Operation Superintendent at PD</div>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+
+
+                <!-- Slider Buttons -->
+                <div class="absolute top-1/2 right-4 xl:right-[12%] scale-110 md:scale-150 bg-slate-100/60 hover:bg-[var(--chamanke-red)] rounded-full 
+                                                                                ">
+                    <button id="nextReview"
+                        class="h-7 w-7 p-1 flex justify-center items-center text-[var(--chamanke-red)] hover:text-white font-bold cursor-pointer duration-300 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="absolute top-1/2 left-4 xl:left-[12%] scale-110 md:scale-150 bg-slate-100/60 hover:bg-[var(--chamanke-red)] rounded-full 
+                                                                                ">
+                    <button id="prevReview"
+                        class="h-7 w-7 p-1 flex justify-center items-center text-[var(--chamanke-red)] hover:text-white font-bold cursor-pointer duration-300 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                        </svg>
+
+                    </button>
                 </div>
             </div>
 
@@ -474,12 +361,12 @@
 
         <!-- Cleints Section ========================================================================================================== -->
         <!-- TODO: add RoseNeft, Genel Energy clients & add links and hover effects to logos -->
-        <section class="bg-gray-200">
+        <section class=" bg-gray-100">
 
             <div class="py-4 mx-auto items-center justify-items-center grid grid-cols-1 md:grid-cols-2 overflow-hidden">
 
                 <div class="p-5">
-                    <h2 class="text-3xl md:text-5xl font-semibold text-cyan-900 uppercase  ">Cleints & Partners</h2>
+                    <h2 class="text-3xl md:text-5xl font-semibold text-cyan-900  uppercase  ">Cleints & Partners</h2>
                     <p class="block max-w-sm text-gray-700 py-3  text-lg">
                         See why over 10+ brands trust Chemanke to help them grow and build successful businesses.
                     </p>
@@ -523,124 +410,14 @@
             </div>
         </section>
 
-
-        <!-- TODO: figure out the animation with sliding reviews. Add buttons to change the reviews -->
-        <section class="bg-white dark:bg-gray-900 flex justify-center">
-            <!-- First Review -->
-            <div class="review max-w-screen-sm md:max-w-screen-2xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6 transition-all duration-300">
-                <figure class="max-w-screen-lg mx-auto">
-                    <svg class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
-                            fill="currentColor" />
-                    </svg>
-                    <blockquote>
-                        <p class="p-5 text-xl font-medium text-gray-900 dark:text-white">They are most helpful local Contractor and are always willing to help
-                            the
-                            Operator, Chamanke Co delivers a first class product, and understand how to work with
-                            International Oi Companies.
-
-                            On occasion Chamanke Company has also participated along with HKN Energy in providing the local community of Chamanke Town with a
-                            new Volleyball Court for the
-                            younger generation of Chamanke community and recently signed up to assist HKN Energy with the funding and refurbishment of Chamanke
-                            Town’s Tartan Stadium, this
-                            makes Chamanke Company a perfect partner as they are willing to give back to the local community.</p>
-                    </blockquote>
-                    <figcaption class="flex items-center justify-center mt-6 space-x-3">
-                        <img class="w-10 h-10 object-contain rounded-full" src="img/Cleints/HKN-Logo.png" alt="profile picture">
-                        <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                            <div class="pr-3 font-medium text-gray-900 dark:text-white">Geoff Potter</div>
-                            <div class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">Materials & Logistics Manager at HKN</div>
-                        </div>
-                    </figcaption>
-                </figure>
-            </div>
-
-            <!-- 2nd Review -->
-            <div class="review max-w-screen-sm md:max-w-screen-2xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6 transition-all duration-300">
-                <figure class="max-w-screen-lg mx-auto">
-                    <svg class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
-                            fill="currentColor" />
-                    </svg>
-                    <blockquote>
-                        <p class="p-5 text-xl font-medium text-gray-900 dark:text-white">They have good rapport with the management and operating personnel of
-                            Hunt
-                            Oil and know how to get things done, especially in remote camps. The quality and
-                            selection of the food provide is second to none and it’s by far the best food that I have had personally here in Northern Iraq/
-                            Kurdistan for my time here. The
-                            rooms are exceptionally clean and good service is provided in the laundry.</p>
-                    </blockquote>
-                    <figcaption class="flex items-center justify-center mt-6 space-x-0">
-                        <img class="w-24 h-10 object-contain rounded-full" src="img/Cleints/Hunt Oil.png" alt="profile picture">
-                        <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                            <div class="pr-3 font-medium text-gray-900 dark:text-white">David Dunsby</div>
-                            <div class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">Senior Drilling Supervisor at HO</div>
-                        </div>
-                    </figcaption>
-                </figure>
-            </div>
-
-            <!-- 3rd Review -->
-            <div class="review max-w-screen-sm md:max-w-screen-2xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6 transition-all duration-300">
-                <figure class="max-w-screen-lg mx-auto">
-                    <svg class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
-                            fill="currentColor" />
-                    </svg>
-                    <blockquote>
-                        <p class="p-5 text-xl font-medium text-gray-900 dark:text-white">The food was excellent all the time that we have spent here, and the
-                            rooms
-                            were clean the whole period and good service was provided also in the laundry. All
-                            personnel were qualified and dedicated to their job and in good relation with all people on location.</p>
-                    </blockquote>
-                    <figcaption class="flex items-center justify-center mt-6 space-x-3">
-                        <img class="w-28 h-14 object-cover rounded-full" src="img/Cleints/Independent-Oil-Tools-01.png" alt="profile picture">
-                        <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                            <div class="pr-3 font-medium text-gray-900 dark:text-white">Gavriloiu Gabriel</div>
-                            <div class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">Rig Manager at IOT</div>
-                        </div>
-                    </figcaption>
-                </figure>
-            </div>
-
-            <!-- 4th Review -->
-            <div class="review max-w-screen-sm md:max-w-screen-2xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6 transition-all duration-300">
-                <figure class="max-w-screen-lg mx-auto">
-                    <svg class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
-                            fill="currentColor" />
-                    </svg>
-                    <blockquote>
-                        <p class="p-5 text-xl font-medium text-gray-900 dark:text-white">We have been associated with Chamanke Company on the contract for
-                            Parker
-                            Rig 269, in the Kurdistan region of Iraq. We are very satisfied with the level of
-                            service provided, and the quality of the food also. The housekeeping and Laundry were both a very high quality, and the daily
-                            service very prompt. Their
-                            personnel is well trained and qualified. We are then happy to recommend Chamanke to any prospective clients.</p>
-                    </blockquote>
-                    <figcaption class="flex items-center justify-center mt-6 space-x-1">
-                        <img class="w-32 h-full  rounded-full" src="img/Cleints/PARKER-DRILLING-LOGO-750.jpg" alt="profile picture">
-                        <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                            <div class="pr-3 font-medium text-gray-900 dark:text-white">Mark Sharkey</div>
-                            <div class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">Operation Superintendent at PD</div>
-                        </div>
-                    </figcaption>
-                </figure>
-            </div>
-        </section>
-
         <!-- Get in Touch Section =======================================================================================================-->
-        <section class="pt-5 bg-white">
+        <section class=" bg-white">
             <div class="grid grid-cols-1 md:grid-cols-3">
                 <!-- Left Col -->
                 <div class="grid md:col-span-2">
-                    <div class="bg-[#f4f4f4] flex justify-center items-center p-4 row-span-1">
+                    <div class="bg-[#74868e]/10 flex justify-center items-center p-4 row-span-1">
                         <div class="get_in_touch_content py-8">
-                            <span class="font-semibold text-5xl ">Get in Touch</span>
+                            <span class="font-semibold text-5xl text-cyan-900 ">Get in Touch</span>
                             <div class="max-w-sm py-3 text-lg">
                                 <p>We’re all ears to your feedback, suggestion or any other questions you may have</p>
                             </div>
@@ -772,7 +549,7 @@
         </section>
 
         <!-- Footer Section ============================================================================================================ -->
-        <footer class="bg-[#F4F4F4] dark:bg-gray-900">
+        <footer class="bg-[#F4F4F4] ">
             <div class="md:ml-16 grid grid-cols-1 gap-8 px-6 py-8 md:grid-cols-3">
                 <div>
                     <img class="pb-4" src="img/Chamanke Logo.png" alt="">

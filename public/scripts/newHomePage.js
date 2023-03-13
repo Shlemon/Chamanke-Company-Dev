@@ -18,7 +18,7 @@ container.btn.addEventListener('click', (e) => {
 
 let currentIndex = 0;
 let isDragging = false;
-let startPosition = 0;
+let startPosition = null;
 
 container.servicesContainer.addEventListener('click', (e) => {
   if (e.target.closest('#sliderNextBtn, #sliderNextBtn svg')) {
@@ -43,7 +43,7 @@ container.servicesContainer.addEventListener('pointerdown', (e) => {
   // prevent selecting
   e.preventDefault();
   isDragging = true;
-  startPosition = e.clientX;
+  startPosition = e.clientX
   container.servicesContainer.style.cursor = 'grabbing';
 });
 
@@ -52,10 +52,10 @@ container.servicesContainer.addEventListener('pointermove', (e) => {
   e.preventDefault();
   if (isDragging) {
     const delta = e.clientX - startPosition;
-    if (delta > 50) {
+    if (delta > 11) {
       isDragging = false;
       container.nextBtn.click();
-    } else if (delta < -50) {
+    } else if (delta < -11) {
       isDragging = false;
       container.prevBtn.click();
     }
