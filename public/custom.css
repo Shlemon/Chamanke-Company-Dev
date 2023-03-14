@@ -125,12 +125,28 @@ z-index: -1;
   animation: swipe-right 0.5s ease-in-out;
 }
 
+.swipe-left2 {
+  animation: swipe-left2 0.5s ease-in-out;
+}
+.swipe-right2 {
+  animation: swipe-right2 0.5s ease-in-out;
+}
+
+
 @keyframes swipe-left {
   0% {
     transform: translateX(0%);
   }
   100% {
     transform: translateX(-70%);
+  }
+}
+@keyframes swipe-left2 {
+  0% {
+    transform: translateX(70%);
+  }
+  100% {
+    transform: translateX(0%);
   }
 }
 
@@ -140,5 +156,14 @@ z-index: -1;
   }
   100% {
     transform: translateX(0%);
+  }
+}
+
+@keyframes swipe-right2 {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(70%);
   }
 }

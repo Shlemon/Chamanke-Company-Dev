@@ -20,7 +20,7 @@
     <body id="homePage" class="">
 
         <!-- NAV Section ==================================================================================================================-->
-        <nav class="nav bg-white border-gray-200 px-2 sm:px-4 py-1.5 rounded dark:bg-gray-900">
+        <nav class="nav bg-white border-gray-200 px-2 sm:px-4 py-1.5 rounded">
             <div class="container flex flex-wrap justify-between mx-auto">
                 <a href="http://chamanke.com/" class="flex items-center scale-[1.5] md:scale-[2]">
                     <img src="./img/Chamanke.png" class="h-6 ml-5 md:ml-10 sm:h-9" alt="Chamanke Logo" />
@@ -28,7 +28,7 @@
 
                 <!-- Burger Button -->
                 <button id="navToggle" type="button"
-                    class="navToggle inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    class="navToggle inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
                     aria-controls="navbar-default" aria-expanded="false">
 
                     <svg id="toggleBars" class="w-6 h-6 duration-500 " aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
@@ -39,13 +39,13 @@
                     </svg>
                 </button>
 
-                <div class="navMenu hidden w-full md:block md:mr-60 md:w-auto" id="navbar-default">
+                <div class="navMenu hidden w-full md:block lg:mr-60 md:w-auto" id="navbar-default">
                     <ul
-                        class=" mr-30 flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                        class=" mr-30 flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
 
                         <li class="relative group">
                             <button
-                                class="navToggle flex px-4 font-medium outline-none focus:outline-none py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:group-hover:text-blue-800 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent uppercase">
+                                class="navToggle flex px-4 font-medium outline-none focus:outline-none py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:group-hover:text-[var(--chamanke-blue)] group-hover:font-semibold md:p-0 uppercase">
                                 About Us
                                 <svg class="w-6 h-6 ml-2" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd"
@@ -59,22 +59,22 @@
 
                                 <ul class="space-y-2 lg:w-36 text-gray-600">
                                     <li>
-                                        <a class="block px-2 py-1 md:py-2 font-medium rounded-md hover:bg-gray-200 " href="./company.html">
+                                        <a class="block px-2 py-1 md:py-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 " href="./company.html">
                                             Company
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="block px-2 py-1 md:py-2 font-medium rounded-md hover:bg-gray-200 " href="./staff.html">
+                                        <a class="block px-2 py-1 md:py-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 " href="./staff.html">
                                             Staff
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="block px-2 py-1 md:py-2 font-medium rounded-md hover:bg-gray-200 " href="./staff.html#careers">
+                                        <a class="block px-2 py-1 md:py-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 " href="./staff.html#careers">
                                             Careers
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="block px-2 py-1 md:py-2 font-medium rounded-md hover:bg-gray-200 " href="#contact">
+                                        <a class="block px-2 py-1 md:py-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 " href="#contact">
                                             Contact
                                         </a>
                                     </li>
@@ -84,7 +84,7 @@
 
                         <li class="relative group">
                             <button
-                                class="navToggle flex px-4 font-medium outline-none focus:outline-none py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:group-hover:text-blue-800 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent uppercase">
+                                class="navToggle flex px-4 font-medium outline-none focus:outline-none py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:group-hover:text-[var(--chamanke-blue)] group-hover:font-semibold md:p-0 uppercase">
                                 Services
                                 <svg class="w-6 h-6 ml-2" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd"
@@ -94,36 +94,41 @@
                             </button>
                             <!-- Dropdown Menu -->
                             <div
-                                class="navMenu invisible h-0 md:group-hover:visible md:group-hover:h-[11rem] duration-500 lg:absolute right-0 bg-white rounded-md py-2  z-30 overflow-hidden">
+                                class="navMenu invisible h-0 md:group-hover:visible md:group-hover:h-[10rem] duration-500 md:absolute -left-10 bg-white rounded-md py-2 w-64 z-30 overflow-hidden">
 
-                                <ul class="space-y-2 lg:w-36 text-gray-600">
+                                <ul class="text-gray-600 flex flex-wrap justify-center [&>*]:py-3">
                                     <li>
-                                        <a class="block px-2 py-1 md:py-2 font-medium rounded-md hover:bg-gray-200 " href="./pojects.html">
+                                        <a data-service="civil" class="serviceLink px-1 md:px-2 py-1 md:py-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 " href="./pojects.html">
                                             Civil Works
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="block px-2 py-1 md:py-2 font-medium rounded-md hover:bg-gray-200 " href="">
-                                            Transportation
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="block px-2 py-1 md:py-2 font-medium rounded-md hover:bg-gray-200 " href="">
+                                        <a data-service="catering"  class="serviceLink px-1 md:px-2 py-1 md:py-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 " href="./pojects.html">
                                             Catering
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="block px-2 py-1 md:py-2 font-medium rounded-md hover:bg-gray-200 " href="">
-                                            Oil Trading
+                                        <a data-service="logistics" class="serviceLink px-1 md:px-2 py-1 md:py-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 " href="./pojects.html">
+                                            Logistics
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a data-service="procurement" class="serviceLink px-1 md:px-2 py-1 md:py-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 " href="./pojects.html">
+                                            Procurment & Supply Chain
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a data-service="maintenance" class="serviceLink px-1 md:px-2 py-1 md:py-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 " href="./pojects.html">
+                                            Mechanical & Maintenance
                                         </a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
 
-                        <li>
-                            <a href="#"
-                                class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-800 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent uppercase">Projects</a>
+                        <li class="group">
+                            <a data-service="all" 
+                                class="block serviceLink py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:group-hover:text-[var(--chamanke-blue)] group-hover:font-semibold md:p-0 uppercase" href="./pojects.html">Projects</a>
                         </li>
                     </ul>
                 </div>
@@ -215,9 +220,7 @@
 
 
         <!-- Testimonials Section ======================================================================================================== -->
-        <!-- TODO: figure out the animation with sliding reviews. Add buttons to change the reviews -->
         <section class="bg-white ">
-            <!-- add a title and a container for the reviews -->
             <h2 class="pt-8 sm:pt-14 md:pt-20 pb-5 text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-wide text-cyan-900 ">
                 Testimonials
             </h2>
@@ -225,13 +228,13 @@
                 <!-- First Review -->
                 <div class="review w-11/12 md:max-w-screen-2xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
                     <figure class="max-w-screen-lg mx-auto">
-                        <svg class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="h-12 mx-auto mb-3 text-gray-400" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
                                 fill="currentColor" />
                         </svg>
                         <blockquote>
-                            <p class="p-5 text-xl font-medium text-gray-900 dark:text-white">The food was excellent all the time that we have spent here, and
+                            <p class="p-5 text-xl font-medium text-gray-900 ">The food was excellent all the time that we have spent here, and
                                 the
                                 rooms
                                 were clean the whole period and good service was provided also in the laundry. All
@@ -239,9 +242,9 @@
                         </blockquote>
                         <figcaption class="flex items-center justify-center mt-6 space-x-3">
                             <img class="w-28 h-14 object-cover rounded-full" src="img/Cleints/Independent-Oil-Tools-01.png" alt="profile picture">
-                            <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                                <div class="pr-3 font-medium text-gray-900 dark:text-white">Gavriloiu Gabriel</div>
-                                <div class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">Rig Manager at IOT</div>
+                            <div class="flex items-center divide-x-2 divide-gray-500">
+                                <div class="pr-3 font-medium text-gray-900 ">Gavriloiu Gabriel</div>
+                                <div class="pl-3 text-sm font-light text-gray-500">Rig Manager at IOT</div>
                             </div>
                         </figcaption>
                     </figure>
@@ -250,13 +253,13 @@
                 <!-- 2nd Review -->
                 <div class="review hidden w-11/12 md:max-w-screen-2xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
                     <figure class="max-w-screen-lg mx-auto">
-                        <svg class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="h-12 mx-auto mb-3 text-gray-400" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
                                 fill="currentColor" />
                         </svg>
                         <blockquote>
-                            <p class="p-5 text-xl font-medium text-gray-900 dark:text-white">They have good rapport with the management and operating personnel
+                            <p class="p-5 text-xl font-medium text-gray-900">They have good rapport with the management and operating personnel
                                 of
                                 Hunt
                                 Oil and know how to get things done, especially in remote camps. The quality and
@@ -266,9 +269,9 @@
                         </blockquote>
                         <figcaption class="flex items-center justify-center mt-6 space-x-0">
                             <img class="w-24 h-10 object-contain rounded-full" src="img/Cleints/Hunt Oil.png" alt="profile picture">
-                            <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                                <div class="pr-3 font-medium text-gray-900 dark:text-white">David Dunsby</div>
-                                <div class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">Senior Drilling Supervisor at HO</div>
+                            <div class="flex items-center divide-x-2 divide-gray-500">
+                                <div class="pr-3 font-medium text-gray-900">David Dunsby</div>
+                                <div class="pl-3 text-sm font-light text-gray-500">Senior Drilling Supervisor at HO</div>
                             </div>
                         </figcaption>
                     </figure>
@@ -277,13 +280,13 @@
                 <!-- 3rd Review -->
                 <div class="review hidden w-11/12 md:max-w-screen-2xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
                     <figure class="max-w-screen-lg mx-auto">
-                        <svg class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="h-12 mx-auto mb-3 text-gray-400" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
                                 fill="currentColor" />
                         </svg>
                         <blockquote>
-                            <p class="p-5 text-xl font-medium text-gray-900 dark:text-white">They are most helpful local Contractor and are always willing to
+                            <p class="p-5 text-xl font-medium text-gray-900">They are most helpful local Contractor and are always willing to
                                 help
                                 the
                                 Operator, Chamanke Co delivers a first class product, and understand how to work with
@@ -299,9 +302,9 @@
                         </blockquote>
                         <figcaption class="flex items-center justify-center mt-6 space-x-3">
                             <img class="w-10 h-10 object-contain rounded-full" src="img/Cleints/HKN-Logo.png" alt="profile picture">
-                            <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                                <div class="pr-3 font-medium text-gray-900 dark:text-white">Geoff Potter</div>
-                                <div class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">Materials & Logistics Manager at HKN</div>
+                            <div class="flex items-center divide-x-2 divide-gray-500">
+                                <div class="pr-3 font-medium text-gray-900">Geoff Potter</div>
+                                <div class="pl-3 text-sm font-light text-gray-500">Materials & Logistics Manager at HKN</div>
                             </div>
                         </figcaption>
                     </figure>
@@ -309,13 +312,13 @@
                 <!-- 4th Review -->
                 <div class="review hidden w-11/12 md:max-w-screen-2xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
                     <figure class="max-w-screen-lg mx-auto">
-                        <svg class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="h-12 mx-auto mb-3 text-gray-400" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
                                 fill="currentColor" />
                         </svg>
                         <blockquote>
-                            <p class="p-5 text-xl font-medium text-gray-900 dark:text-white">We have been associated with Chamanke Company on the contract for
+                            <p class="p-5 text-xl font-medium text-gray-900">We have been associated with Chamanke Company on the contract for
                                 Parker
                                 Rig 269, in the Kurdistan region of Iraq. We are very satisfied with the level of
                                 service provided, and the quality of the food also. The housekeeping and Laundry were both a very high quality, and the daily
@@ -324,9 +327,9 @@
                         </blockquote>
                         <figcaption class="flex items-center justify-center mt-6 space-x-1">
                             <img class="w-32 h-full  rounded-full" src="img/Cleints/PARKER-DRILLING-LOGO-750.jpg" alt="profile picture">
-                            <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                                <div class="pr-3 font-medium text-gray-900 dark:text-white">Mark Sharkey</div>
-                                <div class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">Operation Superintendent at PD</div>
+                            <div class="flex items-center divide-x-2 divide-gray-500">
+                                <div class="pr-3 font-medium text-gray-900">Mark Sharkey</div>
+                                <div class="pl-3 text-sm font-light text-gray-500">Operation Superintendent at PD</div>
                             </div>
                         </figcaption>
                     </figure>

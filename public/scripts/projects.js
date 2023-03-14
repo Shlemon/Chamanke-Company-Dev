@@ -3,7 +3,6 @@ window.onload = () => {
   filterCards(selectedServiceId);
 };
 // getting the id of the clicked button from the services page that was stored in sessionStorage
-// const selectedServiceId = sessionStorage.getItem('selectedServiceId');
 const selectedServiceId = localStorage.getItem('selectedServiceId');
 const categoryButtons = document.querySelectorAll('.service-category');
 

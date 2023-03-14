@@ -23,6 +23,7 @@ if (screen.width < 768) {
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// SERVICES Section
 const container = {
   servicesContainer: document.querySelector('#servicesContainer'),
   img: document.querySelector('#servicesImg'),
@@ -33,14 +34,25 @@ const container = {
   prevBtn: document.querySelector('#sliderPrevBtn'),
 };
 
-// store the id of the clicked service to use it for the filtering in the projects page
+// store the id of the clicked service from the Services Section to use it for the filtering in the projects page
 container.btn.addEventListener('click', (e) => {
   const clickedId = e.target.id;
 
-  // sessionStorage.setItem('selectedServiceId', clickedId);
   localStorage.setItem('selectedServiceId', clickedId);
 });
 
+// store the id of the clicked service from the navBar
+const serviceLinks = document.querySelectorAll('.serviceLink');
+
+serviceLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    const clickedLink = link.getAttribute('data-service');
+    console.log(clickedLink);
+    localStorage.setItem('selectedServiceId', clickedLink);
+  })
+})
+
+////////////////////////////////////////////////////////////////////////
 let currentIndex = 0;
 let isDragging = false;
 let startPosition = null;
@@ -156,17 +168,13 @@ let currentReview = 0;
 const nextReviewBtn = document.querySelector('#nextReview');
 const prevReviewBtn = document.querySelector('#prevReview');
 
-
-
-
 nextReviewBtn.addEventListener('click', nextReview);
 prevReviewBtn.addEventListener('click', prevReview);
-// reviews[currentReview].classList.remove('hidden');
-
 
 
 function nextReview() {
   // slide out the current review
+  reviews[currentReview].classList.remove('swipe-left2');
   reviews[currentReview].classList.add('swipe-left');
   // wait for the sliding animation to finish (0.5s)
   setTimeout(() => {
@@ -177,12 +185,16 @@ function nextReview() {
 
     // remove hidden and swipe classes from the next review after increasing the index
     reviews[currentReview].classList.remove('hidden');
-    reviews[currentReview].classList.remove('swipe-left', 'swipe-right');
+    reviews[currentReview].classList.remove('swipe-left', 'swipe-right2');
+    // add swipe-right class to animate new review entering from the right
+    reviews[currentReview].classList.add('swipe-left2');
   }, 500);
 }
 
+
 function prevReview() {
-  reviews[currentReview].classList.add('swipe-right');
+  reviews[currentReview].classList.remove('swipe-right');
+  reviews[currentReview].classList.add('swipe-right2');
 
   setTimeout(() => {
     reviews[currentReview].classList.add('hidden');
@@ -191,9 +203,49 @@ function prevReview() {
     if (currentReview < 0) currentReview = reviews.length - 1;
 
     reviews[currentReview].classList.remove('hidden');
-    reviews[currentReview].classList.remove('swipe-left', 'swipe-right');
+    reviews[currentReview].classList.remove('swipe-left','swipe-right2');
+    reviews[currentReview].classList.add('swipe-right');
   }, 500);
 }
+
+
+// the extra animations sideways
+
+// function nextReview() {
+//   // slide out the current review
+//   reviews[currentReview].classList.remove('swipe-right');
+//   reviews[currentReview].classList.add('swipe-left');
+//   // wait for the sliding animation to finish (0.5s)
+//   setTimeout(() => {
+//     reviews[currentReview].classList.add('hidden');
+
+//     currentReview++;
+//     if (currentReview >= reviews.length) currentReview = 0;
+
+//     // remove hidden and swipe classes from the next review after increasing the index
+//     reviews[currentReview].classList.remove('hidden');
+//     reviews[currentReview].classList.remove('swipe-left', 'swipe-right');
+//     // add swipe-right class to animate new review entering from the right
+//     reviews[currentReview].classList.add('swipe-right');
+//   }, 500);
+// }
+
+// function prevReview() {
+//   reviews[currentReview].classList.remove('swipe-left2');
+//   reviews[currentReview].classList.add('swipe-right2');
+
+//   setTimeout(() => {
+//     reviews[currentReview].classList.add('hidden');
+
+//     currentReview--;
+//     if (currentReview < 0) currentReview = reviews.length - 1;
+
+//     reviews[currentReview].classList.remove('hidden');
+//     reviews[currentReview].classList.remove('swipe-left2', 'swipe-right2');
+//     reviews[currentReview].classList.add('swipe-left2');
+//   }, 500);
+// }
+
 
 
 
@@ -248,12 +300,6 @@ reviewsContainer.addEventListener('pointerup', () => {
   isDragging = false;
   reviewsContainer.style.cursor = 'default';
 });
-
-
-
-
-
-
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // back to top Btn
