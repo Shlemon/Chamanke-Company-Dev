@@ -161,6 +161,7 @@ const prevReviewBtn = document.querySelector('#prevReview');
 
 nextReviewBtn.addEventListener('click', nextReview);
 prevReviewBtn.addEventListener('click', prevReview);
+// reviews[currentReview].classList.remove('hidden');
 
 
 
@@ -247,6 +248,12 @@ reviewsContainer.addEventListener('pointerup', () => {
   isDragging = false;
   reviewsContainer.style.cursor = 'default';
 });
+
+
+
+
+
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // back to top Btn
