@@ -11,35 +11,35 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/96f59b036f.js" crossorigin="anonymous"></script>
-        <!-- Flowbite shit -->
-        <!-- <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.4/dist/flowbite.min.css" />
-        <script src="https://unpkg.com/flowbite@1.5.4/dist/flowbite.js"></script> -->
 
     </head>
 
-    <body id="homePage" class="">
+    <body id="homePage">
 
         <!-- NAV Section ==================================================================================================================-->
-        <nav class="nav bg-white border-gray-200 px-2 sm:px-4 py-1.5 rounded">
+        <nav class="nav bg-white border-gray-100 border-b-2 px-2 sm:px-4 py-1.5 rounded">
             <div class="container flex flex-wrap justify-between mx-auto">
                 <a href="http://chamanke.com/" class="flex items-center scale-[1.5] md:scale-[2]">
                     <img src="./img/Chamanke.png" class="h-6 ml-5 md:ml-10 sm:h-9" alt="Chamanke Logo" />
                 </a>
 
                 <!-- Burger Button -->
-                <button id="navToggle" type="button"
-                    class="navToggle inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
-                    aria-controls="navbar-default" aria-expanded="false">
+                <button class="navToggle inline-flex items-center p-2  text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 ">
 
-                    <svg id="toggleBars" class="w-6 h-6 duration-500 " aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg">
+                    <svg id="burgerIcon" class="w-6 h-6 transition-all duration-500" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd"
                             d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
                             clip-rule="evenodd"></path>
                     </svg>
+
+                    <svg id="closeIcon" class="w-6 h-6 hidden transition-all duration-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+
                 </button>
 
-                <div class="navMenu hidden w-full md:block lg:mr-60 md:w-auto" id="navbar-default">
+                <div class="navMenu hidden transition-opacity w-full md:block lg:mr-60 md:w-auto" aria-expanded="false">
                     <ul
                         class=" mr-30 flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
 
@@ -54,8 +54,40 @@
                                 </svg>
                             </button>
                             <!-- Dropdown Menu -->
-                            <div
-                                class="navMenu invisible h-0 md:group-hover:visible md:group-hover:h-[11rem] duration-500 lg:absolute right-0 bg-white rounded-md py-2  z-30 overflow-hidden">
+                            <div aria-expanded="false"
+                            
+                                class="navMenu invisible h-0 md:group-hover:visible md:group-hover:h-[6.5rem] duration-500 md:absolute -left-8 bg-white rounded-md py-2 w-44 z-30 overflow-hidden">
+                            
+                                <ul class="text-gray-600 grid md:grid-cols-2 gap-2 [&>*]:py-1 md:[&>*]:py-3 px-2 ">
+                                    <li>
+                                        <a class="serviceLink px-1 md:px-2 py-1 md:py-2 rounded-sm font-medium  hover:text-black hover:bg-gray-200"
+                                            href="./company.html">
+                                            Company
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="serviceLink px-1 md:px-2 py-1 md:py-2 rounded-sm font-medium  hover:text-black hover:bg-gray-200"
+                                            href="./staff.html">
+                                            Staff
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="serviceLink px-1 md:px-2 py-1 md:py-2 rounded-sm font-medium  hover:text-black hover:bg-gray-200"
+                                            href="./staff.html#careers">
+                                            Careers
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="serviceLink px-1 md:px-2 py-1 md:py-2 rounded-sm font-medium  hover:text-black hover:bg-gray-200"
+                                            href="#contact">
+                                            Contant
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- old subMenu -->
+                            <!-- <div aria-expanded="false"
+                                class="navMenu invisible h-0 md:group-hover:visible md:group-hover:h-[11rem] duration-500 md:absolute right-0 bg-white rounded-md py-2  z-30 overflow-hidden">
 
                                 <ul class="space-y-2 lg:w-36 text-gray-600">
                                     <li>
@@ -69,7 +101,8 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="block px-2 py-1 md:py-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 " href="./staff.html#careers">
+                                        <a class="block px-2 py-1 md:py-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 "
+                                            href="./staff.html#careers">
                                             Careers
                                         </a>
                                     </li>
@@ -79,7 +112,7 @@
                                         </a>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> -->
                         </li>
 
                         <li class="relative group">
@@ -93,32 +126,42 @@
                                 </svg>
                             </button>
                             <!-- Dropdown Menu -->
-                            <div
-                                class="navMenu invisible h-0 md:group-hover:visible md:group-hover:h-[10rem] duration-500 md:absolute -left-10 bg-white rounded-md py-2 w-64 z-30 overflow-hidden">
+                            <div aria-expanded="false"
+                                class="navMenu invisible h-0 md:group-hover:visible md:group-hover:h-[9rem] duration-500 md:absolute -left-20 bg-white rounded-md py-2 w-64 z-30 overflow-hidden">
 
                                 <ul class="text-gray-600 flex flex-wrap justify-center [&>*]:py-3">
                                     <li>
-                                        <a data-service="civil" class="serviceLink px-1 md:px-2 py-1 md:py-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 " href="./pojects.html">
+                                        <a data-service="civil"
+                                            class="serviceLink px-1 md:px-2 py-1 md:py-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 "
+                                            href="./pojects.html">
                                             Civil Works
                                         </a>
                                     </li>
                                     <li>
-                                        <a data-service="catering"  class="serviceLink px-1 md:px-2 py-1 md:py-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 " href="./pojects.html">
+                                        <a data-service="catering"
+                                            class="serviceLink px-1 md:px-2 py-1 md:py-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 "
+                                            href="./pojects.html">
                                             Catering
                                         </a>
                                     </li>
                                     <li>
-                                        <a data-service="logistics" class="serviceLink px-1 md:px-2 py-1 md:py-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 " href="./pojects.html">
+                                        <a data-service="logistics"
+                                            class="serviceLink px-1 md:px-2 py-1 md:py-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 "
+                                            href="./pojects.html">
                                             Logistics
                                         </a>
                                     </li>
                                     <li>
-                                        <a data-service="procurement" class="serviceLink px-1 md:px-2 py-1 md:py-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 " href="./pojects.html">
+                                        <a data-service="procurement"
+                                            class="serviceLink px-1 md:px-2 py-1 md:py-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 "
+                                            href="./pojects.html">
                                             Procurment & Supply Chain
                                         </a>
                                     </li>
                                     <li>
-                                        <a data-service="maintenance" class="serviceLink px-1 md:px-2 py-1 md:py-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 " href="./pojects.html">
+                                        <a data-service="maintenance"
+                                            class="serviceLink px-1 md:px-2 py-1 md:py-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 "
+                                            href="./pojects.html">
                                             Mechanical & Maintenance
                                         </a>
                                     </li>
@@ -127,8 +170,9 @@
                         </li>
 
                         <li class="group">
-                            <a data-service="all" 
-                                class="block serviceLink py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:group-hover:text-[var(--chamanke-blue)] group-hover:font-semibold md:p-0 uppercase" href="./pojects.html">Projects</a>
+                            <a data-service="all"
+                                class="serviceLink block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:group-hover:text-[var(--chamanke-blue)] group-hover:font-semibold md:p-0 uppercase"
+                                href="./pojects.html">Projects</a>
                         </li>
                     </ul>
                 </div>
@@ -136,7 +180,7 @@
         </nav>
 
         <!-- HERO Section =================================================================================================================-->
-        <section class="">
+        <section>
             <div class="relative">
                 <img src="./img/card.jpg" class="w-full md:h-[40dvh] lg:h-[75dvh] xl:h-[90dvh]" alt="header image">
                 <div
@@ -164,7 +208,7 @@
         </section>
 
         <!-- Services Section ======================================================================================================== -->
-        <section class="">
+        <section>
             <div id="servicesContainer" class="relative overflow-hidden  z-10 bg-black/70">
                 <img id="servicesImg"
                     class="h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-[100vh] w-full p-0 bg-cover brightness-75 bg-no-repeat transition-all duration-500 ease-in-out"
@@ -182,7 +226,7 @@
 
                     <div class="flex justify-center mt-8 sm:mt-14 md:mt-20">
                         <button type="button" class="text-white bg-[var(--chamanke-red)] hover:bg-[var(--chamanke-blue)] duration-300 focus:ring-2
-                                                 font-medium rounded-sm text-sm md:text-lg lg:scale-110 px-5 py-2.5 text-center mr-2 mb-2">
+                        font-medium rounded-sm text-sm md:text-lg lg:scale-110 px-5 py-2.5 text-center mr-2 mb-2">
                             <a id="civil" href="./pojects.html"> view projects</a>
                         </button>
 
@@ -473,41 +517,41 @@
                         <form id="contactForm" action="https://formsubmit.co/e517c32f94f396d9f0edcdf9526368e8" method="POST">
                             <div class="relative z-0 mb-6 w-auto group">
                                 <input type="name" name="Full Name" id="fullName"
-                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300  dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#0C4773] peer"
+                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-[#0C4773] peer"
                                     placeholder=" " required />
                                 <label for="fullName"
-                                    class="peer-focus:font-medium absolute text-md text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#0C4773] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Full
+                                    class="peer-focus:font-medium absolute text-md text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#0C4773] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Full
                                     Name
                                 </label>
                             </div>
 
                             <div class="relative z-0 mb-6 w-full group">
                                 <input type="email" name="email" id="email"
-                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300  dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#0C4773] peer"
+                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-[#0C4773] peer"
                                     placeholder=" " required />
                                 <label for="email"
-                                    class="peer-focus:font-medium absolute text-md text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#0C4773]  peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email
+                                    class="peer-focus:font-medium absolute text-md text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#0C4773] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email
                                 </label>
                             </div>
 
                             <div class="relative z-0 mb-6 w-full group">
                                 <input type="text" name="subject" id="subject"
-                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300  dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#0C4773] peer"
+                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-[#0C4773] peer"
                                     placeholder=" " required />
                                 <label for="subject"
-                                    class="peer-focus:font-medium absolute text-md text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#0C4773]  peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Subject
+                                    class="peer-focus:font-medium absolute text-md text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#0C4773] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Subject
                                 </label>
                             </div>
 
 
                             <label for="message"
-                                class="now peer-focus:font-medium text-md text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#0C4773] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Your
+                                class="now peer-focus:font-medium text-md text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#0C4773] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Your
                                 message
                             </label>
 
                             <textarea id="message" rows="4" name="message"
-                                class="my-3 block p-2.5 w-full text-sm text-gray-900 bg-transparent border-2 rounded-lg border-gray-300  dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-[#0C4773] peer">
-                                                    </textarea>
+                                class="my-3 block p-2.5 w-full text-sm text-gray-900 bg-transparent border-2 rounded-lg border-gray-300 focus:outline-none focus:ring-0 focus:border-[#0C4773] peer">
+                            </textarea>
 
                             <button type="submit"
                                 class="text-white my-6 relative top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]  border-2 hover:scale-105 border-[#0C4773] bg-[#0C4773]/90 font-medium rounded-lg text-sm w-full max-w-[90px] sm:w-auto px-5 py-2.5 text-center">Submit
@@ -554,7 +598,7 @@
         <footer class="bg-[#F4F4F4] ">
             <div class="md:ml-16 grid grid-cols-1 gap-8 px-6 py-8 md:grid-cols-3">
                 <div>
-                    <img class="pb-4" src="img/Chamanke Logo.png" alt="">
+                    <img class="pb-4 h-12 sm:h-16 " src="img/Chamanke Name + Logo.png" alt="">
                     <p class="max-w-sm">
                         Chamanke Company was founded with intent to be one of the leaders in the Kurdistan region
                         in providing services to companies working in oil industry and logistics, and currently renowned for
@@ -564,8 +608,8 @@
 
                 <div class="md:ml-40 grid grid-cols-2 md:grid-cols-2 md:gap-44 lg:gap-72 justify-center items-center">
                     <div>
-                        <h2 class="mb-6 text-sm font-bold text-gray-500 uppercase dark:text-gray-400">Company</h2>
-                        <ul class="text-gray-500 dark:text-gray-400">
+                        <h2 class="mb-6 text-sm font-bold text-gray-500 uppercase">Company</h2>
+                        <ul class="text-gray-500">
                             <li class="mb-4">
                                 <a href="./company.html" class=" hover:underline">About</a>
                             </li>
@@ -581,8 +625,8 @@
                         </ul>
                     </div>
                     <div>
-                        <h2 class="mb-6 text-sm font-bold text-gray-500 uppercase dark:text-gray-400">Links</h2>
-                        <ul class="text-gray-500 dark:text-gray-400">
+                        <h2 class="mb-6 text-sm font-bold text-gray-500 uppercase">Links</h2>
+                        <ul class="text-gray-500">
                             <li class="mb-4">
                                 <a href="#" class="hover:underline">Home</a>
                             </li>
@@ -600,13 +644,13 @@
                 </div>
             </div>
 
-            <div class="px-4 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
-                <span class="md:ml-16 text-sm text-gray-500 dark:text-gray-300 sm:text-center">© 2023 <a href="http://chamanke.com/">Chamanke™</a>. All Rights
+            <div class="px-4 py-6 bg-gray-100 md:flex md:items-center md:justify-between">
+                <span class="md:ml-16 text-sm text-gray-500 sm:text-center">© 2023 <a href="http://chamanke.com/">Chamanke™</a>.  All Rights
                     Reserved.
                 </span>
 
                 <!-- SOCIAL MEDIA SVGs Black and White -->
-                <!-- <div class="flex mt-4 space-x-6 sm:justify-center md:mt-0">
+                <div class="flex mt-4 space-x-6 sm:justify-center md:mt-0">
                     <a href="#" class="text-gray-400 hover:text-gray-900 dark:hover:text-white">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path fill-rule="evenodd"
@@ -646,12 +690,15 @@
                         </svg>
                         <span class="sr-only">Dribbble account</span>
                     </a>
-                </div> -->
+                </div>
             </div>
         </footer>
         <!-- back to top btn -->
         <div id="toTopBtn" class="fixed opacity-0 bottom-20 z-50  duration-300">
-            <i class="fa-solid fa-angle-up text-white hover:text-blue-900 hover:bg-blue-100 text-4xl text-center bg-slate-300 rounded-2xl w-12 h-12 p-2"></i>
+            <svg class="text-white hover:text-[#2e3c49] hover:bg-blue-100 text-4xl text-center bg-slate-300 rounded-2xl
+             w-12 h-12 p-2 hover:font-bold " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+            </svg>
         </div>
 
         <script src="./scripts/homePage.js"></script>

@@ -2,26 +2,49 @@
 // Nav burger buttons
 const navTogglers = document.querySelectorAll('.navToggle');
 const navMenus = document.querySelectorAll('.navMenu');
-const toggleBars = document.querySelector('#toggleBars');
+const burgerBtn = document.querySelector('#burgerIcon');
+const closeBtn = document.querySelector('#closeIcon');
 
-// change the if() to check wether the nav menu is displayed or not
 if (screen.width < 768) {
-  navTogglers.forEach((toggler) => {
-    toggler.addEventListener('click', (e) => {
-      if (e.currentTarget === navTogglers[0]) {
-        toggleBars.classList.toggle('rotate-90');
-        navMenus[0].classList.toggle('hidden');
-      } else if (e.currentTarget === navTogglers[1]) {
-        navMenus[1].classList.toggle('invisible');
-        navMenus[1].classList.toggle('h-[10rem]');
-      } else if (e.currentTarget === navTogglers[2]) {
-        navMenus[2].classList.toggle('invisible');
-        navMenus[2].classList.toggle('h-[10rem]');
-      }
-    });
+navTogglers.forEach((toggler) => {
+  toggler.addEventListener('click', (e) => {
+    if (e.currentTarget === navTogglers[0]) {
+      updateNavMenu();
+    } else if (e.currentTarget === navTogglers[1]) {
+      showSubNavMenu(navMenus[1]);
+    } else if (e.currentTarget === navTogglers[2]) {
+      showSubNavMenu(navMenus[2]);
+    }
   });
+});
 }
 
+
+function updateNavMenu() {
+  burgerBtn.classList.add('fade-out');
+
+  setTimeout(() => {
+    burgerBtn.classList.toggle('hidden');
+    closeBtn.classList.toggle('fade-in');
+    closeBtn.classList.toggle('hidden');
+    navMenus[0].classList.toggle('hidden');
+    updateAriaAttribute(navMenus[0]);
+  }, 100);
+}
+
+function showSubNavMenu(menu) {
+  menu.classList.toggle('invisible');
+  menu.classList.toggle('h-[10rem]');
+  updateAriaAttribute(menu);
+}
+
+function updateAriaAttribute(menu) {
+  if (menu.classList.contains('hidden') || menu.classList.contains('invisible')) {
+    menu.setAttribute('aria-expanded', 'false');
+  } else {
+    menu.setAttribute('aria-expanded', 'true');
+  }
+}
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // SERVICES Section
 const container = {
@@ -44,13 +67,13 @@ container.btn.addEventListener('click', (e) => {
 // store the id of the clicked service from the navBar
 const serviceLinks = document.querySelectorAll('.serviceLink');
 
-serviceLinks.forEach(link => {
+serviceLinks.forEach((link) => {
   link.addEventListener('click', () => {
     const clickedLink = link.getAttribute('data-service');
     console.log(clickedLink);
     localStorage.setItem('selectedServiceId', clickedLink);
-  })
-})
+  });
+});
 
 ////////////////////////////////////////////////////////////////////////
 let currentIndex = 0;
@@ -171,7 +194,6 @@ const prevReviewBtn = document.querySelector('#prevReview');
 nextReviewBtn.addEventListener('click', nextReview);
 prevReviewBtn.addEventListener('click', prevReview);
 
-
 function nextReview() {
   // slide out the current review
   reviews[currentReview].classList.remove('swipe-left2');
@@ -191,7 +213,6 @@ function nextReview() {
   }, 500);
 }
 
-
 function prevReview() {
   reviews[currentReview].classList.remove('swipe-right');
   reviews[currentReview].classList.add('swipe-right2');
@@ -203,11 +224,10 @@ function prevReview() {
     if (currentReview < 0) currentReview = reviews.length - 1;
 
     reviews[currentReview].classList.remove('hidden');
-    reviews[currentReview].classList.remove('swipe-left','swipe-right2');
+    reviews[currentReview].classList.remove('swipe-left', 'swipe-right2');
     reviews[currentReview].classList.add('swipe-right');
   }, 500);
 }
-
 
 // the extra animations sideways
 
@@ -245,11 +265,6 @@ function prevReview() {
 //     reviews[currentReview].classList.add('swipe-left2');
 //   }, 500);
 // }
-
-
-
-
-
 
 // old code without animations
 
