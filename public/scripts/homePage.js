@@ -323,11 +323,9 @@ window.addEventListener('scroll', handleScroll);
 
 function handleScroll() {
   if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-    // toTopBtn.classList.add('opacity-100')
     toTopBtn.style.opacity = 1;
     screen.width <= 450 ? (toTopBtn.style.right = '15px') : (toTopBtn.style.right = '50px');
   } else {
-    // toTopBtn.classList.remove('opacity-100');
     toTopBtn.style.opacity = 0;
     toTopBtn.style.right = '0px';
   }
