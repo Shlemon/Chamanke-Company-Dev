@@ -2,27 +2,51 @@
 // Nav burger buttons
 const navTogglers = document.querySelectorAll('.navToggle');
 const navMenus = document.querySelectorAll('.navMenu');
-const toggleBars = document.querySelector('#toggleBars');
+const burgerBtn = document.querySelector('#burgerIcon');
+const closeBtn = document.querySelector('#closeIcon');
 
-// change the if() to check wether the nav menu is displayed or not
 if (screen.width < 768) {
-  navTogglers.forEach((toggler) => {
-    toggler.addEventListener('click', (e) => {
-      if (e.currentTarget === navTogglers[0]) {
-        toggleBars.classList.toggle('rotate-90');
-        navMenus[0].classList.toggle('hidden');
-      } else if (e.currentTarget === navTogglers[1]) {
-        navMenus[1].classList.toggle('invisible');
-        navMenus[1].classList.toggle('h-[10rem]');
-      } else if (e.currentTarget === navTogglers[2]) {
-        navMenus[2].classList.toggle('invisible');
-        navMenus[2].classList.toggle('h-[10rem]');
-      }
-    });
+navTogglers.forEach((toggler) => {
+  toggler.addEventListener('click', (e) => {
+    if (e.currentTarget === navTogglers[0]) {
+      updateNavMenu();
+    } else if (e.currentTarget === navTogglers[1]) {
+      showSubNavMenu(navMenus[1]);
+    } else if (e.currentTarget === navTogglers[2]) {
+      showSubNavMenu(navMenus[2]);
+    }
   });
+});
 }
 
+
+function updateNavMenu() {
+  burgerBtn.classList.add('fade-out');
+
+  setTimeout(() => {
+    burgerBtn.classList.toggle('hidden');
+    closeBtn.classList.toggle('fade-in');
+    closeBtn.classList.toggle('hidden');
+    navMenus[0].classList.toggle('hidden');
+    updateAriaAttribute(navMenus[0]);
+  }, 100);
+}
+
+function showSubNavMenu(menu) {
+  menu.classList.toggle('invisible');
+  menu.classList.toggle('h-[10rem]');
+  updateAriaAttribute(menu);
+}
+
+function updateAriaAttribute(menu) {
+  if (menu.classList.contains('hidden') || menu.classList.contains('invisible')) {
+    menu.setAttribute('aria-expanded', 'false');
+  } else {
+    menu.setAttribute('aria-expanded', 'true');
+  }
+}
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// SERVICES Section
 const container = {
   servicesContainer: document.querySelector('#servicesContainer'),
   img: document.querySelector('#servicesImg'),
@@ -33,14 +57,25 @@ const container = {
   prevBtn: document.querySelector('#sliderPrevBtn'),
 };
 
-// store the id of the clicked service to use it for the filtering in the projects page
+// store the id of the clicked service from the Services Section to use it for the filtering in the projects page
 container.btn.addEventListener('click', (e) => {
   const clickedId = e.target.id;
 
-  // sessionStorage.setItem('selectedServiceId', clickedId);
   localStorage.setItem('selectedServiceId', clickedId);
 });
 
+// store the id of the clicked service from the navBar
+const serviceLinks = document.querySelectorAll('.serviceLink');
+
+serviceLinks.forEach((link) => {
+  link.addEventListener('click', () => {
+    const clickedLink = link.getAttribute('data-service');
+    console.log(clickedLink);
+    localStorage.setItem('selectedServiceId', clickedLink);
+  });
+});
+
+////////////////////////////////////////////////////////////////////////
 let currentIndex = 0;
 let isDragging = false;
 let startPosition = null;
@@ -156,17 +191,12 @@ let currentReview = 0;
 const nextReviewBtn = document.querySelector('#nextReview');
 const prevReviewBtn = document.querySelector('#prevReview');
 
-
-
-
 nextReviewBtn.addEventListener('click', nextReview);
 prevReviewBtn.addEventListener('click', prevReview);
-// reviews[currentReview].classList.remove('hidden');
-
-
 
 function nextReview() {
   // slide out the current review
+  reviews[currentReview].classList.remove('swipe-left2');
   reviews[currentReview].classList.add('swipe-left');
   // wait for the sliding animation to finish (0.5s)
   setTimeout(() => {
@@ -177,12 +207,15 @@ function nextReview() {
 
     // remove hidden and swipe classes from the next review after increasing the index
     reviews[currentReview].classList.remove('hidden');
-    reviews[currentReview].classList.remove('swipe-left', 'swipe-right');
+    reviews[currentReview].classList.remove('swipe-left', 'swipe-right2');
+    // add swipe-right class to animate new review entering from the right
+    reviews[currentReview].classList.add('swipe-left2');
   }, 500);
 }
 
 function prevReview() {
-  reviews[currentReview].classList.add('swipe-right');
+  reviews[currentReview].classList.remove('swipe-right');
+  reviews[currentReview].classList.add('swipe-right2');
 
   setTimeout(() => {
     reviews[currentReview].classList.add('hidden');
@@ -191,13 +224,47 @@ function prevReview() {
     if (currentReview < 0) currentReview = reviews.length - 1;
 
     reviews[currentReview].classList.remove('hidden');
-    reviews[currentReview].classList.remove('swipe-left', 'swipe-right');
+    reviews[currentReview].classList.remove('swipe-left', 'swipe-right2');
+    reviews[currentReview].classList.add('swipe-right');
   }, 500);
 }
 
+// the extra animations sideways
 
+// function nextReview() {
+//   // slide out the current review
+//   reviews[currentReview].classList.remove('swipe-right');
+//   reviews[currentReview].classList.add('swipe-left');
+//   // wait for the sliding animation to finish (0.5s)
+//   setTimeout(() => {
+//     reviews[currentReview].classList.add('hidden');
 
+//     currentReview++;
+//     if (currentReview >= reviews.length) currentReview = 0;
 
+//     // remove hidden and swipe classes from the next review after increasing the index
+//     reviews[currentReview].classList.remove('hidden');
+//     reviews[currentReview].classList.remove('swipe-left', 'swipe-right');
+//     // add swipe-right class to animate new review entering from the right
+//     reviews[currentReview].classList.add('swipe-right');
+//   }, 500);
+// }
+
+// function prevReview() {
+//   reviews[currentReview].classList.remove('swipe-left2');
+//   reviews[currentReview].classList.add('swipe-right2');
+
+//   setTimeout(() => {
+//     reviews[currentReview].classList.add('hidden');
+
+//     currentReview--;
+//     if (currentReview < 0) currentReview = reviews.length - 1;
+
+//     reviews[currentReview].classList.remove('hidden');
+//     reviews[currentReview].classList.remove('swipe-left2', 'swipe-right2');
+//     reviews[currentReview].classList.add('swipe-left2');
+//   }, 500);
+// }
 
 // old code without animations
 
@@ -249,12 +316,6 @@ reviewsContainer.addEventListener('pointerup', () => {
   reviewsContainer.style.cursor = 'default';
 });
 
-
-
-
-
-
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // back to top Btn
 const toTopBtn = document.querySelector('#toTopBtn');
@@ -262,11 +323,9 @@ window.addEventListener('scroll', handleScroll);
 
 function handleScroll() {
   if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-    // toTopBtn.classList.add('opacity-100')
     toTopBtn.style.opacity = 1;
     screen.width <= 450 ? (toTopBtn.style.right = '15px') : (toTopBtn.style.right = '50px');
   } else {
-    // toTopBtn.classList.remove('opacity-100');
     toTopBtn.style.opacity = 0;
     toTopBtn.style.right = '0px';
   }

@@ -1,25 +1,60 @@
 // Nav burger buttons
 const navTogglers = document.querySelectorAll('.navToggle');
 const navMenus = document.querySelectorAll('.navMenu');
-const toggleBars = document.querySelector('#toggleBars');
+const burgerBtn = document.querySelector('#burgerIcon');
+const closeBtn = document.querySelector('#closeIcon');
 
 if (screen.width < 768) {
   navTogglers.forEach((toggler) => {
     toggler.addEventListener('click', (e) => {
       if (e.currentTarget === navTogglers[0]) {
-        toggleBars.classList.toggle('rotate-90');
-        navMenus[0].classList.toggle('hidden');
+        updateNavMenu();
       } else if (e.currentTarget === navTogglers[1]) {
-        navMenus[1].classList.toggle('invisible');
-        navMenus[1].classList.toggle('h-[10rem]');
+        showSubNavMenu(navMenus[1]);
       } else if (e.currentTarget === navTogglers[2]) {
-        navMenus[2].classList.toggle('invisible');
-        navMenus[2].classList.toggle('h-[10rem]');
+        showSubNavMenu(navMenus[2]);
       }
     });
   });
 }
 
+function updateNavMenu() {
+  burgerBtn.classList.add('fade-out');
+
+  setTimeout(() => {
+    burgerBtn.classList.toggle('hidden');
+    closeBtn.classList.toggle('fade-in');
+    closeBtn.classList.toggle('hidden');
+    navMenus[0].classList.toggle('hidden');
+    updateAriaAttribute(navMenus[0]);
+  }, 100);
+}
+
+function showSubNavMenu(menu) {
+  menu.classList.toggle('invisible');
+  menu.classList.toggle('h-[10rem]');
+  updateAriaAttribute(menu);
+}
+
+function updateAriaAttribute(menu) {
+  if (menu.classList.contains('hidden') || menu.classList.contains('invisible')) {
+    menu.setAttribute('aria-expanded', 'false');
+  } else {
+    menu.setAttribute('aria-expanded', 'true');
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// store the id of the clicked service from the navBar
+const serviceLinks = document.querySelectorAll('.serviceLink');
+
+serviceLinks.forEach((link) => {
+  link.addEventListener('click', () => {
+    const clickedLink = link.getAttribute('data-service');
+    console.log(clickedLink);
+    localStorage.setItem('selectedServiceId', clickedLink);
+  });
+});
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // back to top Btn
@@ -28,11 +63,9 @@ window.addEventListener('scroll', handleScroll);
 
 function handleScroll() {
   if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-    // toTopBtn.classList.add('opacity-100')
     toTopBtn.style.opacity = 1;
     screen.width <= 450 ? (toTopBtn.style.right = '15px') : (toTopBtn.style.right = '50px');
   } else {
-    // toTopBtn.classList.remove('opacity-100');
     toTopBtn.style.opacity = 0;
     toTopBtn.style.right = '0px';
   }
