@@ -9,7 +9,11 @@
 
         <link rel="stylesheet" href="./output.css">
         <link rel="stylesheet" href="./custom.css">
-        <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet">
+
+        <script src="https://cdn.tailwindcss.com"></script>
 
     </head>
 
@@ -21,27 +25,27 @@
                 <a href="./index.html" class="flex items-center scale-[1.5] md:scale-[2]" aria-label="Go to Home Page">
                     <img src="./img/Chamanke.png" class="h-6 ml-5 md:ml-10 sm:h-9" alt="Chamanke Logo" />
                 </a>
-        
+
                 <!-- Burger Button -->
                 <button class="navToggle inline-flex items-center p-2  text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 ">
-        
+
                     <svg id="burgerIcon" class="w-6 h-6 transition-all duration-500" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd"
                             d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
                             clip-rule="evenodd"></path>
                     </svg>
-        
+
                     <svg id="closeIcon" class="w-6 h-6 hidden transition-all duration-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
-        
+
                 </button>
-        
+
                 <div class="navMenu hidden transition-opacity w-full md:block lg:mr-60 md:w-auto" aria-expanded="false">
                     <ul
                         class=" mr-30 flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
-        
+
                         <li class="relative group">
                             <button
                                 class="navToggle flex px-4 font-medium outline-none focus:outline-none py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:group-hover:text-[var(--chamanke-blue)] group-hover:font-semibold md:p-0 uppercase">
@@ -55,7 +59,7 @@
                             <!-- Dropdown Menu -->
                             <div aria-expanded="false"
                                 class="navMenu invisible h-0 md:group-hover:visible md:group-hover:h-[6.5rem] duration-500 md:absolute -left-8 bg-white rounded-md py-2 w-44 z-30 overflow-hidden">
-        
+
                                 <ul class="text-gray-600 grid md:grid-cols-2 gap-2 [&>*]:py-1 md:[&>*]:py-3 px-2 ">
                                     <li>
                                         <a class="serviceLink px-1 md:px-2 py-1 md:py-2 rounded-sm font-medium  hover:text-black hover:bg-gray-200"
@@ -64,8 +68,8 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="serviceLink px-1 md:px-2 py-1 md:py-2 rounded-sm font-medium  hover:text-black hover:bg-gray-200" href="./staff.html"
-                                            aria-label="Go to Staff Page">
+                                        <a class="serviceLink px-1 md:px-2 py-1 md:py-2 rounded-sm font-medium  hover:text-black hover:bg-gray-200"
+                                            href="./staff.html" aria-label="Go to Staff Page">
                                             Staff
                                         </a>
                                     </li>
@@ -76,15 +80,15 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="serviceLink px-1 md:px-2 py-1 md:py-2 rounded-sm font-medium  hover:text-black hover:bg-gray-200" href="#contact"
-                                            aria-label="Go to Contact Page">
+                                        <a class="serviceLink px-1 md:px-2 py-1 md:py-2 rounded-sm font-medium  hover:text-black hover:bg-gray-200"
+                                            href="#contact" aria-label="Go to Contact Page">
                                             Contant
                                         </a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
-        
+
                         <li class="relative group">
                             <button
                                 class="navToggle flex px-4 font-medium outline-none focus:outline-none py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:group-hover:text-[var(--chamanke-blue)] group-hover:font-semibold md:p-0 uppercase">
@@ -98,10 +102,11 @@
                             <!-- Dropdown Menu -->
                             <div aria-expanded="false"
                                 class="navMenu invisible h-0 md:group-hover:visible md:group-hover:h-[9rem] duration-500 md:absolute -left-20 bg-white rounded-md py-2 w-64 z-30 overflow-hidden">
-        
+
                                 <ul class="text-gray-600 flex flex-wrap justify-center [&>*]:py-3">
                                     <li>
-                                        <a data-service="civil" class="serviceLink px-1 md:px-2 py-1 md:py-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 "
+                                        <a data-service="civil"
+                                            class="serviceLink px-1 md:px-2 py-1 md:py-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 "
                                             href="./pojects.html" aria-label="Go to the Civil Works Page">
                                             Civil Works
                                         </a>
@@ -137,7 +142,7 @@
                                 </ul>
                             </div>
                         </li>
-        
+
                         <li class="group">
                             <a data-service="all"
                                 class="serviceLink block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:group-hover:text-[var(--chamanke-blue)] group-hover:font-semibold md:p-0 uppercase"
@@ -154,7 +159,7 @@
                 <img id="servicesImg" src="" class="brightness-[60%] w-full h-[65dvh]" alt="...">
                 <h1 id="servicesTitle"
                     class="top-1/2 left-1/2 absolute -translate-x-1/2 -translate-y-1/2  text-4xl  md:text-5xl lg:text-6xl text-white text-center font-bold w-10/12 ">
-                    
+                    <!-- inserted wih JS -->
                 </h1>
             </div>
         </section>
@@ -199,203 +204,150 @@
         </section>
 
         <!-- Gallery Section ============================================================================================================ -->
-        <section class="bg-slate-10">
-            <div class=" relative min-h-[100vh] px-7">
-                <div class="image-container flex flex-wrap gap-3.5 lg:gap-6 justify-center p-2.5">
-                    <!-- make a 'card class and use the @apply directive to use it here for all cards' -->
+        <section class="pb-10">
+            <div class="cards-container flex flex-wrap gap-3.5 lg:gap-6 justify-center p-2.5">
+                <!-- 'card' class used with @apply directive, check input.css for details' -->
 
-                    <!-- <div class="civil image min-w-fit mx-2 md:mx-3 text-center overflow-hidden group">
-                        <div class="content">
-                            <img src="./img/projects/Bejil Civil works.jpg" draggable="false" alt="Bejil Civil works"
-                                class="mb-6 w-[22rem] h-[16.5rem] object-cover object-center duration-300 ease-in group-hover:scale-110">
-                            <span class="font-bold text-md inline-block max-w-xs group-hover:text-[var(--chamanke-red)] duration-300 ease-in">
-                                Civil Works for Bejil Wells 2 and 11 - Block 11 Harir-Bejil
-                            </span>
-                        </div>
-                    </div> -->
-
-                    <!-- card 1 -->
-                    <div class="card civil mb-5 max-h-fit hover:shadow-md duration-300 ease-in-out max-w-sm rounded-sm group overflow-hidden">
-                        <img class="rounded-t-sm h-80 duration-300 ease-in group-hover:scale-105" src="./img/projects/Bejil Civil works.jpg"
-                            alt="Civil Works" />
-                        <div class="pt-3 pl-2 text-left bg-white group-hover:bg-gray-100/30 ">
-                            <h5 class="text-lg font-bold tracking-tight text-gray-700">
-                                Civil Works for Bejil Wells 2 and 11 - Block 11 Harir-Bejil
-                            </h5>
-                            <div class="[&>*]:py-0.5 py-1 text-sm">
-                                <span>Service Category: Civil</span>
-                                <span class="block">Client: Rosneft-Middle East Company LLC</span>
-                                <span>Duration: 45 Days, May — July 2021 </span>
-                                <span class="block">Number of personnel involved: 25 People</span>
-                            </div>
+                <!-- card 1 -->
+                <div class="card civil group">
+                    <img class="rounded-t-sm h-80 duration-300 ease-in group-hover:scale-105" src="./img/projects/Bejil Civil works.jpg" alt="Civil Works" />
+                    <div class="pt-3 pl-2 text-left bg-white group-hover:bg-gray-100/30 ">
+                        <h5 class="text-lg font-bold tracking-tight text-gray-700">
+                            Civil Works for Bejil Wells 2 and 11 - Block 11 Harir-Bejil
+                        </h5>
+                        <div class="[&>*]:py-0.5 py-1 text-sm">
+                            <span>Service Category: Civil</span>
+                            <span class="block">Client: Rosneft-Middle East Company LLC</span>
+                            <span>Duration: 45 Days, May — July 2021 </span>
+                            <span class="block">Number of personnel involved: 25 People</span>
                         </div>
                     </div>
-
-                    <div class="card civil mb-5 max-h-fit hover:shadow-md duration-300 ease-in-out max-w-sm rounded-sm group overflow-hidden">
-                        <img class="rounded-t-sm h-80 duration-300 ease-in group-hover:scale-105" src="./img/projects/Pad Foundation.jpg"
-                            alt="Pad Foundation" />
-                        <div class="pt-3 pl-2 text-left bg-white group-hover:bg-gray-100/30 ">
-                            <h5 class="text-lg font-bold tracking-tight text-gray-700">
-                                Construction of Foundation CH-E Pad LER & G Pad Produced Water Pump
-                            </h5>
-                            <div class="[&>*]:py-0.5 py-1 text-sm">
-                                <span>Service Category: Civil</span>
-                                <span class="block">Client: TAQA Atrush B.V.</span>
-                                <span>Duration: 30 Days, November — December 2019</span>
-                                <span class="block">Number of personnel involved: 25 People</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card logistics mb-5 max-h-fit hover:shadow-md duration-300 ease-in-out max-w-sm rounded-sm group overflow-hidden">
-                        <img class="rounded-t-sm h-80 duration-300 ease-in group-hover:scale-105" src="./img/projects/Oil Transportation.jpg"
-                            alt="Oil Transportation" />
-                        <div class="pt-3 pl-2 text-left bg-white group-hover:bg-gray-100/30 ">
-                            <h5 class="text-lg font-bold tracking-tight text-gray-700">
-                                Transportation of Crude oil and Provision of Diesel
-                            </h5>
-                            <div class="[&>*]:py-0.5 py-1 text-sm">
-                                <span>Service Category: Logistics</span>
-                                <span class="block">Client: </span>
-                                <span>Duration: 45 Days, May — July 2021 </span>
-                                <span class="block">Number of personnel involved: People</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card maintenance mb-5 max-h-fit hover:shadow-md duration-300 ease-in-out max-w-sm rounded-sm group overflow-hidden">
-                        <img class="rounded-t-sm h-80 duration-300 ease-in group-hover:scale-105" src="./img/projects/Camp Maintenance Services.jpg"
-                            alt="Camp Maintenance Services" />
-                        <div class="pt-3 pl-2 text-left bg-white group-hover:bg-gray-100/30 ">
-                            <h5 class="text-lg font-bold tracking-tight text-gray-700">
-                                Provision of CAMP MAINTENANCE Services
-                            </h5>
-                            <div class="[&>*]:py-0.5 py-1 text-sm">
-                                <span>Service Category: Maintenance</span>
-                                <span class="block">Client: Rosneft -HARIR-BEJIL PTE. LTD</span>
-                                <span>Duration: 2 Years Contract Days, January 2020 — January 2022 </span>
-                                <span class="block">Number of personnel involved: 20 People</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card procurement mb-5 max-h-fit hover:shadow-md duration-300 ease-in-out max-w-sm rounded-sm group overflow-hidden">
-                        <img class="rounded-t-sm h-80 duration-300 ease-in group-hover:scale-105" src="./img/projects/Water Supply Network.jpg"
-                            alt="Water Supply Network" />
-                        <div class="pt-3 pl-2 text-left bg-white group-hover:bg-gray-100/30 ">
-                            <h5 class="text-lg font-bold tracking-tight text-gray-700">
-                                Water Supply Network (Besat Zheri)
-                            </h5>
-                            <div class="[&>*]:py-0.5 py-1 text-sm">
-                                <span>Service Category: Procurement</span>
-                                <span class="block">Client: Gulf Keystone Petroleum International LTD.</span>
-                                <span>Duration: 45 Days, December 2019 — January 2020 </span>
-                                <span class="block">Number of personnel involved: 25 People</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card maintenance mb-5 max-h-fit hover:shadow-md duration-300 ease-in-out max-w-sm rounded-sm group overflow-hidden">
-                        <img class="rounded-t-sm h-80 duration-300 ease-in group-hover:scale-105" src="./img/projects/Waste Management.jpg"
-                            alt="Waste management" />
-                        <div class="pt-3 pl-2 text-left bg-white group-hover:bg-gray-100/30 ">
-                            <h5 class="text-lg font-bold tracking-tight text-gray-700">
-                                Waste management
-                            </h5>
-                            <div class="[&>*]:py-0.5 py-1 text-sm">
-                                <span>Service Category: Construction</span>
-                                <span class="block">Client: Rosneft-Middle East Company LLC</span>
-                                <span>Duration: 45 Days, May — July 2021 </span>
-                                <span class="block">Number of personnel involved: 25 People</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card civil mb-5 max-h-fit hover:shadow-md duration-300 ease-in-out max-w-sm rounded-sm group overflow-hidden">
-                        <img class="rounded-t-sm h-80 duration-300 ease-in group-hover:scale-105" src="./img/projects/Signature Towers.jpg"
-                            alt="Signature Tower" />
-                        <div class="pt-3 pl-2 text-left bg-white group-hover:bg-gray-100/30 ">
-                            <h5 class="text-lg font-bold tracking-tight text-gray-700">
-                                Signature Tower
-                            </h5>
-                            <div class="[&>*]:py-0.5 py-1 text-sm">
-                                <span>Service Category: Construction</span>
-                                <span class="block">Client: Rosneft-Middle East Company LLC</span>
-                                <span>Duration: 45 Days, May — July 2021 </span>
-                                <span class="block">Number of personnel involved: 25 People</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card civil mb-5 max-h-fit hover:shadow-md duration-300 ease-in-out max-w-sm rounded-sm group overflow-hidden">
-                        <img class="rounded-t-sm h-80 duration-300 ease-in group-hover:scale-105" src="./img/projects/French Village.jpg"
-                            alt="French Village" />
-                        <div class="pt-3 pl-2 text-left bg-white group-hover:bg-gray-100/30 ">
-                            <h5 class="text-lg font-bold tracking-tight text-gray-700">
-                                French Village
-                            </h5>
-                            <div class="[&>*]:py-0.5 py-1 text-sm">
-                                <span>Service Category: Construction</span>
-                                <span class="block">Client: Rosneft-Middle East Company LLC</span>
-                                <span>Duration: 45 Days, May — July 2021 </span>
-                                <span class="block">Number of personnel involved: 25 People</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card catering mb-5 max-h-fit hover:shadow-md duration-300 ease-in-out max-w-sm rounded-sm group overflow-hidden">
-                        <img class="rounded-t-sm h-80 duration-300 ease-in group-hover:scale-105" src="./img/projects/Zilla Tower.jpg" alt="Zilla Tower" />
-                        <div class="pt-3 pl-2 text-left bg-white group-hover:bg-gray-100/30 ">
-                            <h5 class="text-lg font-bold tracking-tight text-gray-700">
-                                Zilla Tower
-                            </h5>
-                            <div class="[&>*]:py-0.5 py-1 text-sm">
-                                <span>Service Category: Construction</span>
-                                <span class="block">Client: Rosneft-Middle East Company LLC</span>
-                                <span>Duration: 45 Days, May — July 2021 </span>
-                                <span class="block">Number of personnel involved: 25 People</span>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
 
-
-                <!-- TODO: deal with the popup image stuff -->
-                <!-- popup image  -->
-                <div class="hidden popup-image fixed top-0 left-0 bg-black/90 w-full h-full z-50">
-                    <span class="absolute top-2 right-5 text-white font-bold text-4xl cursor-pointer z-50">&times;</span>
-                    <img class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-8 border-white rounded-md object-cover w-11/12 md:w-[50rem] max-h-[40rem] "
-                        src="./img/projects/Bejil Civil works/Road Measurement.jpg" alt="Bejil Civil works">
-
-
-
-                    <!-- Slider controls -->
-                    <button type="button"
-                        class="previousBtn absolute top-36 left-1/4 sm:top-64 sm:left-48 md:top-80 xl:top-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none">
-                        <span
-                            class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 md:w-14 md:h-14 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/60 transition-all duration-200 dark:group-hover:bg-gray-800/60">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                class="w-10 h-10 text-gray-800 dark:text-gray-100">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
-                            </svg>
-
-                            <span class="sr-only">Previous</span>
-                        </span>
-                    </button>
-                    <button type="button"
-                        class="nextBtn absolute top-36 right-1/4 sm:top-64 sm:right-48 md:top-80 xl:top-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none">
-                        <span
-                            class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 md:w-14 md:h-14 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/60 transition-all duration-200 dark:group-hover:bg-gray-800/60">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                class="w-10 h-10 text-gray-800 dark:text-gray-100">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-                            </svg>
-                            <span class="sr-only">Next</span>
-                        </span>
-                    </button>
-
+                <div class="card civil group">
+                    <img class="rounded-t-sm h-80 duration-300 ease-in group-hover:scale-105" src="./img/projects/Pad Foundation.jpg" alt="Pad Foundation" />
+                    <div class="pt-3 pl-2 text-left bg-white group-hover:bg-gray-100/30 ">
+                        <h5 class="text-lg font-bold tracking-tight text-gray-700">
+                            Construction of Foundation CH-E Pad LER & G Pad Produced Water Pump
+                        </h5>
+                        <div class="[&>*]:py-0.5 py-1 text-sm">
+                            <span>Service Category: Civil</span>
+                            <span class="block">Client: TAQA Atrush B.V.</span>
+                            <span>Duration: 30 Days, November — December 2019</span>
+                            <span class="block">Number of personnel involved: 25 People</span>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="card logistics group">
+                    <img class="rounded-t-sm h-80 duration-300 ease-in group-hover:scale-105" src="./img/projects/Oil Transportation.jpg"
+                        alt="Oil Transportation" />
+                    <div class="pt-3 pl-2 text-left bg-white group-hover:bg-gray-100/30 ">
+                        <h5 class="text-lg font-bold tracking-tight text-gray-700">
+                            Transportation of Crude oil and Provision of Diesel
+                        </h5>
+                        <div class="[&>*]:py-0.5 py-1 text-sm">
+                            <span>Service Category: Logistics</span>
+                            <span class="block">Client: </span>
+                            <span>Duration: 45 Days, May — July 2021 </span>
+                            <span class="block">Number of personnel involved: People</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card maintenance group">
+                    <img class="rounded-t-sm h-80 duration-300 ease-in group-hover:scale-105" src="./img/projects/Camp Maintenance Services.jpg"
+                        alt="Camp Maintenance Services" />
+                    <div class="pt-3 pl-2 text-left bg-white group-hover:bg-gray-100/30 ">
+                        <h5 class="text-lg font-bold tracking-tight text-gray-700">
+                            Provision of CAMP MAINTENANCE Services
+                        </h5>
+                        <div class="[&>*]:py-0.5 py-1 text-sm">
+                            <span>Service Category: Maintenance</span>
+                            <span class="block">Client: Rosneft -HARIR-BEJIL PTE. LTD</span>
+                            <span>Duration: 2 Years Contract Days, January 2020 — January 2022 </span>
+                            <span class="block">Number of personnel involved: 20 People</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card procurement group">
+                    <img class="rounded-t-sm h-80 duration-300 ease-in group-hover:scale-105" src="./img/projects/Water Supply Network.jpg"
+                        alt="Water Supply Network" />
+                    <div class="pt-3 pl-2 text-left bg-white group-hover:bg-gray-100/30 ">
+                        <h5 class="text-lg font-bold tracking-tight text-gray-700">
+                            Water Supply Network (Besat Zheri)
+                        </h5>
+                        <div class="[&>*]:py-0.5 py-1 text-sm">
+                            <span>Service Category: Procurement</span>
+                            <span class="block">Client: Gulf Keystone Petroleum International LTD.</span>
+                            <span>Duration: 45 Days, December 2019 — January 2020 </span>
+                            <span class="block">Number of personnel involved: 25 People</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card maintenance group">
+                    <img class="rounded-t-sm h-80 duration-300 ease-in group-hover:scale-105" src="./img/projects/Waste Management.jpg"
+                        alt="Waste management" />
+                    <div class="pt-3 pl-2 text-left bg-white group-hover:bg-gray-100/30 ">
+                        <h5 class="text-lg font-bold tracking-tight text-gray-700">
+                            Waste management
+                        </h5>
+                        <div class="[&>*]:py-0.5 py-1 text-sm">
+                            <span>Service Category: Construction</span>
+                            <span class="block">Client: Rosneft-Middle East Company LLC</span>
+                            <span>Duration: 45 Days, May — July 2021 </span>
+                            <span class="block">Number of personnel involved: 25 People</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card civil group">
+                    <img class="rounded-t-sm h-80 duration-300 ease-in group-hover:scale-105" src="./img/projects/Signature Towers.jpg" alt="Signature Tower" />
+                    <div class="pt-3 pl-2 text-left bg-white group-hover:bg-gray-100/30 ">
+                        <h5 class="text-lg font-bold tracking-tight text-gray-700">
+                            Signature Tower
+                        </h5>
+                        <div class="[&>*]:py-0.5 py-1 text-sm">
+                            <span>Service Category: Construction</span>
+                            <span class="block">Client: Rosneft-Middle East Company LLC</span>
+                            <span>Duration: 45 Days, May — July 2021 </span>
+                            <span class="block">Number of personnel involved: 25 People</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card civil group">
+                    <img class="rounded-t-sm h-80 duration-300 ease-in group-hover:scale-105" src="./img/projects/French Village.jpg" alt="French Village" />
+                    <div class="pt-3 pl-2 text-left bg-white group-hover:bg-gray-100/30 ">
+                        <h5 class="text-lg font-bold tracking-tight text-gray-700">
+                            French Village
+                        </h5>
+                        <div class="[&>*]:py-0.5 py-1 text-sm">
+                            <span>Service Category: Construction</span>
+                            <span class="block">Client: Rosneft-Middle East Company LLC</span>
+                            <span>Duration: 45 Days, May — July 2021 </span>
+                            <span class="block">Number of personnel involved: 25 People</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card catering group">
+                    <img class="rounded-t-sm h-80 duration-300 ease-in group-hover:scale-105" src="./img/projects/Zilla Tower.jpg" alt="Zilla Tower" />
+                    <div class="pt-3 pl-2 text-left bg-white group-hover:bg-gray-100/30 ">
+                        <h5 class="text-lg font-bold tracking-tight text-gray-700">
+                            Zilla Tower
+                        </h5>
+                        <div class="[&>*]:py-0.5 py-1 text-sm">
+                            <span>Service Category: Construction</span>
+                            <span class="block">Client: Rosneft-Middle East Company LLC</span>
+                            <span>Duration: 45 Days, May — July 2021 </span>
+                            <span class="block">Number of personnel involved: 25 People</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -411,7 +363,7 @@
                         performing Constructions, transportations, Catering and trading oil products.
                     </p>
                 </div>
-        
+
                 <div class="md:ml-40 grid grid-cols-2 md:grid-cols-2 md:gap-44 lg:gap-72 justify-center items-center">
                     <div>
                         <h2 class="mb-6 text-sm font-bold text-gray-500 uppercase">Company</h2>
@@ -449,18 +401,19 @@
                     </div>
                 </div>
             </div>
-        
+
             <div class="px-4 py-6 bg-gray-100 md:flex md:items-center md:justify-between">
-                <span class="md:ml-16 text-sm text-gray-500 sm:text-center">
+                <small class="md:ml-16 text-sm text-gray-500 sm:text-center">
                     © 2023 <a href="./index.html">Chamanke™</a>. All Rights Reserved.
-                </span>
+                </small>
             </div>
         </footer>
-        
+
         <!-- back to top btn -->
         <div id="toTopBtn" class="fixed opacity-0 bottom-20 z-50 duration-300">
             <svg class="text-white hover:text-[#2e3c49] hover:bg-blue-100 text-4xl text-center bg-slate-300 rounded-2xl
-                     w-12 h-12 p-1.5 hover:font-bold " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                     w-12 h-12 p-1.5 hover:font-bold " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
             </svg>
         </div>

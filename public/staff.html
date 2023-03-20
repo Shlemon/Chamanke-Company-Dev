@@ -9,39 +9,43 @@
 
         <link rel="stylesheet" href="./output.css">
         <link rel="stylesheet" href="./custom.css">
-        <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet">
+
+        <script src="https://cdn.tailwindcss.com"></script>
 
     </head>
 
-    <body id="staff">
+    <body>
 
         <!-- NAV Section ==================================================================================================================-->
-        <nav class="nav bg-white border-gray-100 border-b-2 px-2 sm:px-4 py-1.5 rounded">
+        <nav class="nav border-gray-100 border-b-2 px-2 sm:px-4 py-1.5 rounded">
             <div class="container flex flex-wrap justify-between mx-auto">
                 <a href="./index.html" class="flex items-center scale-[1.5] md:scale-[2]" aria-label="Go to Home Page">
                     <img src="./img/Chamanke.png" class="h-6 ml-5 md:ml-10 sm:h-9" alt="Chamanke Logo" />
                 </a>
-        
+
                 <!-- Burger Button -->
                 <button class="navToggle inline-flex items-center p-2  text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 ">
-        
+
                     <svg id="burgerIcon" class="w-6 h-6 transition-all duration-500" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd"
                             d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
                             clip-rule="evenodd"></path>
                     </svg>
-        
+
                     <svg id="closeIcon" class="w-6 h-6 hidden transition-all duration-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
-        
+
                 </button>
-        
+
                 <div class="navMenu hidden transition-opacity w-full md:block lg:mr-60 md:w-auto" aria-expanded="false">
                     <ul
                         class=" mr-30 flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
-        
+
                         <li class="relative group">
                             <button
                                 class="navToggle flex px-4 font-medium outline-none focus:outline-none py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:group-hover:text-[var(--chamanke-blue)] group-hover:font-semibold md:p-0 uppercase">
@@ -55,7 +59,7 @@
                             <!-- Dropdown Menu -->
                             <div aria-expanded="false"
                                 class="navMenu invisible h-0 md:group-hover:visible md:group-hover:h-[6.5rem] duration-500 md:absolute -left-8 bg-white rounded-md py-2 w-44 z-30 overflow-hidden">
-        
+
                                 <ul class="text-gray-600 grid md:grid-cols-2 gap-2 [&>*]:py-1 md:[&>*]:py-3 px-2 ">
                                     <li>
                                         <a class="serviceLink px-1 md:px-2 py-1 md:py-2 rounded-sm font-medium  hover:text-black hover:bg-gray-200"
@@ -64,8 +68,8 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="serviceLink px-1 md:px-2 py-1 md:py-2 rounded-sm font-medium  hover:text-black hover:bg-gray-200" href="./staff.html"
-                                            aria-label="Go to Staff Page">
+                                        <a class="serviceLink px-1 md:px-2 py-1 md:py-2 rounded-sm font-medium  hover:text-black hover:bg-gray-200"
+                                            href="./staff.html" aria-label="Go to Staff Page">
                                             Staff
                                         </a>
                                     </li>
@@ -76,15 +80,15 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="serviceLink px-1 md:px-2 py-1 md:py-2 rounded-sm font-medium  hover:text-black hover:bg-gray-200" href="#contact"
-                                            aria-label="Go to Contact Page">
+                                        <a class="serviceLink px-1 md:px-2 py-1 md:py-2 rounded-sm font-medium  hover:text-black hover:bg-gray-200"
+                                            href="#contact" aria-label="Go to Contact Page">
                                             Contant
                                         </a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
-        
+
                         <li class="relative group">
                             <button
                                 class="navToggle flex px-4 font-medium outline-none focus:outline-none py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:group-hover:text-[var(--chamanke-blue)] group-hover:font-semibold md:p-0 uppercase">
@@ -98,10 +102,11 @@
                             <!-- Dropdown Menu -->
                             <div aria-expanded="false"
                                 class="navMenu invisible h-0 md:group-hover:visible md:group-hover:h-[9rem] duration-500 md:absolute -left-20 bg-white rounded-md py-2 w-64 z-30 overflow-hidden">
-        
+
                                 <ul class="text-gray-600 flex flex-wrap justify-center [&>*]:py-3">
                                     <li>
-                                        <a data-service="civil" class="serviceLink px-1 md:px-2 py-1 md:py-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 "
+                                        <a data-service="civil"
+                                            class="serviceLink px-1 md:px-2 py-1 md:py-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 "
                                             href="./pojects.html" aria-label="Go to the Civil Works Page">
                                             Civil Works
                                         </a>
@@ -137,7 +142,7 @@
                                 </ul>
                             </div>
                         </li>
-        
+
                         <li class="group">
                             <a data-service="all"
                                 class="serviceLink block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:group-hover:text-[var(--chamanke-blue)] group-hover:font-semibold md:p-0 uppercase"
@@ -149,7 +154,7 @@
         </nav>
 
         <!-- HERO Section =================================================================================================================-->
-        <section class="pt-10 bg-slate-50 pb-20">
+        <section class="pt-10  bg-slate-50 pb-20">
             <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold ml-6 lg:ml-9 text-[#0C4773]">Chamanke Organizational Staff</h1>
             <p class="px-6 py-4 max-w-3xl pb-8 lg:max-w-none lg:px-9 md:text-xl ">
                 The company is proud with its local and international staff that are trained to deliver a professional service with an extra focus on the
@@ -158,7 +163,7 @@
                 order to become one
                 of the leading constructional and logistical company’s in the Kurdistan Region of Iraq.
                 <br>
-                Chamanke Company staff is one-of-a-kind. Every member of our company is focused on only one thing … Providing the best service possible for
+                Chamanke Company staff is one-of-a-kind. Every member of our company is focused on only one thing — Providing the best service possible for
                 Chamanke comapny's
                 clients.
             </p>
@@ -168,17 +173,14 @@
                 <h2 class="pb-4 md:pb-12 lg:pb-20 text-lg sm:text-xl md:text-2xl lg:text-3xl text-[#0C4773] font-semibold text-center capitalize">Meet the
                     forces that drive Chamanke onwards and upwards</h2>
 
-                <!-- text-[#ba3948] -->
-                <!-- [&>*]:bg-gradient-to-r from-[#0c4773] to-transparent [&>*]:rounded-md -->
                 <ul class="flex flex-wrap gap-10 sm:gap-16 md:gap-x-24 lg:gap-x-32  justify-center lg:justify-evenly xl:px-28  [&>*]:py-6">
                     <li>
                         <figure class="bg-gradient-to-r from-[#0c4773] to-transparent rounded-md">
-                            <img class="max-w-[10rem] md:max-w-[14rem] max-h-[10rem] md:max-h-[14rem]" src="./img/staff-page/Omed.png"
-                                alt="Omed Taher's photo">
+                            <img class="max-w-[10rem] md:max-w-[14rem] max-h-[10rem] md:max-h-[14rem]" src="./img/staff-page/Omed.png" alt="Omed Taher's photo">
                         </figure>
                         <div class="text-center pt-3">
-                            <span class=" text-red-800 font-bold ">Omed Taher</span>
-                            <span class="block text-[#0c4773] italic ">CEO</span>
+                            <span class=" text-[var(--chamanke-red)] font-semibold">Omed Taher</span>
+                            <span class="block text-[#0c4773] italic">CEO</span>
                         </div>
                     </li>
 
@@ -188,19 +190,18 @@
                                 alt="Haval Suleiman's photo">
                         </figure>
                         <div class="text-center pt-3">
-                            <span class=" text-red-800 font-bold ">Haval Suleiman</span>
-                            <span class="block text-[#0c4773] italic ">Managing Director</span>
+                            <span class="text-[var(--chamanke-red)] font-semibold">Haval Suleiman</span>
+                            <span class="block text-[#0c4773] italic">Managing Director</span>
                         </div>
                     </li>
 
                     <li>
                         <figure class="bg-gradient-to-r from-[#0c4773] to-transparent rounded-md">
-                            <img class="max-w-[10rem] md:max-w-[14rem] max-h-[10rem] md:max-h-[14rem]" src="./img/staff-page/Sami.png"
-                                alt="Sami Goran's photo">
+                            <img class="max-w-[10rem] md:max-w-[14rem] max-h-[10rem] md:max-h-[14rem]" src="./img/staff-page/Sami.png" alt="Sami Goran's photo">
                         </figure>
                         <div class="text-center pt-3">
-                            <span class=" text-red-800 font-bold ">Sami Goran</span>
-                            <span class="block text-[#0c4773] italic ">Operations Manager</span>
+                            <span class="text-[var(--chamanke-red)] font-semibold">Sami Goran</span>
+                            <span class="block text-[#0c4773] italic">Operations Manager</span>
                         </div>
                     </li>
 
@@ -210,47 +211,47 @@
                                 alt="Sagvan Ezzaddin's photo">
                         </figure>
                         <div class="text-center pt-3">
-                            <span class=" text-red-800 font-bold ">Sagvan Ezzaddin</span>
-                            <span class="block text-[#0c4773] italic ">Logistics Manager</span>
+                            <span class="text-[var(--chamanke-red)] font-semibold">Sagvan Ezzaddin</span>
+                            <span class="block text-[#0c4773] italic">Logistics Manager</span>
                         </div>
                     </li>
 
                     <li>
                         <figure class="bg-gradient-to-r from-[#0c4773] to-transparent rounded-md">
-                            <img class="max-w-[10rem] md:max-w-[14rem] max-h-[10rem] md:max-h-[14rem]" src="./img/staff-page/Ababakr.png"
+                            <img loading="lazy" class="max-w-[10rem] md:max-w-[14rem] max-h-[10rem] md:max-h-[14rem]" src="./img/staff-page/Ababakr.png"
                                 alt="Ababakr Omer's photo">
                         </figure>
                         <div class="text-center pt-3">
-                            <span class=" text-red-800 font-bold ">Ababakr Omer</span>
-                            <span class="block text-[#0c4773] italic ">Senior Civil Engineer</span>
+                            <span class="text-[var(--chamanke-red)] font-semibold">Ababakr Omer</span>
+                            <span class="block text-[#0c4773] italic">Senior Civil Engineer</span>
                         </div>
                     </li>
 
                     <li class="relative top-16">
                         <figure class="bg-gradient-to-r from-[#0c4773] to-transparent rounded-md">
-                            <img class="max-w-[10rem] md:max-w-[14rem] max-h-[10rem] md:max-h-[14rem]" src="./img/staff-page/Shivan.png"
+                            <img loading="lazy" class="max-w-[10rem] md:max-w-[14rem] max-h-[10rem] md:max-h-[14rem]" src="./img/staff-page/Shivan.png"
                                 alt="Shivan's photo">
                         </figure>
                         <div class="text-center pt-3">
-                            <span class=" text-red-800 font-bold ">Shivan</span>
-                            <span class="block text-[#0c4773] italic ">Lawyer</span>
+                            <span class="text-[var(--chamanke-red)] font-semibold">Shivan</span>
+                            <span class="block text-[#0c4773] italic">Lawyer</span>
                         </div>
                     </li>
 
                     <li>
                         <figure class="bg-gradient-to-r from-[#0c4773] to-transparent rounded-md">
-                            <img class="max-w-[10rem] md:max-w-[14rem] max-h-[10rem] md:max-h-[14rem]" src="./img/staff-page/Msheer.png"
+                            <img loading="lazy" class="max-w-[10rem] md:max-w-[14rem] max-h-[10rem] md:max-h-[14rem]" src="./img/staff-page/Msheer.png"
                                 alt="Msheer Abdullah's photo">
                         </figure>
                         <div class="text-center pt-3">
-                            <span class=" text-red-800 font-bold ">Msheer Abdullah</span>
-                            <span class="block text-[#0c4773] italic ">Accountant</span>
+                            <span class="text-[var(--chamanke-red)] font-semibold">Msheer Abdullah</span>
+                            <span class="block text-[#0c4773] italic">Accountant</span>
                         </div>
                     </li>
                 </ul>
             </div>
 
-            <p class="px-6 py-4 max-w-3xl pb-8 lg:max-w-none lg:px-9 md:text-xl">
+            <p class="px-6 lg:px-28 py-9 md:py-14 max-w-3xl lg:max-w-none md:text-xl text-center">
                 With a team of experienced personnel, Chamanke is capable of managing and delivering this project to the client within the time frame required.
                 Our employees
                 are genera lly well trained and follow an ongoing technical training to employ the international standards for h a ndling and safety in order to
@@ -267,83 +268,83 @@
 
                     <li class="relative top-16">
                         <figure class="bg-gradient-to-r from-[#0c4773] to-transparent rounded-md">
-                            <img class="max-w-[10rem] md:max-w-[14rem] max-h-[10rem] md:max-h-[14rem]" src="./img/staff-page/Ashty.png"
+                            <img loading="lazy" class="max-w-[10rem] md:max-w-[14rem] max-h-[10rem] md:max-h-[14rem]" src="./img/staff-page/Ashty.png"
                                 alt="Ashty Taher's photo">
                         </figure>
                         <div class="text-center pt-3">
-                            <span class=" text-red-800 font-bold ">Ashty Taher</span>
-                            <span class="block text-[#0c4773] italic ">HR/Contract <br> Specialist</span>
+                            <span class="text-[var(--chamanke-red)] font-semibold">Ashty Taher</span>
+                            <span class="block text-[#0c4773] italic">HR/Contract <br> Specialist</span>
                         </div>
                     </li>
 
                     <li>
                         <figure class="bg-gradient-to-r from-[#0c4773] to-transparent rounded-md">
-                            <img class="max-w-[10rem] md:max-w-[14rem] max-h-[10rem] md:max-h-[14rem]" src="./img/staff-page/Laween.png"
+                            <img loading="lazy" class="max-w-[10rem] md:max-w-[14rem] max-h-[10rem] md:max-h-[14rem]" src="./img/staff-page/Laween.png"
                                 alt="Laween R. Hamza's photo">
                         </figure>
                         <div class="text-center pt-3">
-                            <span class=" text-red-800 font-bold ">Laween R. Hamza</span>
-                            <span class="block text-[#0c4773] italic ">Tendering & Proposal <br> Engineer</span>
+                            <span class="text-[var(--chamanke-red)] font-semibold">Laween R. Hamza</span>
+                            <span class="block text-[#0c4773] italic">Tendering & Proposal <br> Engineer</span>
                         </div>
                     </li>
 
                     <li class="relative top-16">
                         <figure class="bg-gradient-to-r from-[#0c4773] to-transparent rounded-md">
-                            <img class="max-w-[10rem] md:max-w-[14rem] max-h-[10rem] md:max-h-[14rem]" src="./img/staff-page/Abdullah.png"
+                            <img loading="lazy" class="max-w-[10rem] md:max-w-[14rem] max-h-[10rem] md:max-h-[14rem]" src="./img/staff-page/Abdullah.png"
                                 alt="Abdullah Geylani's photo">
                         </figure>
                         <div class="text-center pt-3">
-                            <span class=" text-red-800 font-bold ">Abdullah Geylani</span>
-                            <span class="block text-[#0c4773] italic ">QA/QC Engineer</span>
+                            <span class="text-[var(--chamanke-red)] font-semibold">Abdullah Geylani</span>
+                            <span class="block text-[#0c4773] italic">QA/QC Engineer</span>
                         </div>
                     </li>
 
                     <li>
                         <figure class="bg-gradient-to-r from-[#0c4773] to-transparent rounded-md">
-                            <img class="max-w-[10rem] md:max-w-[14rem] max-h-[10rem] md:max-h-[14rem]" src="./img/staff-page/Maa'wa.png"
+                            <img loading="lazy" class="max-w-[10rem] md:max-w-[14rem] max-h-[10rem] md:max-h-[14rem]" src="./img/staff-page/Maa'wa.png"
                                 alt="Maa'wa Falah's photo">
                         </figure>
                         <div class="text-center pt-3">
-                            <span class=" text-red-800 font-bold ">Maa'wa Falah</span>
-                            <span class="block text-[#0c4773] italic ">Invoice Tracker</span>
+                            <span class="text-[var(--chamanke-red)] font-semibold">Maa'wa Falah</span>
+                            <span class="block text-[#0c4773] italic">Invoice Tracker</span>
                         </div>
                     </li>
 
                     <li class="relative top-16">
                         <figure class="bg-gradient-to-r from-[#0c4773] to-transparent rounded-md">
-                            <img class="max-w-[10rem] md:max-w-[14rem] max-h-[10rem] md:max-h-[14rem]" src="./img/staff-page/Ayad.png"
+                            <img loading="lazy" class="max-w-[10rem] md:max-w-[14rem] max-h-[10rem] md:max-h-[14rem]" src="./img/staff-page/Ayad.png"
                                 alt="Ayad Danial's photo">
                         </figure>
                         <div class="text-center pt-3">
-                            <span class=" text-red-800 font-bold ">Ayad Danial</span>
-                            <span class="block text-[#0c4773] italic ">HSE</span>
+                            <span class="text-[var(--chamanke-red)] font-semibold">Ayad Danial</span>
+                            <span class="block text-[#0c4773] italic">HSE</span>
                         </div>
                     </li>
 
                     <li>
                         <figure class="bg-gradient-to-r from-[#0c4773] to-transparent rounded-md">
-                            <img class="max-w-[10rem] md:max-w-[14rem] max-h-[10rem] md:max-h-[14rem]" src="./img/staff-page/Mahabad.png"
+                            <img loading="lazy" class="max-w-[10rem] md:max-w-[14rem] max-h-[10rem] md:max-h-[14rem]" src="./img/staff-page/Mahabad.png"
                                 alt="Mahabad Abdulkhalq's photo">
                         </figure>
                         <div class="text-center pt-3">
-                            <span class=" text-red-800 font-bold ">Mahabad Abdulkhalq</span>
-                            <span class="block text-[#0c4773] italic ">Mechanical Engineer</span>
+                            <span class="text-[var(--chamanke-red)] font-semibold">Mahabad Abdulkhalq</span>
+                            <span class="block text-[#0c4773] italic">Mechanical Engineer</span>
                         </div>
                     </li>
 
                     <li class="relative top-16">
                         <figure class="bg-gradient-to-r from-[#0c4773] to-transparent rounded-md">
-                            <img class="max-w-[10rem] md:max-w-[14rem] max-h-[10rem] md:max-h-[14rem]" src="./img/staff-page/Mohammed.png"
+                            <img loading="lazy" class="max-w-[10rem] md:max-w-[14rem] max-h-[10rem] md:max-h-[14rem]" src="./img/staff-page/Mohammed.png"
                                 alt="Mohammed Yassir's photo">
                         </figure>
                         <div class="text-center pt-3">
-                            <span class=" text-red-800 font-bold ">Mohammed Yassir</span>
-                            <span class="block text-[#0c4773] italic ">HSE</span>
+                            <span class="text-[var(--chamanke-red)] font-semibold">Mohammed Yassir</span>
+                            <span class="block text-[#0c4773] italic">HSE</span>
                         </div>
                     </li>
                 </ul>
             </div>
-            <p class="px-6 py-4 max-w-3xl pb-8 lg:max-w-none lg:px-9 md:text-xl">
+            <p class="px-6 lg:px-28 py-9 md:py-14 max-w-3xl lg:max-w-none md:text-xl text-center">
                 In addition to our experienced workers, we continuously recruit new fresh spirit workers, rising talent to add to our knowledgeable team. These
                 dedicated
                 “quality experts” include not only the employees that make the Chamanke company by hand, but the various other personnel needed to make a
@@ -360,49 +361,113 @@
                 <!-- Left Col -->
                 <div id="careers" class="grid max-w-xl w-11/12 mx-auto md:ml-4">
                     <div class="form px-6 py-8 bg-white ">
-                        <h3 class="text-[#2C463F] text-2xl font-semibold  mb-10">If you are interested in becoming a member of Chamanke family, go ahead and
-                            fill in the application form.</h3>
-                        <form>
-                            <div class="relative z-0 mb-6 w-auto group">
-                                <input type="name" name="floating_name" id="floating_name"
-                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-[#0C4773] peer"
+                        <span class="text-[#2C463F] text-2xl font-semibold  mb-10">
+                            If you are interested in becoming a member of Chamanke family, go ahead and fill in the application form.
+                        </span>
+                        
+                        <form action="https://formsubmit.co/e517c32f94f396d9f0edcdf9526368e8" method="POST" enctype="multipart/form-data" class="py-11">
+
+                            <div class="relative mb-8">
+                                <input type="name" name="Full Name" id="fullName"
+                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:border-[#0C4773] peer"
                                     placeholder=" " required />
-                                <label for="floating_name"
-                                    class="peer-focus:font-medium absolute text-md text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#0C4773]  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Full
-                                    Name
+                                <label for="fullName"
+                                    class="absolute top-3 text-md text-gray-500 peer-focus:text-[#0C4773] peer-focus:font-semibold duration-300 origin-[0] peer-focus:left-0 -translate-y-9 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-9 peer-focus:scale-90">
+                                    Full Name
                                 </label>
                             </div>
 
-                            <div class="relative z-0 mb-6 w-full group">
-                                <input type="email" name="floating_email" id="floating_email"
-                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-[#0C4773] peer"
+                            <div class="relative mb-8">
+                                <input type="email" name="email" id="email"
+                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:border-[#0C4773] peer"
                                     placeholder=" " required />
-                                <label for="floating_email"
-                                    class="peer-focus:font-medium absolute text-md text-gray-500  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#0C4773]  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email
+                                <label for="email"
+                                    class="absolute top-3 text-md text-gray-500 peer-focus:text-[#0C4773] peer-focus:font-semibold duration-300 origin-[0] peer-focus:left-0 -translate-y-9 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-9 peer-focus:scale-90">
+                                    Email
                                 </label>
                             </div>
 
-                            <div class="relative z-0 mb-6 group">
-                                <input type="file" name="floating_file" id="floating_file" class="hidden" placeholder=" " required />
-                                <label for="floating_file"
-                                    class="block text-gray-500 border-0 border-b-2 border-gray-300 hover:border-[#0C4773] hover:cursor-pointer">Your
-                                    CV <i class="scale-125 ml-3 py-2 fa fa-cloud-upload"></i>
+                            <div class="relative mb-8">
+                                <input type="file" name="file" id="file" class="hidden" placeholder="" required />
+                                <label for="file" class="block text-gray-500 border-0 border-b-2 border-gray-300 hover:border-[#0C4773] hover:cursor-pointer">
+                                    <div class="flex gap-2">
+
+                                        <span id="uploadedFile">Your CV</span>
+                                        <svg class="h-6 w-6 fill-[#2C463F]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                                            <path
+                                                d="M144 480C64.5 480 0 415.5 0 336c0-62.8 40.2-116.2 96.2-135.9c-.1-2.7-.2-5.4-.2-8.1c0-88.4 71.6-160 160-160c59.3 0 111 32.2 138.7 80.2C409.9 102 428.3 96 448 96c53 0 96 43 96 96c0 12.2-2.3 23.8-6.4 34.6C596 238.4 640 290.1 640 352c0 70.7-57.3 128-128 128H144zm79-217c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l39-39V392c0 13.3 10.7 24 24 24s24-10.7 24-24V257.9l39 39c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0l-80 80z" />
+                                        </svg>
+                                    </div>
+
                                 </label>
                             </div>
 
                             <label for="message"
-                                class="now peer-focus:font-medium text-md text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#0C4773] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Your
-                                message
+                                class="now peer-focus:font-medium text-md text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#0C4773] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                                Your message
                             </label>
 
-                            <textarea id="message" rows="4"
-                                class="my-3 block p-2.5 w-full text-sm text-gray-900 bg-transparent border-2 rounded-lg border-gray-300 focus:outline-none focus:ring-0 focus:border-[#0C4773] peer">
+                            <textarea id="message" rows="4" name="message"
+                                class="my-3 block p-2.5 w-full text-sm text-gray-900 bg-transparent border-2 rounded-lg border-gray-300 focus:outline-none focus:border-[#0C4773] peer">
                             </textarea>
 
                             <button type="submit"
                                 class="text-white my-6 relative top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]  border-2 hover:scale-105 border-[#0C4773] bg-[#0C4773]/90 font-medium rounded-lg text-sm w-full max-w-[90px] sm:w-auto px-5 py-2.5 text-center">Submit
                             </button>
                         </form>
+
+
+
+                        <!-- <form action="https://formsubmit.co/e517c32f94f396d9f0edcdf9526368e8" method="POST" enctype="multipart/form-data" class="py-6">
+
+                            <div class="relative z-0 mb-6 w-auto group">
+                                <input type="name" name="Full Name" id="fullName"
+                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-[#0C4773] peer"
+                                    placeholder=" " required />
+                                <label for="fullName"
+                                    class="peer-focus:font-medium absolute text-md text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#0C4773]  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Full
+                                    Name
+                                </label>
+                            </div>
+
+                            <div class="relative z-0 mb-6 w-full group">
+                                <input type="email" name="email" id="email"
+                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-[#0C4773] peer"
+                                    placeholder=" " required />
+                                <label for="email"
+                                    class="peer-focus:font-medium absolute text-md text-gray-500  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#0C4773]  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                                    Email
+                                </label>
+                            </div>
+
+                            <div class="relative z-0 mb-6 group">
+                                <input type="file" name="file" id="file" class="hidden" placeholder="" required />
+                                <label for="file" class="block text-gray-500 border-0 border-b-2 border-gray-300 hover:border-[#0C4773] hover:cursor-pointer">
+                                    <div class="flex gap-2">
+
+                                        <span id="uploadedFile">Your CV</span>
+                                        <svg class="h-6 w-6 fill-[#2C463F]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                                            <path
+                                                d="M144 480C64.5 480 0 415.5 0 336c0-62.8 40.2-116.2 96.2-135.9c-.1-2.7-.2-5.4-.2-8.1c0-88.4 71.6-160 160-160c59.3 0 111 32.2 138.7 80.2C409.9 102 428.3 96 448 96c53 0 96 43 96 96c0 12.2-2.3 23.8-6.4 34.6C596 238.4 640 290.1 640 352c0 70.7-57.3 128-128 128H144zm79-217c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l39-39V392c0 13.3 10.7 24 24 24s24-10.7 24-24V257.9l39 39c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0l-80 80z" />
+                                        </svg>
+                                    </div>
+
+                                </label>
+                            </div>
+
+                            <label for="message"
+                                class="now peer-focus:font-medium text-md text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#0C4773] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                                Your message
+                            </label>
+
+                            <textarea id="message" rows="4" name="message"
+                                class="my-3 block p-2.5 w-full text-sm text-gray-900 bg-transparent border-2 rounded-lg border-gray-300 focus:outline-none focus:ring-0 focus:border-[#0C4773] peer">
+                            </textarea>
+
+                            <button type="submit"
+                                class="text-white my-6 relative top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]  border-2 hover:scale-105 border-[#0C4773] bg-[#0C4773]/90 font-medium rounded-lg text-sm w-full max-w-[90px] sm:w-auto px-5 py-2.5 text-center">Submit
+                            </button>
+                        </form> -->
                     </div>
                 </div>
 
@@ -416,7 +481,7 @@
                     <!-- Contact info -->
                     <div class="[&>*]:py-2 mr-20">
                         <div>
-                            <span class="text-red-800 font-bold">Business Development</span>
+                            <span class="text-[var(--chamanke-red)] font-bold">Business Development</span>
                             <span class="block text-[#0c4773] font-semibold">Sami Salim</span>
 
                             <div>
@@ -438,7 +503,7 @@
                         </div>
 
                         <div>
-                            <span class="text-red-800 font-bold">Logistics</span>
+                            <span class="text-[var(--chamanke-red)] font-bold">Logistics</span>
                             <span class="block text-[#0c4773] font-semibold">Sagvan Ezzaddin</span>
 
                             <div>
@@ -460,7 +525,7 @@
                         </div>
 
                         <div>
-                            <span class="text-red-800 font-bold">Human Resources</span>
+                            <span class="text-[var(--chamanke-red)] font-bold">Human Resources</span>
                             <span class="block text-[#0c4773] font-semibold">Ashti T. Mohammed</span>
 
                             <div>
@@ -482,7 +547,7 @@
                         </div>
 
                         <div>
-                            <span class="text-red-800 font-bold">Accounting</span>
+                            <span class="text-[var(--chamanke-red)] font-bold">Accounting</span>
                             <span class="block text-[#0c4773] font-semibold">Haval Suleiman</span>
 
                             <div>
@@ -519,7 +584,7 @@
                         performing Constructions, transportations, Catering and trading oil products.
                     </p>
                 </div>
-        
+
                 <div class="md:ml-40 grid grid-cols-2 md:grid-cols-2 md:gap-44 lg:gap-72 justify-center items-center">
                     <div>
                         <h2 class="mb-6 text-sm font-bold text-gray-500 uppercase">Company</h2>
@@ -557,23 +622,25 @@
                     </div>
                 </div>
             </div>
-        
+
             <div class="px-4 py-6 bg-gray-100 md:flex md:items-center md:justify-between">
-                <span class="md:ml-16 text-sm text-gray-500 sm:text-center">
+                <small class="md:ml-16 text-sm text-gray-500 sm:text-center">
                     © 2023 <a href="./index.html">Chamanke™</a>. All Rights Reserved.
-                </span>
+                </small>
             </div>
         </footer>
-        
+
         <!-- back to top btn -->
         <div id="toTopBtn" class="fixed opacity-0 bottom-20 z-50 duration-300">
             <svg class="text-white hover:text-[#2e3c49] hover:bg-blue-100 text-4xl text-center bg-slate-300 rounded-2xl
-                     w-12 h-12 p-1.5 hover:font-bold " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                     w-12 h-12 p-1.5 hover:font-bold " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
             </svg>
         </div>
 
         <script src="./scripts/staffPage.js"></script>
+        <script src="./scripts/common.js"></script>
 
     </body>
 

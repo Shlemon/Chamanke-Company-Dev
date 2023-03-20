@@ -8,15 +8,20 @@
         <title>Chamanke Company</title>
         <link rel="stylesheet" href="./output.css">
         <link rel="stylesheet" href="./custom.css">
-        <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
 
 
     </head>
 
-    <body id="homePage">
+    <body>
 
         <!-- NAV Section ==================================================================================================================-->
-        <nav class="nav bg-white border-gray-100 border-b-2 px-2 sm:px-4 py-1.5 rounded">
+        <nav class="nav border-gray-100 border-b-2 px-2 sm:px-4 py-1.5 rounded">
             <div class="container flex flex-wrap justify-between mx-auto">
                 <a href="./index.html" class="flex items-center scale-[1.5] md:scale-[2]" aria-label="Go to Home Page">
                     <img src="./img/Chamanke.png" class="h-6 ml-5 md:ml-10 sm:h-9" alt="Chamanke Logo" />
@@ -179,9 +184,9 @@
 
         <!-- Services Section ======================================================================================================== -->
         <section>
-            <div id="servicesContainer" class="relative overflow-hidden  z-10 bg-black/70">
+            <div id="servicesContainer" class="relative overflow-hidden ">
                 <img id="servicesImg"
-                    class="h-[45dvh] min-[500px]:h-[50dvh] sm:h-[55dvh] md:h-[60dvh] lg:h-[100dvh] w-full p-0 bg-cover brightness-75 bg-no-repeat transition-all duration-500 ease-in-out"
+                    class="h-[45vh] min-[500px]:h-[50vh] sm:h-[55vh] md:h-[60vh] lg:h-[80vh] xl:h-[100vh] w-full p-0 bg-cover brightness-[0.6] bg-no-repeat transition-all duration-500 ease-in-out"
                     src="./img/Snow-removing.jpg" alt="">
 
                 <div class="absolute top-[5%] sm:top-[20%] -translate-x-1/2 left-1/2 w-10/12  md:h-[15rem] p-4 md:p-6">
@@ -197,7 +202,7 @@
                     <div class="flex justify-center mt-8 sm:mt-14 md:mt-20">
                         <button type="button" class="text-white bg-[var(--chamanke-red)] hover:bg-[var(--chamanke-blue)] duration-300 focus:ring-2
                         font-medium rounded-sm text-sm md:text-lg lg:scale-110 px-5 py-2.5 text-center mr-2 mb-2">
-                            <a id="civil" href="./pojects.html"> view projects</a>
+                            <a id="serviceBtn" data-service="civil" class="serviceLink" href="./pojects.html"> view projects</a>
                         </button>
 
                     </div>
@@ -209,7 +214,7 @@
                 <!-- Slider Buttons -->
                 <div class="absolute top-1/2 right-1 sm:scale-150  bg-[#3A454A]/50 hover:bg-slate-200/60 rounded-sm opacity-60 hover:opacity-100
                                     ">
-                    <button id="sliderNextBtn" name="Next Service Slide"
+                    <button id="nextServiceBtn" name="Next Service Slide"
                         class="h-14 w-7 p-1 flex justify-center items-center text-white hover:text-gray-600  hover:font-bold cursor-pointer duration-300 ">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
@@ -219,7 +224,7 @@
 
                 <div class="absolute top-1/2 left-1 sm:scale-150  bg-[#3A454A]/50 hover:bg-slate-200/60 rounded-sm opacity-60 hover:opacity-100
                                     ">
-                    <button id="sliderPrevBtn" name="Previous Service Slide"
+                    <button id="prevServiceBtn" name="Previous Service Slide"
                         class="h-14 w-7 p-1 flex justify-center items-center text-white hover:text-gray-600  hover:font-bold cursor-pointer duration-300 ">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -512,7 +517,7 @@
                 <div id="contact" class="grid row-auto max-w-[30rem] w-11/12 mx-auto md:mx-1  lg:h-[727px] pt-6">
                     <div class="form p-6 bg-white ">
                         <h3 class="text-[#2C463F] text-2xl font-semibold text-center mb-5">Say Something...</h3>
-                        <form id="contactForm" action="https://formsubmit.co/e517c32f94f396d9f0edcdf9526368e8" method="POST">
+                        <form id="contactForm" action="https://formsubmit.co/e517c32f94f396d9f0edcdf9526368e8" method="POST" >
                             <div class="relative z-0 mb-6 w-auto group">
                                 <input type="name" name="Full Name" id="fullName"
                                     class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-[#0C4773] peer"
@@ -659,9 +664,9 @@
             </div>
 
             <div class="px-4 py-6 bg-gray-100 md:flex md:items-center md:justify-between">
-                <span class="md:ml-16 text-sm text-gray-500 sm:text-center">
+                <small class="md:ml-16 text-sm text-gray-500 sm:text-center">
                     © 2023 <a href="./index.html">Chamanke™</a>. All Rights Reserved.
-                </span>
+                </small>
             </div>
         </footer>
 
@@ -674,6 +679,7 @@
         </div>
 
         <script src="./scripts/homePage.js"></script>
+        <script src="./scripts/common.js"></script>
 
     </body>
 

@@ -1,10 +1,12 @@
 // display the category based on the click from the services page
 window.onload = () => {
+  console.log(selectedServiceId);
   filterCards(selectedServiceId);
 };
 // getting the id of the clicked button from the services section of home page that was stored in sessionStorage
 const selectedServiceId = localStorage.getItem('selectedServiceId');
 const categoryButtons = document.querySelectorAll('.service-category');
+
 
 // store the id of the clicked service from the navBar
 const serviceLinks = document.querySelectorAll('.serviceLink');

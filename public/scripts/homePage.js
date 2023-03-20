@@ -1,94 +1,58 @@
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Nav burger buttons
-const navTogglers = document.querySelectorAll('.navToggle');
-const navMenus = document.querySelectorAll('.navMenu');
-const burgerBtn = document.querySelector('#burgerIcon');
-const closeBtn = document.querySelector('#closeIcon');
+'use strict';
 
-if (screen.width < 768) {
-navTogglers.forEach((toggler) => {
-  toggler.addEventListener('click', (e) => {
-    if (e.currentTarget === navTogglers[0]) {
-      updateNavMenu();
-    } else if (e.currentTarget === navTogglers[1]) {
-      showSubNavMenu(navMenus[1]);
-    } else if (e.currentTarget === navTogglers[2]) {
-      showSubNavMenu(navMenus[2]);
-    }
-  });
-});
-}
-
-
-function updateNavMenu() {
-  burgerBtn.classList.add('fade-out');
-
-  setTimeout(() => {
-    burgerBtn.classList.toggle('hidden');
-    closeBtn.classList.toggle('fade-in');
-    closeBtn.classList.toggle('hidden');
-    navMenus[0].classList.toggle('hidden');
-    updateAriaAttribute(navMenus[0]);
-  }, 100);
-}
-
-function showSubNavMenu(menu) {
-  menu.classList.toggle('invisible');
-  menu.classList.toggle('h-[10rem]');
-  updateAriaAttribute(menu);
-}
-
-function updateAriaAttribute(menu) {
-  if (menu.classList.contains('hidden') || menu.classList.contains('invisible')) {
-    menu.setAttribute('aria-expanded', 'false');
-  } else {
-    menu.setAttribute('aria-expanded', 'true');
-  }
-}
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // SERVICES Section
-const container = {
+const services = [
+  {
+    title: 'Construction & building materials trade ',
+    image: 'img/Snow-removing.jpg',
+    description: 'Get All Your Civil Needs Done In An Effiecnt Way',
+    data: 'civil',
+  },
+  {
+    title: 'Catering & Housekeeping',
+    image: 'img/services/Catering.jpg',
+    description: 'A Catering Service You can Trust',
+    data: 'catering',
+  },
+  {
+    title: 'logistics',
+    image: 'img/services/logistics.jpg',
+    description: 'Logistics info',
+    data: 'logistics',
+  },
+  {
+    title: 'Procurment & Supply Chain',
+    image: 'img/services/Oil Trading.jpg',
+    description: 'Procurement & Supply Chain info',
+    data: 'procurement',
+  },
+  {
+    title: 'Mechanical & Maintenance Works',
+    image: 'img/services/Utility.jpeg',
+    description: 'Mechanical & Maintenance Works info',
+    data: 'maintenance',
+  },
+];
+const servicesSection = {
   servicesContainer: document.querySelector('#servicesContainer'),
-  img: document.querySelector('#servicesImg'),
-  title: document.querySelector('#servicesTitle'),
-  description: document.querySelector('#servicesDescription'),
-  btn: document.querySelector('#civil'),
-  nextBtn: document.querySelector('#sliderNextBtn'),
-  prevBtn: document.querySelector('#sliderPrevBtn'),
+  serviceImg: document.querySelector('#servicesImg'),
+  serviceTitle: document.querySelector('#servicesTitle'),
+  serviceDescription: document.querySelector('#servicesDescription'),
+  serviceBtn: document.querySelector('#serviceBtn'),
+  nextServiceBtn: document.querySelector('#nextServiceBtn'),
+  prevServiceBtn: document.querySelector('#prevServiceBtn'),
 };
+const { servicesContainer, serviceImg, serviceTitle, serviceDescription, serviceBtn, nextServiceBtn, prevServiceBtn } = servicesSection;
 
-// store the id of the clicked service from the Services Section to use it for the filtering in the projects page
-container.btn.addEventListener('click', (e) => {
-  const clickedId = e.target.id;
-
-  localStorage.setItem('selectedServiceId', clickedId);
-});
-
-// store the id of the clicked service from the navBar
-const serviceLinks = document.querySelectorAll('.serviceLink');
-
-serviceLinks.forEach((link) => {
-  link.addEventListener('click', () => {
-    const clickedLink = link.getAttribute('data-service');
-    console.log(clickedLink);
-    localStorage.setItem('selectedServiceId', clickedLink);
-  });
-});
-
-////////////////////////////////////////////////////////////////////////
-let currentIndex = 0;
-let isDragging = false;
-let startPosition = null;
-
-container.servicesContainer.addEventListener('click', (e) => {
-  if (e.target.closest('#sliderNextBtn, #sliderNextBtn svg')) {
+servicesContainer.addEventListener('click', (e) => {
+  if (e.target.closest('#nextServiceBtn, #nextServiceBtn svg')) {
     currentIndex++;
     if (currentIndex >= services.length) currentIndex = 0;
 
     crossfade();
   }
 
-  if (e.target.closest('#sliderPrevBtn, #sliderPrevBtn svg')) {
+  if (e.target.closest('#prevServiceBtn, #prevServiceBtn svg')) {
     currentIndex--;
     if (currentIndex < 0) currentIndex = services.length - 1;
 
@@ -96,41 +60,41 @@ container.servicesContainer.addEventListener('click', (e) => {
   }
 });
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
 // pointer events (mouse + touch + stylus...etc.)
+let currentIndex = 0;
+let isDragging = false;
+let startPosition = null;
 
-container.servicesContainer.addEventListener('pointerdown', (e) => {
-  // prevent selecting
+servicesContainer.addEventListener('pointerdown', (e) => {
   e.preventDefault();
   isDragging = true;
   startPosition = e.clientX;
-  container.servicesContainer.style.cursor = 'grabbing';
+  servicesContainer.style.cursor = 'grabbing';
 });
 
-container.servicesContainer.addEventListener('pointermove', (e) => {
-  // prevent selecting
+servicesContainer.addEventListener('pointermove', (e) => {
   e.preventDefault();
   if (isDragging) {
     const delta = e.clientX - startPosition;
     if (delta > 11) {
       isDragging = false;
-      container.nextBtn.click();
+      nextServiceBtn.click();
     } else if (delta < -11) {
       isDragging = false;
-      container.prevBtn.click();
+      prevServiceBtn.click();
     }
   }
 });
 
-container.servicesContainer.addEventListener('pointerup', () => {
+servicesContainer.addEventListener('pointerup', () => {
   isDragging = false;
-  container.servicesContainer.style.cursor = 'default';
+  servicesContainer.style.cursor = 'default';
 });
 
 function crossfade() {
   // fade out current content
-  container.img.classList.remove('fade-in');
-  container.img.classList.add('fade-out');
+  serviceImg.classList.remove('fade-in');
+  serviceImg.classList.add('fade-out');
 
   setTimeout(() => {
     updateElements();
@@ -138,84 +102,57 @@ function crossfade() {
 }
 
 function updateElements() {
-  const currentData = services[currentIndex];
+  const currentService = services[currentIndex];
 
-  container.img.src = currentData.image;
-  container.title.textContent = currentData.title;
-  container.description.textContent = currentData.description;
-  container.btn.id = currentData.btnId;
+  serviceImg.src = currentService.image;
+  serviceTitle.textContent = currentService.title;
+  serviceDescription.textContent = currentService.description;
+  serviceBtn.setAttribute('data-service', currentService.data);
 
   // fade in the next content
-  container.img.classList.remove('fade-out');
-  container.img.classList.add('fade-in');
+  serviceImg.classList.remove('fade-out');
+  serviceImg.classList.add('fade-in');
 }
 
-const services = [
-  {
-    title: 'Construction & building materials trade ',
-    image: 'img/Snow-removing.jpg',
-    description: 'Get All Your Civil Needs Done In An Effiecnt Way',
-    btnId: 'civil',
-  },
-  {
-    title: 'Catering & Housekeeping',
-    image: 'img/services/Catering.jpg',
-    description: 'A Catering Service You can Trust',
-    btnId: 'catering',
-  },
-  {
-    title: 'logistics',
-    image: 'img/services/logistics.jpg',
-    description: 'Logistics info',
-    btnId: 'logistics',
-  },
-  {
-    title: 'Procurment & Supply Chain',
-    image: 'img/services/Oil Trading.jpg',
-    description: 'Procurement & Supply Chain info',
-    btnId: 'procurement',
-  },
-  {
-    title: 'Mechanical & Maintenance Works',
-    image: 'img/services/Utility.jpeg',
-    description: 'Mechanical & Maintenance Works info',
-    btnId: 'maintenance',
-  },
-];
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Reviews Section
-const reviews = document.querySelectorAll('.reviews-container .review');
-const reviewsContainer = document.querySelector('.reviews-container');
-let currentReview = 0;
-const nextReviewBtn = document.querySelector('#nextReview');
-const prevReviewBtn = document.querySelector('#prevReview');
+const reviewsSection = {
+  reviewsContainer: document.querySelector('.reviews-container'),
+  reviews: document.querySelectorAll('.reviews-container .review'),
+  nextReviewBtn: document.querySelector('#nextReview'),
+  prevReviewBtn: document.querySelector('#prevReview'),
+};
+
+const { reviewsContainer, reviews, nextReviewBtn, prevReviewBtn } = reviewsSection;
 
 nextReviewBtn.addEventListener('click', nextReview);
 prevReviewBtn.addEventListener('click', prevReview);
 
+let currentReview = 0;
 function nextReview() {
+  // remove the class added at the end
+  reviews[currentReview].classList.remove('slide-left-in');
+
   // slide out the current review
-  reviews[currentReview].classList.remove('swipe-left2');
-  reviews[currentReview].classList.add('swipe-left');
-  // wait for the sliding animation to finish (0.5s)
+  reviews[currentReview].classList.add('slide-left-out');
+
   setTimeout(() => {
     reviews[currentReview].classList.add('hidden');
 
     currentReview++;
     if (currentReview >= reviews.length) currentReview = 0;
 
-    // remove hidden and swipe classes from the next review after increasing the index
+    // remove classes from the next review after increasing the index
     reviews[currentReview].classList.remove('hidden');
-    reviews[currentReview].classList.remove('swipe-left', 'swipe-right2');
-    // add swipe-right class to animate new review entering from the right
-    reviews[currentReview].classList.add('swipe-left2');
+    reviews[currentReview].classList.remove('slide-left-out');
+
+    // animate new review entering from the right
+    reviews[currentReview].classList.add('slide-left-in');
   }, 500);
 }
 
 function prevReview() {
-  reviews[currentReview].classList.remove('swipe-right');
-  reviews[currentReview].classList.add('swipe-right2');
+  reviews[currentReview].classList.remove('slide-right-in');
+  reviews[currentReview].classList.add('slide-right-out');
 
   setTimeout(() => {
     reviews[currentReview].classList.add('hidden');
@@ -224,72 +161,13 @@ function prevReview() {
     if (currentReview < 0) currentReview = reviews.length - 1;
 
     reviews[currentReview].classList.remove('hidden');
-    reviews[currentReview].classList.remove('swipe-left', 'swipe-right2');
-    reviews[currentReview].classList.add('swipe-right');
+    reviews[currentReview].classList.remove('slide-right-out');
+
+    reviews[currentReview].classList.add('slide-right-in');
   }, 500);
 }
 
-// the extra animations sideways
-
-// function nextReview() {
-//   // slide out the current review
-//   reviews[currentReview].classList.remove('swipe-right');
-//   reviews[currentReview].classList.add('swipe-left');
-//   // wait for the sliding animation to finish (0.5s)
-//   setTimeout(() => {
-//     reviews[currentReview].classList.add('hidden');
-
-//     currentReview++;
-//     if (currentReview >= reviews.length) currentReview = 0;
-
-//     // remove hidden and swipe classes from the next review after increasing the index
-//     reviews[currentReview].classList.remove('hidden');
-//     reviews[currentReview].classList.remove('swipe-left', 'swipe-right');
-//     // add swipe-right class to animate new review entering from the right
-//     reviews[currentReview].classList.add('swipe-right');
-//   }, 500);
-// }
-
-// function prevReview() {
-//   reviews[currentReview].classList.remove('swipe-left2');
-//   reviews[currentReview].classList.add('swipe-right2');
-
-//   setTimeout(() => {
-//     reviews[currentReview].classList.add('hidden');
-
-//     currentReview--;
-//     if (currentReview < 0) currentReview = reviews.length - 1;
-
-//     reviews[currentReview].classList.remove('hidden');
-//     reviews[currentReview].classList.remove('swipe-left2', 'swipe-right2');
-//     reviews[currentReview].classList.add('swipe-left2');
-//   }, 500);
-// }
-
-// old code without animations
-
-// nextReviewBtn.addEventListener('click', () => {
-//   reviews[currentReview].classList.add('.swipe-left');
-//   reviews[currentReview].classList.add('hidden');
-//   currentReview++;
-//   if (currentReview >= reviews.length) {
-//     currentReview = 0;
-//   }
-//   reviews[currentReview].classList.remove('hidden');
-//   reviews[currentReview].classList.remove('swipe-left');
-// });
-
-// prevReviewBtn.addEventListener('click', () => {
-//   reviews[currentReview].classList.add('hidden');
-//   currentReview--;
-//   if (currentReview < 0) {
-//     currentReview = reviews.length - 1;
-//   }
-//   reviews[currentReview].classList.remove('hidden');
-// });
-
 reviewsContainer.addEventListener('pointerdown', (e) => {
-  // prevent selecting
   e.preventDefault();
   isDragging = true;
   startPosition = e.clientX;
@@ -297,7 +175,6 @@ reviewsContainer.addEventListener('pointerdown', (e) => {
 });
 
 reviewsContainer.addEventListener('pointermove', (e) => {
-  // prevent selecting
   e.preventDefault();
   if (isDragging) {
     const delta = e.clientX - startPosition;
@@ -317,25 +194,10 @@ reviewsContainer.addEventListener('pointerup', () => {
 });
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// back to top Btn
-const toTopBtn = document.querySelector('#toTopBtn');
-window.addEventListener('scroll', handleScroll);
-
-function handleScroll() {
-  if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-    toTopBtn.style.opacity = 1;
-    screen.width <= 450 ? (toTopBtn.style.right = '15px') : (toTopBtn.style.right = '50px');
-  } else {
-    toTopBtn.style.opacity = 0;
-    toTopBtn.style.right = '0px';
-  }
-}
-
-toTopBtn.addEventListener('click', () => {
-  document.documentElement.scrollTop = 0;
-  document.body.scrollTop = 0;
-});
-
+setInterval(() => {
+  nextServiceBtn.click();
+  nextReviewBtn.click();
+}, 5000);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 const form = document.getElementById('contactForm');
 

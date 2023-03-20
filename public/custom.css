@@ -1,17 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 * {
   font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* :root {
-  --chamanke-blue: #1642a0;
-  --chamanke-red: #e04639;
-  --chamanke-light-blue: #0a88a3;
-  --chamanke-green: #007832;
-  --chamanke-gray: #74878e
-  --my-blue: #0C4773
-} */
 :root {
   --chamanke-blue2: #1642a0;
   --chamanke-blue: #2e3c49;
@@ -27,41 +21,22 @@
 }
 
 
-
-/* Hide scrollbar in samller window sizes for Chrome, Safari and Opera */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.reveal {
-  position: relative;
-  transform: translateY(150px);
-  opacity: 0;
-  transition: all 1s ease;
-}
-
-.reveal.active {
-  transform: translateY(0px);
-  opacity: 1;
-}
-/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* homepage: services section */
 #servicesContainer:before {
 content: "";
 position: absolute;
 width: 100%;
 height: 100%;
 background-color: #000;
-opacity: .5;
+opacity: .9;
 z-index: -1;
-}
-
-
-.fade-out {
-  animation: fade-out 0.5s ease-in-out;
 }
 
 .fade-in {
   animation: fade-in 0.5s ease-in-out;
+}
+.fade-out {
+  animation: fade-out 0.5s ease-in-out;
 }
 
 
@@ -96,56 +71,24 @@ z-index: -1;
 }
 
 
+/* homepage: reviews section */
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* .swipe-right {
-  transform: translateX(100%);
-  transition: all 0.5s ease-in-out;
+.slide-left-out {
+  animation: slide-left-out 0.5s ease-in-out;
 }
 
-.swipe-left {
-  transform: translateX(-100%);
-  transition: all 0.5s ease-in-out;
-} */
-
-
-
-.swipe-left {
-  animation: swipe-left 0.5s ease-in-out;
+.slide-left-in {
+  animation: slide-left-in 0.5s ease-in-out;
+}
+.slide-right-in {
+  animation: slide-right-in 0.5s ease-in-out;
 }
 
-.swipe-right {
-  animation: swipe-right 0.5s ease-in-out;
+.slide-right-out {
+  animation: slide-right-out 0.5s ease-in-out;
 }
 
-.swipe-left2 {
-  animation: swipe-left2 0.5s ease-in-out;
-}
-.swipe-right2 {
-  animation: swipe-right2 0.5s ease-in-out;
-}
-
-
-@keyframes swipe-left {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-70%);
-  }
-}
-@keyframes swipe-left2 {
+@keyframes slide-left-in {
   0% {
     transform: translateX(70%);
   }
@@ -154,7 +97,16 @@ z-index: -1;
   }
 }
 
-@keyframes swipe-right {
+@keyframes slide-left-out {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-70%);
+  }
+}
+
+@keyframes slide-right-in {
   0% {
     transform: translateX(-70%);
   }
@@ -163,11 +115,25 @@ z-index: -1;
   }
 }
 
-@keyframes swipe-right2 {
+@keyframes slide-right-out {
   0% {
     transform: translateX(0%);
   }
   100% {
     transform: translateX(70%);
   }
+}
+
+/* company page: revealing the certificates */
+
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.reveal.active {
+  transform: translateY(0px);
+  opacity: 1;
 }

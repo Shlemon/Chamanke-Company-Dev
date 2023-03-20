@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+* {
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+
+:root {
+  --chamanke-blue2: #1642a0;
+  --chamanke-blue: #2e3c49;
+  --chamanke-red: #e04639;
+  --chamanke-light-blue: #0a88a3;
+  --chamanke-green: #007832;
+  --chamanke-gray: #74878e
+  --my-blue: #0C4773
+  --linkedIn:#007AB9,
+  --facebook:#1A6ED8,
+  --youtube:#FF0000,
+  --twitter:#1D9BF0
+}
+
+
+
+
+/* for the company page reveal the certificates */
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.reveal.active {
+  transform: translateY(0px);
+  opacity: 1;
+}
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+#servicesContainer:before {
+content: "";
+position: absolute;
+width: 100%;
+height: 100%;
+background-color: #000;
+opacity: .9;
+z-index: -1;
+}
+
+
+.fade-out {
+  animation: fade-out 0.5s ease-in-out;
+}
+
+.fade-in {
+  animation: fade-in 0.5s ease-in-out;
+}
+
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.75;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.swipe-left {
+  animation: swipe-left 0.5s ease-in-out;
+}
+
+.swipe-right {
+  animation: swipe-right 0.5s ease-in-out;
+}
+
+.swipe-left2 {
+  animation: swipe-left2 0.5s ease-in-out;
+}
+.swipe-right2 {
+  animation: swipe-right2 0.5s ease-in-out;
+}
+
+
+@keyframes swipe-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-70%);
+  }
+}
+
+
+
+@keyframes swipe-left2 {
+  0% {
+    transform: translateX(70%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes swipe-right {
+  0% {
+    transform: translateX(-70%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes swipe-right2 {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(70%);
+  }
+}
