@@ -9,7 +9,10 @@ const navBar = {
 };
 const { navTogglers, navMenus, burgerBtn, closeBtn } = navBar;
 
-if (screen.width < 768) {
+// if (screen.width < 768) {
+let isTouchDevices = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+if (isTouchDevices) {
   navTogglers.forEach((toggler) => {
     toggler.addEventListener('click', (e) => {
       if (e.currentTarget === navTogglers[0]) {
