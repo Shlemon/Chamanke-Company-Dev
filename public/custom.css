@@ -7,19 +7,15 @@
 }
 
 :root {
-  --chamanke-blue2: #1642a0;
-  --chamanke-blue: #2e3c49;
-  --chamanke-red: #e04639;
+  --chamanke-blue-main: #0C4773
+  --chamanke-dark-blue: #2e3c49;
   --chamanke-light-blue: #0a88a3;
-  --chamanke-green: #007832;
-  --chamanke-gray: #74878e
-  --my-blue: #0C4773
-  --linkedIn:#007AB9,
-  --facebook:#1A6ED8,
-  --youtube:#FF0000,
-  --twitter:#1D9BF0
+  --chamanke-red: #e04639;
+  --chamanke-midnight-green: #164E63;
+  --chamanke-japanese-indigo: #2C463F;
+  --chamanke-slate-gray: #74878e;
+  --chamanke-off-white: #fafbfa
 }
-
 
 /* homepage: services section */
 #servicesContainer:before {
@@ -80,13 +76,13 @@ z-index: -1;
 .slide-left-in {
   animation: slide-left-in 0.5s ease-in-out;
 }
+.slide-right-out {
+  animation: slide-right-out 0.5s ease-in-out;
+}
 .slide-right-in {
   animation: slide-right-in 0.5s ease-in-out;
 }
 
-.slide-right-out {
-  animation: slide-right-out 0.5s ease-in-out;
-}
 
 @keyframes slide-left-in {
   0% {

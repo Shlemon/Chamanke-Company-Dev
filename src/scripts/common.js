@@ -37,7 +37,7 @@ function showNavMenu() {
 
 function showSubNavMenu(menu) {
   menu.classList.toggle('invisible');
-  menu.classList.toggle('h-[10rem]');
+  menu.classList.toggle('h-[10.5rem]');
   updateAriaAttribute(menu);
 }
 
