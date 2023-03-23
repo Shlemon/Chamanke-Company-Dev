@@ -7,19 +7,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Chamanke Company</title>
         <link rel="stylesheet" href="./output.css">
-        <link rel="stylesheet" href="./custom.css">
+        <!-- <link rel="stylesheet" href="./custom.css"> -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet">
         <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
 
     </head>
 
-    <body id="homePage">
-
+    <body>
         <!-- NAV Section ==================================================================================================================-->
-        <nav class="nav bg-white border-gray-100 border-b-2 px-2 sm:px-4 py-1.5 rounded">
+        <nav class="nav border-gray-100 border-b-2 px-2 sm:px-4 py-1.5 rounded">
             <div class="container flex flex-wrap justify-between mx-auto">
                 <a href="./index.html" class="flex items-center scale-[1.5] md:scale-[2]" aria-label="Go to Home Page">
-                    <img src="./img/Chamanke.png" class="h-6 ml-5 md:ml-10 sm:h-9" alt="Chamanke Logo" />
+                    <img src="./img/home-page/nav-chamanke.png" class="h-6 ml-5 md:ml-10 sm:h-9" alt="Chamanke Logo" />
                 </a>
 
                 <!-- Burger Button -->
@@ -40,11 +44,11 @@
 
                 <div class="navMenu hidden transition-opacity w-full md:block lg:mr-60 md:w-auto" aria-expanded="false">
                     <ul
-                        class=" mr-30 flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
+                        class="mr-30 flex flex-col gap-1 md:gap-0 p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
 
                         <li class="relative group">
                             <button
-                                class="navToggle flex px-4 font-medium outline-none focus:outline-none py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:group-hover:text-[var(--chamanke-blue)] group-hover:font-semibold md:p-0 uppercase">
+                                class="navToggle flex px-4 font-medium outline-none focus:outline-none py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:group-hover:text-chamanke-dark-blue group-hover:font-semibold md:p-0 uppercase">
                                 About Us
                                 <svg class="w-6 h-6 ml-2" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd"
@@ -54,30 +58,30 @@
                             </button>
                             <!-- Dropdown Menu -->
                             <div aria-expanded="false"
-                                class="navMenu invisible h-0 md:group-hover:visible md:group-hover:h-[6.5rem] duration-500 md:absolute -left-8 bg-white rounded-md py-2 w-44 z-30 overflow-hidden">
+                                class="navMenu invisible md:group-hover:visible h-0 md:group-hover:h-[9.5rem] duration-500 md:absolute right-0 lg:w-32 bg-white rounded-md py-2 z-30 overflow-hidden">
 
-                                <ul class="text-gray-600 grid md:grid-cols-2 gap-2 [&>*]:py-1 md:[&>*]:py-3 px-2 ">
+                                <ul class="text-gray-600">
                                     <li>
-                                        <a class="serviceLink px-1 md:px-2 py-1 md:py-2 rounded-sm font-medium  hover:text-black hover:bg-gray-200"
-                                            href="./company.html" aria-label="Go to Company Page">
+                                        <a class="serviceLink block p-2 rounded-sm font-medium  hover:text-black hover:bg-gray-200" href="./about.html"
+                                            aria-label="Go to Company Page">
                                             Company
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="serviceLink px-1 md:px-2 py-1 md:py-2 rounded-sm font-medium  hover:text-black hover:bg-gray-200"
-                                            href="./staff.html" aria-label="Go to Staff Page">
+                                        <a class="serviceLink block p-2 rounded-sm font-medium  hover:text-black hover:bg-gray-200" href="./staff.html"
+                                            aria-label="Go to Staff Page">
                                             Staff
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="serviceLink px-1 md:px-2 py-1 md:py-2 rounded-sm font-medium  hover:text-black hover:bg-gray-200"
-                                            href="./staff.html#careers" aria-label="Go to Careers Page">
+                                        <a class="serviceLink block p-2 rounded-sm font-medium  hover:text-black hover:bg-gray-200" href="./staff.html#careers"
+                                            aria-label="Go to Careers Page">
                                             Careers
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="serviceLink px-1 md:px-2 py-1 md:py-2 rounded-sm font-medium  hover:text-black hover:bg-gray-200"
-                                            href="#contact" aria-label="Go to Contact Page">
+                                        <a class="serviceLink block p-2 rounded-sm font-medium  hover:text-black hover:bg-gray-200" href="#contact"
+                                            aria-label="Go to Contact Page">
                                             Contant
                                         </a>
                                     </li>
@@ -87,7 +91,7 @@
 
                         <li class="relative group">
                             <button
-                                class="navToggle flex px-4 font-medium outline-none focus:outline-none py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:group-hover:text-[var(--chamanke-blue)] group-hover:font-semibold md:p-0 uppercase">
+                                class="navToggle flex px-4 font-medium outline-none focus:outline-none py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:group-hover:text-chamanke-dark-blue group-hover:font-semibold md:p-0 uppercase">
                                 Services
                                 <svg class="w-6 h-6 ml-2" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd"
@@ -97,40 +101,39 @@
                             </button>
                             <!-- Dropdown Menu -->
                             <div aria-expanded="false"
-                                class="navMenu invisible h-0 md:group-hover:visible md:group-hover:h-[9rem] duration-500 md:absolute -left-20 bg-white rounded-md py-2 w-64 z-30 overflow-hidden">
+                                class="navMenu invisible md:group-hover:visible h-0 md:group-hover:h-[14rem] duration-500 md:absolute right-0 lg:w-36 bg-white rounded-md py-2  z-30 overflow-hidden">
 
-                                <ul class="text-gray-600 flex flex-wrap justify-center [&>*]:py-3">
+                                <ul class="text-gray-600">
                                     <li>
-                                        <a data-service="civil"
-                                            class="serviceLink px-1 md:px-2 py-1 md:py-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 "
+                                        <a data-service="civil" class="serviceLink block p-1 md:p-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 "
                                             href="./pojects.html" aria-label="Go to the Civil Works Page">
                                             Civil Works
                                         </a>
                                     </li>
                                     <li>
                                         <a data-service="catering"
-                                            class="serviceLink px-1 md:px-2 py-1 md:py-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 "
+                                            class="serviceLink block p-1 md:p-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 "
                                             href="./pojects.html" aria-label="Go to the Catering Works Page">
                                             Catering
                                         </a>
                                     </li>
                                     <li>
                                         <a data-service="logistics"
-                                            class="serviceLink px-1 md:px-2 py-1 md:py-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 "
+                                            class="serviceLink block p-1 md:p-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 "
                                             href="./pojects.html" aria-label="Go to the Logistics Works Page">
                                             Logistics
                                         </a>
                                     </li>
                                     <li>
                                         <a data-service="procurement"
-                                            class="serviceLink px-1 md:px-2 py-1 md:py-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 "
+                                            class="serviceLink block p-1 md:p-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 "
                                             href="./pojects.html" aria-label="Go to the Procurment & Supply Chain Works Page">
                                             Procurment & Supply Chain
                                         </a>
                                     </li>
                                     <li>
                                         <a data-service="maintenance"
-                                            class="serviceLink px-1 md:px-2 py-1 md:py-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 "
+                                            class="serviceLink block p-1 md:p-2 font-medium rounded-sm hover:text-black hover:bg-gray-200 "
                                             href="./pojects.html" aria-label="Go to the Mechanical & Maintenance Works Page">
                                             Mechanical & Maintenance
                                         </a>
@@ -141,7 +144,7 @@
 
                         <li class="group">
                             <a data-service="all"
-                                class="serviceLink block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:group-hover:text-[var(--chamanke-blue)] group-hover:font-semibold md:p-0 uppercase"
+                                class="serviceLink block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:group-hover:text-chamanke-dark-blue group-hover:font-semibold md:p-0 uppercase"
                                 href="./pojects.html">Projects</a>
                         </li>
                     </ul>
@@ -152,11 +155,11 @@
         <!-- HERO Section =================================================================================================================-->
         <section>
             <div class="relative">
-                <img src="./img/card.jpg" class="w-full md:h-[40dvh] lg:h-[75dvh] xl:h-[90dvh]" alt="header image">
+                <img src="./img/home-page/hero-card-bg.jpg" class="w-full md:h-[40dvh] lg:h-[75dvh] xl:h-[90dvh]" alt="header image">
                 <div
                     class="absolute scale-[0.15] -top-72 -left-44 min-[500px]:-top-64 min-[500px]:-left-32 sm:scale-[0.2] sm:-top-52 sm:-left-28 md:scale-[0.25] md:-top-60 md:-left-28 lg:-top-48 lg:-left-20 lg:scale-[0.3] xl:-left-6 xl:scale-[0.35] ">
 
-                    <img src="./img/logo with name.png" alt="">
+                    <img src="./img/home-page/hero-logo+name.png" alt="">
                 </div>
 
                 <div
@@ -167,7 +170,7 @@
                     </p>
 
                     <p class="md:py-1 lg:py-2 font-bold">because we have <br>
-                        <span class="text-[var(--chamanke-red)] ">DONE</span> that job
+                        <span class="text-chamanke-red ">DONE</span> that job
                     </p>
                 </div>
 
@@ -179,10 +182,10 @@
 
         <!-- Services Section ======================================================================================================== -->
         <section>
-            <div id="servicesContainer" class="relative overflow-hidden  z-10 bg-black/70">
+            <div id="servicesContainer" class="relative overflow-hidden ">
                 <img id="servicesImg"
-                    class="h-[45dvh] min-[500px]:h-[50dvh] sm:h-[55dvh] md:h-[60dvh] lg:h-[100dvh] w-full p-0 bg-cover brightness-75 bg-no-repeat transition-all duration-500 ease-in-out"
-                    src="./img/Snow-removing.jpg" alt="">
+                    class="h-[45vh] min-[500px]:h-[50vh] sm:h-[55vh] md:h-[60vh] lg:h-[80vh] xl:h-[100vh] w-full p-0 bg-cover brightness-[0.6] bg-no-repeat transition-all duration-500 ease-in-out"
+                    src="./img/home-page/services/snow-removing.jpg" alt="">
 
                 <div class="absolute top-[5%] sm:top-[20%] -translate-x-1/2 left-1/2 w-10/12  md:h-[15rem] p-4 md:p-6">
 
@@ -195,9 +198,9 @@
                     </p>
 
                     <div class="flex justify-center mt-8 sm:mt-14 md:mt-20">
-                        <button type="button" class="text-white bg-[var(--chamanke-red)] hover:bg-[var(--chamanke-blue)] duration-300 focus:ring-2
+                        <button type="button" class="text-white bg-chamanke-red hover:bg-chamanke-dark-blue duration-300 focus:ring-2
                         font-medium rounded-sm text-sm md:text-lg lg:scale-110 px-5 py-2.5 text-center mr-2 mb-2">
-                            <a id="civil" href="./pojects.html"> view projects</a>
+                            <a id="serviceBtn" data-service="civil" class="serviceLink" href="./pojects.html"> view projects</a>
                         </button>
 
                     </div>
@@ -209,7 +212,7 @@
                 <!-- Slider Buttons -->
                 <div class="absolute top-1/2 right-1 sm:scale-150  bg-[#3A454A]/50 hover:bg-slate-200/60 rounded-sm opacity-60 hover:opacity-100
                                     ">
-                    <button id="sliderNextBtn" name="Next Service Slide"
+                    <button id="nextServiceBtn" name="Next Service Slide"
                         class="h-14 w-7 p-1 flex justify-center items-center text-white hover:text-gray-600  hover:font-bold cursor-pointer duration-300 ">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
@@ -219,7 +222,7 @@
 
                 <div class="absolute top-1/2 left-1 sm:scale-150  bg-[#3A454A]/50 hover:bg-slate-200/60 rounded-sm opacity-60 hover:opacity-100
                                     ">
-                    <button id="sliderPrevBtn" name="Previous Service Slide"
+                    <button id="prevServiceBtn" name="Previous Service Slide"
                         class="h-14 w-7 p-1 flex justify-center items-center text-white hover:text-gray-600  hover:font-bold cursor-pointer duration-300 ">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -234,7 +237,8 @@
 
         <!-- Testimonials Section ======================================================================================================== -->
         <section class="bg-white ">
-            <h2 class="pt-8 sm:pt-14 md:pt-20 pb-5 text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-wide text-cyan-900 ">
+            <h2
+                class="pt-8 sm:pt-14 md:pt-20 pb-5 text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-wide text-chamanke-midnight-green">
                 Testimonials
             </h2>
             <div class="reviews-container flex justify-center relative overflow-hidden">
@@ -254,7 +258,7 @@
                                 personnel were qualified and dedicated to their job and in good relation with all people on location.</p>
                         </blockquote>
                         <figcaption class="flex items-center justify-center mt-6 space-x-3">
-                            <img class="w-28 h-14 object-cover rounded-full" loading="lazy" src="img/Cleints/Independent-oil-Tools-logo.png"
+                            <img class="w-28 h-14 object-cover rounded-full" loading="lazy" src="img/home-page/Cleints/Independent-oil-Tools-logo.png"
                                 alt="profile picture">
                             <div class="flex items-center divide-x-2 divide-gray-500">
                                 <div class="pr-3 font-medium text-gray-900 ">Gavriloiu Gabriel</div>
@@ -282,7 +286,8 @@
                                 rooms are exceptionally clean and good service is provided in the laundry.</p>
                         </blockquote>
                         <figcaption class="flex items-center justify-center mt-6 space-x-0">
-                            <img class="w-24 h-10 object-contain rounded-full" loading="lazy" src="img/Cleints/Hunt-Oil-logo.png" alt="profile picture">
+                            <img class="w-24 h-10 object-contain rounded-full" loading="lazy" src="img/home-page/Cleints/Hunt-Oil-logo.png"
+                                alt="profile picture">
                             <div class="flex items-center divide-x-2 divide-gray-500">
                                 <div class="pr-3 font-medium text-gray-900">David Dunsby</div>
                                 <div class="pl-3 text-sm font-light text-gray-500">Senior Drilling Supervisor at HO</div>
@@ -315,7 +320,7 @@
                                 makes Chamanke Company a perfect partner as they are willing to give back to the local community.</p>
                         </blockquote>
                         <figcaption class="flex items-center justify-center mt-6 space-x-3">
-                            <img class="w-10 h-10 object-contain rounded-full" loading="lazy" src="img/Cleints/HKN-logo.png" alt="profile picture">
+                            <img class="w-10 h-10 object-contain rounded-full" loading="lazy" src="img/home-page/Cleints/HKN-logo.png" alt="profile picture">
                             <div class="flex items-center divide-x-2 divide-gray-500">
                                 <div class="pr-3 font-medium text-gray-900">Geoff Potter</div>
                                 <div class="pl-3 text-sm font-light text-gray-500">Materials & Logistics Manager at HKN</div>
@@ -340,7 +345,7 @@
                                 personnel is well trained and qualified. We are then happy to recommend Chamanke to any prospective clients.</p>
                         </blockquote>
                         <figcaption class="flex items-center justify-center mt-6 space-x-1">
-                            <img class="w-32 h-full  rounded-full" loading="lazy" src="img/Cleints/Parker-drilling-logo-2.jpg" alt="profile picture">
+                            <img class="w-32 h-full  rounded-full" loading="lazy" src="img/home-page/Cleints/Parker-drilling-logo-2.jpg" alt="profile picture">
                             <div class="flex items-center divide-x-2 divide-gray-500">
                                 <div class="pr-3 font-medium text-gray-900">Mark Sharkey</div>
                                 <div class="pl-3 text-sm font-light text-gray-500">Operation Superintendent at PD</div>
@@ -351,20 +356,20 @@
 
 
                 <!-- Slider Buttons -->
-                <div class="absolute top-1/2 right-4 xl:right-[12%] scale-110 md:scale-150 bg-slate-100/60 hover:bg-[var(--chamanke-red)] rounded-full 
+                <div class="absolute top-1/2 right-4 xl:right-[12%] scale-110 md:scale-150 bg-slate-100/60 hover:bg-chamanke-red rounded-full 
                                                                                 ">
                     <button id="nextReview" name="Next Review"
-                        class="h-7 w-7 p-1 flex justify-center items-center text-[var(--chamanke-red)] hover:text-white font-bold cursor-pointer duration-300 ">
+                        class="h-7 w-7 p-1 flex justify-center items-center text-chamanke-red hover:text-white font-bold cursor-pointer duration-300 ">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                         </svg>
                     </button>
                 </div>
 
-                <div class="absolute top-1/2 left-4 xl:left-[12%] scale-110 md:scale-150 bg-slate-100/60 hover:bg-[var(--chamanke-red)] rounded-full 
+                <div class="absolute top-1/2 left-4 xl:left-[12%] scale-110 md:scale-150 bg-slate-100/60 hover:bg-chamanke-red rounded-full 
                                                                                 ">
                     <button id="prevReview" name="Previous Review"
-                        class="h-7 w-7 p-1 flex justify-center items-center text-[var(--chamanke-red)] hover:text-white font-bold cursor-pointer duration-300 ">
+                        class="h-7 w-7 p-1 flex justify-center items-center text-chamanke-red hover:text-white font-bold cursor-pointer duration-300 ">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                         </svg>
@@ -375,12 +380,12 @@
 
         </section>
 
-        <!-- Cleints Section ========================================================================================================== -->
-        <section class=" bg-gray-200/80">
+        <!-- Clients Section ========================================================================================================== -->
+        <section class="  bg-chamanke-slate-gray/10">
             <div id="partners" class="lg:pt-4 lg:pb-12 mx-auto items-center justify-items-center grid grid-cols-1 md:grid-cols-2 overflow-hidden">
 
                 <div class="p-5">
-                    <h2 class="text-3xl md:text-5xl font-semibold text-cyan-900  uppercase">Cleints & Partners</h2>
+                    <h2 class="text-3xl md:text-5xl font-semibold text-chamanke-midnight-green  uppercase">Clients & Partners</h2>
                     <p class="block max-w-sm text-gray-700 py-3  text-lg">
                         See why over 10+ brands trust Chemanke to help them grow and build successful businesses.
                     </p>
@@ -391,62 +396,63 @@
 
                     <div class="w-[12rem]  mx-1 md:mx-4 p-4 md:p-2">
                         <a href="https://www.taqa.com/" target="_blank" aria-label="Visit Client Company's Website">
-                            <img loading="lazy" src="img/Cleints/taqa-logo.svg" alt="Taqa Company Logo">
+                            <img loading="lazy" src="img/home-page/Cleints/taqa-logo.svg" alt="Taqa Company Logo">
                         </a>
                     </div>
                     <div class="w-[12rem]  mx-1 md:mx-4 p-4 md:p-2">
                         <a href="https://www.hknenergy.com/" target="_blank" aria-label="Visit Client Company's Website">
-                            <img loading="lazy" src="img/Cleints/HKN-logo.png" alt="HKN Company Logo" class="scale-75">
+                            <img loading="lazy" src="img/home-page/Cleints/HKN-logo.png" alt="HKN Company Logo" class="scale-75">
                         </a>
                     </div>
                     <div class="w-[12rem]  mx-1 md:mx-4 p-4 md:p-2">
                         <a href="https://www.gulfkeystone.com/" target="_blank" aria-label="Visit Client Company's Website">
-                            <img loading="lazy" src="img/Cleints/GKP-logo.svg" alt="GKP Company Logo" class="scale-90">
+                            <img loading="lazy" src="img/home-page/Cleints/GKP-logo.svg" alt="GKP Company Logo" class="scale-90">
                         </a>
                     </div>
                     <div class="w-[12rem] mx-1 md:mx-4 p-4 md:p-2">
                         <a href="https://www.chevron.com/" target="_blank" aria-label="Visit Client Company's Website">
-                            <img loading="lazy" src="img/Cleints/Chevron-logo.svg.png" alt="Chevron Company Logo" class="scale-75">
+                            <img loading="lazy" src="img/home-page/Cleints/Chevron-logo.svg.png" alt="Chevron Company Logo" class="scale-75">
                         </a>
                     </div>
                     <div class="w-[12rem]  mx-1 md:mx-4 p-4 md:p-2">
                         <a href="https://gov.krd/english/" target="_blank" aria-label="Visit Client Company's Website">
-                            <img loading="lazy" src="img/Cleints/KRG-logo.png" alt="KRG logo" class="scale-90">
+                            <img loading="lazy" src="img/home-page/Cleints/KRG-logo.png" alt="KRG logo" class="scale-90">
                         </a>
                     </div>
                     <div class="w-[12rem] mx-1 md:mx-4 p-4 md:p-2">
                         <a href="https://iotgroup.com/" target="_blank" aria-label="Visit Client Company's Website">
-                            <img loading="lazy" src="img/Cleints/Independent-oil-Tools-logo.png" alt="Independent Oil Tools Company Logo" class="  scale-150">
+                            <img loading="lazy" src="img/home-page/Cleints/Independent-oil-Tools-logo.png" alt="Independent Oil Tools Company Logo"
+                                class="  scale-150">
                         </a>
                     </div>
                     <div class="w-[12rem]  mx-1 md:mx-4 p-4 md:p-2">
                         <a href="http://www.huntoil.com/" target="_blank" aria-label="Visit Client Company's Website">
-                            <img loading="lazy" src="img/Cleints/Hunt-Oil-logo.png" alt="Hunt Oil Company Logo" class="scale-125">
+                            <img loading="lazy" src="img/home-page/Cleints/Hunt-Oil-logo.png" alt="Hunt Oil Company Logo" class="scale-125">
                         </a>
                     </div>
                     <div class="w-[12rem]  mx-1 md:mx-4 p-4 md:p-2">
                         <a href="https://www.dno.no/" target="_blank" aria-label="Visit Client Company's Website">
-                            <img loading="lazy" src="img/Cleints/DNO-logo.svg" alt="DNO Company Logo" class="scale-90">
+                            <img loading="lazy" src="img/home-page/Cleints/DNO-logo.svg" alt="DNO Company Logo" class="scale-90">
                         </a>
                     </div>
                     <div class="w-[12rem] mx-1 md:mx-4 p-4 md:p-2">
                         <a href="http://khk-logistics.com/dqe-international/" target="_blank" aria-label="Visit Client Company's Website">
-                            <img loading="lazy" src="img/Cleints/DQE-logo.png" alt="DQE Company Logo" class="  scale-150">
+                            <img loading="lazy" src="img/home-page/Cleints/DQE-logo.png" alt="DQE Company Logo" class="  scale-150">
                         </a>
                     </div>
                     <div class="w-[12rem] mx-1 md:mx-4 p-4 md:p-2">
                         <a href="https://genelenergy.com/" target="_blank" aria-label="Visit Client Company's Website">
-                            <img loading="lazy" src="img/Cleints/Genel-energy-logo.png" alt="Genel Energy Company Logo" class="scale-110">
+                            <img loading="lazy" src="img/home-page/Cleints/Genel-energy-logo.png" alt="Genel Energy Company Logo" class="scale-110">
                         </a>
                     </div>
                     <div class="w-[12rem]  mx-1 md:mx-4 p-4 md:p-2">
                         <a href="https://eurasiadrilling.com/" target="_blank" aria-label="Visit Client Company's Website">
-                            <img loading="lazy" src="img/Cleints/EDC-logo.png" alt="EDC Company Logo" class="scale-90">
+                            <img loading="lazy" src="img/home-page/Cleints/EDC-logo.png" alt="EDC Company Logo" class="scale-90">
                         </a>
                     </div>
                     <div class="w-[12rem]  mx-1 md:mx-4 p-4 md:p-2">
                         <a href="http://www.parkerdrilling.com/" target="_blank" aria-label="Visit Client Company's Website">
-                            <img loading="lazy" src="img/Cleints/parker-drilling-logo.png" alt="Parker Drilling logo">
+                            <img loading="lazy" src="img/home-page/Cleints/parker-drilling-logo.png" alt="Parker Drilling logo">
                         </a>
                     </div>
 
@@ -459,9 +465,9 @@
             <div class="grid grid-cols-1 md:grid-cols-3">
                 <!-- Left Col -->
                 <div class="grid md:col-span-2">
-                    <div class="bg-[#F4F4F4] flex justify-center items-center p-4 row-span-1">
+                    <div class="bg-chamanke-dark-green/5 flex justify-center items-center p-4 row-span-1">
                         <div class="get_in_touch_content py-8">
-                            <span class="font-semibold text-5xl text-cyan-900 ">Get in Touch</span>
+                            <span class="font-semibold text-5xl text-chamanke-midnight-green ">Get in Touch</span>
                             <div class="max-w-sm py-3 text-lg">
                                 <p>We’re all ears to your feedback, suggestion or any other questions you may have</p>
                             </div>
@@ -511,48 +517,54 @@
                 <!-- Right Col -->
                 <div id="contact" class="grid row-auto max-w-[30rem] w-11/12 mx-auto md:mx-1  lg:h-[727px] pt-6">
                     <div class="form p-6 bg-white ">
-                        <h3 class="text-[#2C463F] text-2xl font-semibold text-center mb-5">Say Something...</h3>
-                        <form id="contactForm" action="https://formsubmit.co/e517c32f94f396d9f0edcdf9526368e8" method="POST">
-                            <div class="relative z-0 mb-6 w-auto group">
+                        <h3 class="text-chamanke-dark-green text-2xl font-semibold text-center mb-5">Say Something...</h3>
+
+                        <form class="pt-5" id="contactForm" action="https://formsubmit.co/e517c32f94f396d9f0edcdf9526368e8" method="POST">
+
+                            <div class="relative mb-8">
                                 <input type="name" name="Full Name" id="fullName"
-                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-[#0C4773] peer"
+                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:border-chamanke-main-blue peer"
                                     placeholder=" " required />
                                 <label for="fullName"
-                                    class="peer-focus:font-medium absolute text-md text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#0C4773] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Full
-                                    Name
+                                    class="absolute top-3 text-md text-gray-500 peer-focus:text-chamanke-main-blue peer-focus:font-semibold duration-300 origin-[0] peer-focus:left-0 -translate-y-9 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-9 peer-focus:scale-[.85]">
+                                    Full Name
                                 </label>
                             </div>
 
-                            <div class="relative z-0 mb-6 w-full group">
+                            <div class="relative mb-8">
                                 <input type="email" name="email" id="email"
-                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-[#0C4773] peer"
+                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:border-chamanke-main-blue peer"
                                     placeholder=" " required />
                                 <label for="email"
-                                    class="peer-focus:font-medium absolute text-md text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#0C4773] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email
+                                    class="absolute top-3 text-md text-gray-500 peer-focus:text-chamanke-main-blue peer-focus:font-semibold duration-300 origin-[0] peer-focus:left-0 -translate-y-9 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-9 peer-focus:scale-[.85]">
+                                    Email
                                 </label>
                             </div>
 
-                            <div class="relative z-0 mb-6 w-full group">
+                            <div class="relative mb-14">
                                 <input type="text" name="subject" id="subject"
-                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-[#0C4773] peer"
+                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:border-chamanke-main-blue peer"
                                     placeholder=" " required />
                                 <label for="subject"
-                                    class="peer-focus:font-medium absolute text-md text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#0C4773] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Subject
+                                    class="absolute top-3 text-md text-gray-500 peer-focus:text-chamanke-main-blue peer-focus:font-semibold duration-300 origin-[0] peer-focus:left-0 -translate-y-9 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-9 peer-focus:scale-[.85]">
+                                    Subject
                                 </label>
                             </div>
 
 
-                            <label for="message"
-                                class="now peer-focus:font-medium text-md text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#0C4773] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Your
-                                message
-                            </label>
+                            <div class="relative">
+                                <textarea id="message" rows="4" name="message"
+                                    class="my-3 block p-2.5 w-full text-sm text-gray-900 bg-transparent border-2 rounded-lg border-gray-300 focus:outline-none focus:ring-0 focus:border-chamanke-main-blue peer">
+                                </textarea>
+                                <label for="message"
+                                    class="absolute top-1 text-md text-gray-500 peer-focus:text-chamanke-main-blue peer-focus:font-semibold duration-300 origin-[0] peer-focus:left-0 -translate-y-9 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-9 peer-focus:scale-[.85]">
+                                    Your message
+                                </label>
+                            </div>
 
-                            <textarea id="message" rows="4" name="message"
-                                class="my-3 block p-2.5 w-full text-sm text-gray-900 bg-transparent border-2 rounded-lg border-gray-300 focus:outline-none focus:ring-0 focus:border-[#0C4773] peer">
-                            </textarea>
 
                             <button type="submit"
-                                class="text-white my-6 relative top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]  border-2 hover:scale-105 border-[#0C4773] bg-[#0C4773]/90 font-medium rounded-lg text-sm w-full max-w-[90px] sm:w-auto px-5 py-2.5 text-center">Submit
+                                class="text-white my-6 relative top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]  border-2 hover:scale-105 border-chamanke-main-blue bg-chamanke-main-blue/90 font-medium rounded-lg text-sm w-full max-w-[90px] sm:w-auto px-5 py-2.5 text-center">Submit
                             </button>
                         </form>
 
@@ -563,7 +575,8 @@
 
                                 <li class="mx-1 hover:-translate-y-0.5 duration-300">
                                     <a href="https://www.linkedin.com/company/chamanke-company/" target="_blank" aria-label="Visit our LinkedIn Page">
-                                        <div class="border-2 rounded-full p-1.5 hover:bg-[#007AB9] hover:fill-white focus:outline-dashed outline-[#0C4773]">
+                                        <div
+                                            class="border-2 rounded-full p-1.5 hover:bg-[#007AB9] hover:fill-white focus:outline-dashed outline-chamanke-main-blue">
                                             <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                                 <path
                                                     d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z" />
@@ -573,7 +586,8 @@
                                 </li>
                                 <li class="mx-1 hover:-translate-y-0.5 duration-300">
                                     <a href="https://www.facebook.com/" target="_blank" aria-label="Visit our Facebook Page">
-                                        <div class="border-2 rounded-full p-1.5 hover:bg-[#1A6ED8] hover:fill-white focus:outline-dashed outline-[#0C4773]">
+                                        <div
+                                            class="border-2 rounded-full p-1.5 hover:bg-[#1A6ED8] hover:fill-white focus:outline-dashed outline-chamanke-main-blue">
                                             <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
                                                 <path
                                                     d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" />
@@ -583,7 +597,8 @@
                                 </li>
                                 <li class="mx-1 hover:-translate-y-0.5 duration-300">
                                     <a href="https://www.youtube.com/channel/UCEIOqyR_RLb2aCLHEnukBig" target="_blank" aria-label="Visit our Youtube Channel">
-                                        <div class="border-2 rounded-full p-1.5 hover:bg-[#FF0000] hover:fill-white focus:outline-dashed outline-[#0C4773]">
+                                        <div
+                                            class="border-2 rounded-full p-1.5 hover:bg-[#FF0000] hover:fill-white focus:outline-dashed outline-chamanke-main-blue">
                                             <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                                                 <path
                                                     d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" />
@@ -593,7 +608,8 @@
                                 </li>
                                 <li class="mx-1 hover:-translate-y-0.5 duration-300">
                                     <a href="https://twitter.com" target="_blank" aria-label="Visit our Twitter">
-                                        <div class="border-2 rounded-full p-1.5 hover:bg-[#1D9BF0] hover:fill-white focus:outline-dashed outline-[#0C4773]">
+                                        <div
+                                            class="border-2 rounded-full p-1.5 hover:bg-[#1D9BF0] hover:fill-white focus:outline-dashed outline-chamanke-main-blue">
                                             <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                                 <path
                                                     d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" />
@@ -612,7 +628,7 @@
         <footer class="bg-[#F4F4F4]">
             <div class="md:ml-16 grid grid-cols-1 gap-8 px-6 py-8 md:grid-cols-3">
                 <div>
-                    <img class="pb-4 h-12 sm:h-16" loading="lazy" src="img/Chamanke Name + Logo.png" alt="">
+                    <img class="pb-4 h-12 sm:h-16" loading="lazy" src="img/home-page/footer-chamanke-name+Logo.png" alt="">
                     <p class="max-w-sm">
                         Chamanke Company was founded with the intent to be one of the leaders in the Kurdistan region
                         in providing services to companies working in oil industry and logistics, and currently renowned for
@@ -625,7 +641,7 @@
                         <h2 class="mb-6 text-sm font-bold text-gray-500 uppercase">Company</h2>
                         <ul class="text-gray-500">
                             <li class="mb-4">
-                                <a href="./company.html" class=" hover:underline" aria-label="Go to Company Page">About</a>
+                                <a href="./about.html" class=" hover:underline" aria-label="Go to Company Page">About</a>
                             </li>
                             <li class="mb-4">
                                 <a href="./staff.html" class="hover:underline" aria-label="Go to Staff Page">Staff</a>
@@ -659,21 +675,22 @@
             </div>
 
             <div class="px-4 py-6 bg-gray-100 md:flex md:items-center md:justify-between">
-                <span class="md:ml-16 text-sm text-gray-500 sm:text-center">
+                <small class="md:ml-16 text-sm text-gray-500 sm:text-center">
                     © 2023 <a href="./index.html">Chamanke™</a>. All Rights Reserved.
-                </span>
+                </small>
             </div>
         </footer>
 
         <!-- back to top btn -->
         <div id="toTopBtn" class="fixed opacity-0 bottom-20 z-50 duration-300">
-            <svg class="text-white hover:text-[#2e3c49] hover:bg-blue-100 text-4xl text-center bg-slate-300 rounded-2xl
+            <svg class="text-white hover:text-chamanke-dark-blue hover:bg-blue-100 text-4xl text-center bg-slate-300 rounded-2xl
              w-12 h-12 p-1.5 hover:font-bold " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
             </svg>
         </div>
 
-        <script src="./scripts/homePage.js"></script>
+        <script src="../src/scripts/index.js"></script>
+        <script src="../src/scripts/common.js"></script>
 
     </body>
 

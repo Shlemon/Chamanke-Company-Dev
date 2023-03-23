@@ -2,14 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --chamanke-blue: #1642a0;
-  --chamanke-red: #e04639;
-  --chamanke-light-blue: #0a88a3;
-  --chamanke-green: #007832;
+
+/* you cant use the @apply directive with the 'group' class */
+.card {
+  @apply mb-5 max-h-fit hover:shadow-md duration-300 ease-in-out max-w-sm rounded-sm overflow-hidden;
 }
-
-/* .card {
-  @apply mb-5 max-h-fit hover:shadow-md duration-300 ease-in-out max-w-sm rounded-sm group overflow-hidden;
-} */
-
