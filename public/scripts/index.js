@@ -131,7 +131,7 @@ prevReviewBtn.addEventListener('click', prevReview);
 let currentReview = 0;
 function nextReview() {
   // remove the class added at the end
-  reviews[currentReview].classList.remove('slide-left-in');
+  reviews[currentReview].classList.remove('slide-left-in', 'slide-right-in');
 
   // slide out the current review
   reviews[currentReview].classList.add('slide-left-out');
@@ -144,7 +144,7 @@ function nextReview() {
 
     // remove classes from the next review after increasing the index
     reviews[currentReview].classList.remove('hidden');
-    reviews[currentReview].classList.remove('slide-left-out');
+    reviews[currentReview].classList.remove('slide-left-out', 'slide-right-out');
 
     // animate new review entering from the right
     reviews[currentReview].classList.add('slide-left-in');
@@ -152,7 +152,7 @@ function nextReview() {
 }
 
 function prevReview() {
-  reviews[currentReview].classList.remove('slide-right-in');
+  reviews[currentReview].classList.remove('slide-right-in', 'slide-left-in');
   reviews[currentReview].classList.add('slide-right-out');
 
   setTimeout(() => {
@@ -162,7 +162,7 @@ function prevReview() {
     if (currentReview < 0) currentReview = reviews.length - 1;
 
     reviews[currentReview].classList.remove('hidden');
-    reviews[currentReview].classList.remove('slide-right-out');
+    reviews[currentReview].classList.remove('slide-right-out', 'slide-left-out');
 
     reviews[currentReview].classList.add('slide-right-in');
   }, 500);
@@ -195,10 +195,33 @@ reviewsContainer.addEventListener('pointerup', () => {
 });
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-setInterval(() => {
-  nextServiceBtn.click();
-  nextReviewBtn.click();
-}, 4000);
+
+let intervalId;
+let slideInterval = interval => {
+  intervalId = setInterval(() => {
+    nextServiceBtn.click();
+    nextReviewBtn.click();
+  }, interval);
+};
+
+let sections = [servicesContainer, reviewsContainer];
+let isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+if (!isTouchDevice) {
+  slideInterval(2000);
+
+  sections.forEach((section) => {
+    section.addEventListener('pointerenter', () => {
+      clearInterval(intervalId);
+    });
+    section.addEventListener('pointerleave', () => {
+      slideInterval(2000);
+    });
+  });
+} else {
+  // for touch devices
+  slideInterval(5000)
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 const form = document.getElementById('contactForm');
 

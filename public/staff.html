@@ -58,7 +58,7 @@
                             </button>
                             <!-- Dropdown Menu -->
                             <div aria-expanded="false"
-                                class="navMenu invisible md:group-hover:visible h-0 md:group-hover:h-[9.5rem] duration-500 md:absolute right-0 lg:w-32 bg-white rounded-md py-2 z-30 overflow-hidden">
+                                class="navMenu invisible md:group-hover:visible h-0 md:group-hover:h-[9.5rem] duration-500 md:absolute right-0 md:w-32 bg-white rounded-md py-2 z-30 overflow-hidden">
 
                                 <ul class="text-gray-600">
                                     <li>
@@ -101,7 +101,7 @@
                             </button>
                             <!-- Dropdown Menu -->
                             <div aria-expanded="false"
-                                class="navMenu invisible md:group-hover:visible h-0 md:group-hover:h-[14rem] duration-500 md:absolute right-0 lg:w-36 bg-white rounded-md py-2  z-30 overflow-hidden">
+                                class="navMenu invisible md:group-hover:visible h-0 md:group-hover:h-[14rem] duration-500 md:absolute right-0 md:w-36 bg-white rounded-md py-2  z-30 overflow-hidden">
 
                                 <ul class="text-gray-600">
                                     <li>
@@ -359,13 +359,14 @@
         <section>
             <div class="bg-white grid grid-cols-1 md:grid-cols-2">
                 <!-- Left Col -->
-                <div id="careers" class="grid max-w-xl w-11/12 mx-auto md:ml-4">
+                <div class="grid max-w-xl w-11/12 mx-auto md:ml-4">
                     <div class="form px-6 py-8 bg-white ">
                         <span class="text-chamanke-dark-green text-2xl font-semibold  mb-10">
                             If you are interested in becoming a member of Chamanke family, go ahead and fill in the application form.
                         </span>
 
-                        <form action="https://formsubmit.co/e517c32f94f396d9f0edcdf9526368e8" method="POST" enctype="multipart/form-data" class="py-11">
+                        <form id="careers" action="https://formsubmit.co/e517c32f94f396d9f0edcdf9526368e8" method="POST" enctype="multipart/form-data"
+                            class="py-11">
 
                             <div class="relative mb-8">
                                 <input type="name" name="Full Name" id="fullName"
