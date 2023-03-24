@@ -45,52 +45,57 @@ const servicesSection = {
 };
 const { servicesContainer, serviceImg, serviceTitle, serviceDescription, serviceBtn, nextServiceBtn, prevServiceBtn } = servicesSection;
 
-servicesContainer.addEventListener('click', (e) => {
-  if (e.target.closest('#nextServiceBtn, #nextServiceBtn svg')) {
-    currentIndex++;
-    if (currentIndex >= services.length) currentIndex = 0;
+// Reviews Section
+const reviewsSection = {
+  reviewsContainer: document.querySelector('.reviews-container'),
+  reviews: document.querySelectorAll('.reviews-container .review'),
+  nextReviewBtn: document.querySelector('#nextReviewBtn'),
+  prevReviewBtn: document.querySelector('#prevReviewBtn'),
+};
+const { reviewsContainer, reviews, nextReviewBtn, prevReviewBtn } = reviewsSection;
 
-    crossfade();
-  }
-
-  if (e.target.closest('#prevServiceBtn, #prevServiceBtn svg')) {
-    currentIndex--;
-    if (currentIndex < 0) currentIndex = services.length - 1;
-
-    crossfade();
-  }
-});
-
-// pointer events (mouse + touch + stylus...etc.)
-let currentIndex = 0;
+let serviceIndex = 0;
+let reviewIndex = 0;
 let isDragging = false;
 let startPosition = null;
+let containers = [servicesContainer, reviewsContainer];
 
-servicesContainer.addEventListener('pointerdown', (e) => {
-  e.preventDefault();
-  isDragging = true;
-  startPosition = e.clientX;
-  servicesContainer.style.cursor = 'grabbing';
-});
+containers.forEach((container) => {
+  // click events
+  container.addEventListener('click', (e) => {
+    if (container === servicesContainer) {
+      if (e.target.closest('#nextServiceBtn, #nextServiceBtn svg')) {
+        nextService();
+      }
 
-servicesContainer.addEventListener('pointermove', (e) => {
-  e.preventDefault();
-  if (isDragging) {
-    const delta = e.clientX - startPosition;
-    if (delta > 11) {
-      isDragging = false;
-      nextServiceBtn.click();
-    } else if (delta < -11) {
-      isDragging = false;
-      prevServiceBtn.click();
+      if (e.target.closest('#prevServiceBtn, #prevServiceBtn svg')) {
+        prevService();
+      }
+    } else if (container === reviewsContainer) {
+      if (e.target.closest('#nextReviewBtn, #nextReviewBtn svg')) {
+        nextReview();
+      }
+
+      if (e.target.closest('#prevReviewBtn, #prevReviewBtn svg')) {
+        prevReview();
+      }
     }
-  }
+  });
+  // touch events
+  pointerEvents(container);
 });
 
-servicesContainer.addEventListener('pointerup', () => {
-  isDragging = false;
-  servicesContainer.style.cursor = 'default';
-});
+function nextService() {
+  serviceIndex++;
+  if (serviceIndex >= services.length) serviceIndex = 0;
+  crossfade();
+}
+
+function prevService() {
+  serviceIndex--;
+  if (serviceIndex < 0) serviceIndex = services.length - 1;
+  crossfade();
+}
 
 function crossfade() {
   // fade out current content
@@ -103,7 +108,7 @@ function crossfade() {
 }
 
 function updateElements() {
-  const currentService = services[currentIndex];
+  const currentService = services[serviceIndex];
 
   serviceImg.src = currentService.image;
   serviceTitle.textContent = currentService.title;
@@ -115,117 +120,99 @@ function updateElements() {
   serviceImg.classList.add('fade-in');
 }
 
-// Reviews Section
-const reviewsSection = {
-  reviewsContainer: document.querySelector('.reviews-container'),
-  reviews: document.querySelectorAll('.reviews-container .review'),
-  nextReviewBtn: document.querySelector('#nextReview'),
-  prevReviewBtn: document.querySelector('#prevReview'),
-};
-
-const { reviewsContainer, reviews, nextReviewBtn, prevReviewBtn } = reviewsSection;
-
-nextReviewBtn.addEventListener('click', nextReview);
-prevReviewBtn.addEventListener('click', prevReview);
-
-let currentReview = 0;
 function nextReview() {
-  // remove the class added at the end
-  reviews[currentReview].classList.remove('slide-left-in', 'slide-right-in');
+  // clear all the sliding classes
+  reviews[reviewIndex].classList.remove('slide-left-in', 'slide-right-in');
 
   // slide out the current review
-  reviews[currentReview].classList.add('slide-left-out');
+  reviews[reviewIndex].classList.add('slide-left-out');
 
   setTimeout(() => {
-    reviews[currentReview].classList.add('hidden');
+    reviews[reviewIndex].classList.add('hidden');
 
-    currentReview++;
-    if (currentReview >= reviews.length) currentReview = 0;
+    reviewIndex++;
+    if (reviewIndex >= reviews.length) reviewIndex = 0;
 
     // remove classes from the next review after increasing the index
-    reviews[currentReview].classList.remove('hidden');
-    reviews[currentReview].classList.remove('slide-left-out', 'slide-right-out');
+    reviews[reviewIndex].classList.remove('hidden');
+    reviews[reviewIndex].classList.remove('slide-left-out', 'slide-right-out');
 
     // animate new review entering from the right
-    reviews[currentReview].classList.add('slide-left-in');
+    reviews[reviewIndex].classList.add('slide-left-in');
   }, 500);
 }
 
 function prevReview() {
-  reviews[currentReview].classList.remove('slide-right-in', 'slide-left-in');
-  reviews[currentReview].classList.add('slide-right-out');
+  reviews[reviewIndex].classList.remove('slide-right-in', 'slide-left-in');
+  reviews[reviewIndex].classList.add('slide-right-out');
 
   setTimeout(() => {
-    reviews[currentReview].classList.add('hidden');
+    reviews[reviewIndex].classList.add('hidden');
 
-    currentReview--;
-    if (currentReview < 0) currentReview = reviews.length - 1;
+    reviewIndex--;
+    if (reviewIndex < 0) reviewIndex = reviews.length - 1;
 
-    reviews[currentReview].classList.remove('hidden');
-    reviews[currentReview].classList.remove('slide-right-out', 'slide-left-out');
+    reviews[reviewIndex].classList.remove('hidden');
+    reviews[reviewIndex].classList.remove('slide-right-out', 'slide-left-out');
 
-    reviews[currentReview].classList.add('slide-right-in');
+    reviews[reviewIndex].classList.add('slide-right-in');
   }, 500);
 }
 
-reviewsContainer.addEventListener('pointerdown', (e) => {
-  e.preventDefault();
-  isDragging = true;
-  startPosition = e.clientX;
-  reviewsContainer.style.cursor = 'grabbing';
-});
+function pointerEvents(container) {
+  container.addEventListener('pointerdown', (e) => {
+    e.preventDefault();
+    isDragging = true;
+    startPosition = e.clientX;
+    container.style.cursor = 'grabbing';
+  });
 
-reviewsContainer.addEventListener('pointermove', (e) => {
-  e.preventDefault();
-  if (isDragging) {
-    const delta = e.clientX - startPosition;
-    if (delta > 11) {
-      isDragging = false;
-      prevReviewBtn.click();
-    } else if (delta < -11) {
-      isDragging = false;
-      nextReviewBtn.click();
+  container.addEventListener('pointermove', (e) => {
+    e.preventDefault();
+    if (isDragging) {
+      const delta = e.clientX - startPosition;
+      if (delta > 11) {
+        isDragging = false;
+        container === servicesContainer ? prevServiceBtn.click() : container === reviewsContainer ? prevReviewBtn.click() : null;
+      } else if (delta < -11) {
+        isDragging = false;
+        container === servicesContainer ? nextServiceBtn.click() : container === reviewsContainer ? nextReviewBtn.click() : null;
+      }
     }
-  }
-});
+  });
 
-reviewsContainer.addEventListener('pointerup', () => {
-  isDragging = false;
-  reviewsContainer.style.cursor = 'default';
-});
+  container.addEventListener('pointerup', () => {
+    isDragging = false;
+    container.style.cursor = 'default';
+  });
+}
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+// auto sliding 
 let intervalId;
-let slideInterval = interval => {
+let slideInterval = (interval) => {
   intervalId = setInterval(() => {
     nextServiceBtn.click();
     nextReviewBtn.click();
   }, interval);
 };
 
-let sections = [servicesContainer, reviewsContainer];
-let isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-if (!isTouchDevice) {
-  slideInterval(2000);
+function autoSlide() {
+  let isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-  sections.forEach((section) => {
-    section.addEventListener('pointerenter', () => {
-      clearInterval(intervalId);
+  if (!isTouchDevice) {
+    slideInterval(2000);
+
+    containers.forEach((container) => {
+      container.addEventListener('pointerenter', () => {
+        clearInterval(intervalId);
+      });
+      container.addEventListener('pointerleave', () => {
+        slideInterval(2000);
+      });
     });
-    section.addEventListener('pointerleave', () => {
-      slideInterval(2000);
-    });
-  });
-} else {
-  // for touch devices
-  slideInterval(5000)
+  } else {
+    // for touch devices
+    slideInterval(6000);
+  }
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-const form = document.getElementById('contactForm');
-
-form.addEventListener('submit', (e) => {
-  // e.preventDefault();
-  console.log('form submitted');
-});
+autoSlide();
