@@ -1,9 +1,9 @@
 'use strict';
 // display the category based on the click from the services page
-window.onload = () => {
-  updateHero(selectedServiceId)
+window.addEventListener('DOMContentLoaded', () => {
+  updateHeader(selectedServiceId)
   filterCards(selectedServiceId);
-};
+});
 // getting the id of the clicked button from the services section of home page that was stored in localStorage
 const selectedServiceId = localStorage.getItem('selectedServiceId');
 const categoryButtons = document.querySelectorAll('.service-category');
@@ -36,10 +36,10 @@ function filterCards(value) {
     }
   });
 
-  updateHero(value);
+  updateHeader(value);
 }
 
-function updateHero(value) {
+function updateHeader(value) {
   const serviceImg = document.querySelector('#servicesImg');
   const serviceTitle = document.querySelector('#servicesTitle');
 
