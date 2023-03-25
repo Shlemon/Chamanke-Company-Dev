@@ -210,9 +210,10 @@ function autoSlide() {
         slideInterval(2000);
       });
     });
-  } else {
-    // for touch devices
-    slideInterval(6000);
   }
+  // else {
+  //   // for touch devices
+  //   slideInterval(6000);
+  // }
 }
 autoSlide();
