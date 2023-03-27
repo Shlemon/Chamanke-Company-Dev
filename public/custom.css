@@ -1,3 +1,5 @@
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
 * {
   font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
@@ -18,7 +20,7 @@
 }
 
 /* homepage: services section */
-#servicesContainer:before {
+#services-container:before {
 content: "";
 position: absolute;
 width: 100%;

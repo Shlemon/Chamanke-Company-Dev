@@ -907,6 +907,10 @@ video {
   width: 1.25rem;
 }
 
+.w-\[100vw\] {
+  width: 100vw;
+}
+
 .max-w-md {
   max-width: 28rem;
 }
@@ -2702,6 +2706,8 @@ video {
   padding-bottom: 0.5rem;
 }
 
+
+
 /* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 * {
@@ -2724,7 +2730,7 @@ video {
 }
 
 /* homepage: services section */
-#servicesContainer:before {
+#services-container:before {
 content: "";
 position: absolute;
 width: 100%;

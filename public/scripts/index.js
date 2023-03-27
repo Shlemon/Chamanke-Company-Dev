@@ -1,49 +1,12 @@
 'use strict';
 
-// SERVICES Section
-const services = [
-  {
-    title: 'Construction & building materials trade ',
-    image: 'img/home-page/services/snow-removing.jpg',
-    description: 'Get All Your Civil Needs Done In An Effiecnt Way',
-    data: 'civil',
-  },
-  {
-    title: 'Catering & Housekeeping',
-    image: 'img/home-page/services/catering-.jpg',
-    description: 'A Catering Service You can Trust',
-    data: 'catering',
-  },
-  {
-    title: 'logistics',
-    image: 'img/home-page/services/logistics.jpg',
-    description: 'Logistics info',
-    data: 'logistics',
-  },
-  {
-    title: 'Procurment & Supply Chain',
-    image: 'img/home-page/services/oil-trading.jpg',
-    description: 'Procurement & Supply Chain info',
-    data: 'procurement',
-  },
-  {
-    title: 'Mechanical & Maintenance Works',
-    image: 'img/home-page/services/maintenance.jpeg',
-    description: 'Mechanical & Maintenance Works info',
-    data: 'maintenance',
-  },
-];
-
 const servicesSection = {
-  servicesContainer: document.querySelector('#servicesContainer'),
-  serviceImg: document.querySelector('#servicesImg'),
-  serviceTitle: document.querySelector('#servicesTitle'),
-  serviceDescription: document.querySelector('#servicesDescription'),
-  serviceBtn: document.querySelector('#serviceBtn'),
+  servicesContainer: document.querySelector('#services-container'),
+  services: document.querySelectorAll('#services-container .service'),
   nextServiceBtn: document.querySelector('#nextServiceBtn'),
   prevServiceBtn: document.querySelector('#prevServiceBtn'),
 };
-const { servicesContainer, serviceImg, serviceTitle, serviceDescription, serviceBtn, nextServiceBtn, prevServiceBtn } = servicesSection;
+const { servicesContainer, services, nextServiceBtn, prevServiceBtn } = servicesSection;
 
 // Reviews Section
 const reviewsSection = {
@@ -61,23 +24,28 @@ let startPosition = null;
 let containers = [servicesContainer, reviewsContainer];
 
 containers.forEach((container) => {
-  // click events
   container.addEventListener('click', (e) => {
     if (container === servicesContainer) {
       if (e.target.closest('#nextServiceBtn, #nextServiceBtn svg')) {
-        nextService();
+        nextItem(services, serviceIndex, (newIndex) => {
+          serviceIndex = newIndex; // update the value of serviceIndex with the new index.
+        });
       }
-
       if (e.target.closest('#prevServiceBtn, #prevServiceBtn svg')) {
-        prevService();
+        prevItem(services, serviceIndex, (newIndex) => {
+          serviceIndex = newIndex;
+        });
       }
     } else if (container === reviewsContainer) {
       if (e.target.closest('#nextReviewBtn, #nextReviewBtn svg')) {
-        nextReview();
+        nextItem(reviews, reviewIndex, (newIndex) => {
+          reviewIndex = newIndex;
+        });
       }
-
       if (e.target.closest('#prevReviewBtn, #prevReviewBtn svg')) {
-        prevReview();
+        prevItem(reviews, reviewIndex, (newIndex) => {
+          reviewIndex = newIndex;
+        });
       }
     }
   });
@@ -85,77 +53,43 @@ containers.forEach((container) => {
   pointerEvents(container);
 });
 
-function nextService() {
-  serviceIndex++;
-  if (serviceIndex >= services.length) serviceIndex = 0;
-  crossfade();
-}
-
-function prevService() {
-  serviceIndex--;
-  if (serviceIndex < 0) serviceIndex = services.length - 1;
-  crossfade();
-}
-
-function crossfade() {
+function nextItem(items, itemIndex, callback) {
   // fade out current content
-  serviceImg.classList.remove('fade-in');
-  serviceImg.classList.add('fade-out');
+  items[itemIndex].classList.remove('fade-in');
+  items[itemIndex].classList.add('fade-out');
 
   setTimeout(() => {
-    updateElements();
+    items[itemIndex].classList.add('hidden');
+
+    itemIndex++;
+    if (itemIndex >= items.length) itemIndex = 0;
+
+    items[itemIndex].classList.remove('hidden');
+
+    // fade in the next content
+    items[itemIndex].classList.remove('fade-out');
+    items[itemIndex].classList.add('fade-in');
+
+    callback(itemIndex); // call the callback function with the updated value of itemIndex
   }, 500);
 }
 
-function updateElements() {
-  const currentService = services[serviceIndex];
-
-  serviceImg.src = currentService.image;
-  serviceTitle.textContent = currentService.title;
-  serviceDescription.textContent = currentService.description;
-  serviceBtn.setAttribute('data-service', currentService.data);
-
-  // fade in the next content
-  serviceImg.classList.remove('fade-out');
-  serviceImg.classList.add('fade-in');
-}
-
-function nextReview() {
-  // clear all the sliding classes
-  reviews[reviewIndex].classList.remove('slide-left-in', 'slide-right-in');
-
-  // slide out the current review
-  reviews[reviewIndex].classList.add('slide-left-out');
+function prevItem(items, itemIndex, callback) {
+  items[itemIndex].classList.remove('fade-in');
+  items[itemIndex].classList.add('fade-out');
 
   setTimeout(() => {
-    reviews[reviewIndex].classList.add('hidden');
+    items[itemIndex].classList.add('hidden');
 
-    reviewIndex++;
-    if (reviewIndex >= reviews.length) reviewIndex = 0;
+    itemIndex--;
+    if (itemIndex < 0) itemIndex = items.length - 1;
 
-    // remove classes from the next review after increasing the index
-    reviews[reviewIndex].classList.remove('hidden');
-    reviews[reviewIndex].classList.remove('slide-left-out', 'slide-right-out');
+    items[itemIndex].classList.remove('hidden');
 
-    // animate new review entering from the right
-    reviews[reviewIndex].classList.add('slide-left-in');
-  }, 500);
-}
+    items[itemIndex].classList.remove('fade-out');
+    items[itemIndex].classList.add('fade-in');
 
-function prevReview() {
-  reviews[reviewIndex].classList.remove('slide-right-in', 'slide-left-in');
-  reviews[reviewIndex].classList.add('slide-right-out');
-
-  setTimeout(() => {
-    reviews[reviewIndex].classList.add('hidden');
-
-    reviewIndex--;
-    if (reviewIndex < 0) reviewIndex = reviews.length - 1;
-
-    reviews[reviewIndex].classList.remove('hidden');
-    reviews[reviewIndex].classList.remove('slide-right-out', 'slide-left-out');
-
-    reviews[reviewIndex].classList.add('slide-right-in');
+    callback(itemIndex);
   }, 500);
 }
 
@@ -187,7 +121,7 @@ function pointerEvents(container) {
   });
 }
 
-// auto sliding 
+// auto sliding
 let intervalId;
 let slideInterval = (interval) => {
   intervalId = setInterval(() => {
@@ -200,20 +134,16 @@ function autoSlide() {
   let isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
   if (!isTouchDevice) {
-    slideInterval(2000);
+    slideInterval(2500);
 
     containers.forEach((container) => {
       container.addEventListener('pointerenter', () => {
         clearInterval(intervalId);
       });
       container.addEventListener('pointerleave', () => {
-        slideInterval(2000);
+        slideInterval(2500);
       });
     });
   }
-  // else {
-  //   // for touch devices
-  //   slideInterval(6000);
-  // }
 }
 autoSlide();

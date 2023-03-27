@@ -1,5 +1,5 @@
 'use strict';
-// display the category based on the click from the services page
+// display the category based on the click coming from the services page or any navbar
 window.addEventListener('DOMContentLoaded', () => {
   updateHeader(selectedServiceId)
   filterCards(selectedServiceId);
